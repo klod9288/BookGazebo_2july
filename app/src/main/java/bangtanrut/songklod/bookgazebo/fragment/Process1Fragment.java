@@ -1,5 +1,7 @@
 package bangtanrut.songklod.bookgazebo.fragment;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -9,9 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
@@ -31,6 +36,7 @@ public class Process1Fragment extends Fragment{
     private String nameString,pavilionString, radioString="0",dateString,timeString;
     private TextView dateTextView, timeTextView;
     private int dayAnInt,monthAnInt,yearAnInt,hourAnInt, minusAnInt;
+
 
     @Nullable
     @Override
@@ -57,7 +63,42 @@ public class Process1Fragment extends Fragment{
         //Setup dateTime
         setupDateTime();
 
+        //Create Date Time Picker
+        creatDateTimePicker();
+
     }//on Activity Create
+
+    private void creatDateTimePicker() {
+        ImageView imageView =(ImageView) getView().findViewById(R.id.imvDateTime);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDateDialog();
+            }
+        });
+    }
+
+    private void showDateDialog() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int intYear, int intMonth, int intDay) {
+                showDate(intDay,intMonth,intYear);
+                showTimeDialog();
+            }
+        }, yearAnInt,monthAnInt,dayAnInt);
+        datePickerDialog.show();
+    }
+
+    private void showTimeDialog() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int intHour, int intMinus) {
+                showTime(intHour,intMinus);
+
+            }
+        }, hourAnInt,minusAnInt,false);
+        timePickerDialog.show();
+    }
 
     private void setupDateTime() {
         Calendar calendar = Calendar.getInstance();
