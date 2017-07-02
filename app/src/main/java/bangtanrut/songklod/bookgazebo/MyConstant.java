@@ -23,6 +23,13 @@ public class MyConstant {
             "Password",
             "Status"};
 
+    //ชื่อศาลา
+    private String[] pavilionStrings = new String[]{"ศาลา 1","ศาลา 2","ศาลา 3","ศาลา 4","ศาลา 5"};
+
+    public String[] getPavilionStrings() {
+        return pavilionStrings;
+    }
+
     public String getUrlGetUser() {
         return urlGetUser;
     }

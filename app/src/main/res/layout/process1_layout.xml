@@ -111,11 +111,10 @@
                 android:textSize="@dimen/h2"
                 android:textStyle="bold" />
 
-            <EditText
+            <Spinner
+                android:id="@+id/spnPavilion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/sala_detail"
-                android:inputType="text" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:orientation="horizontal"
