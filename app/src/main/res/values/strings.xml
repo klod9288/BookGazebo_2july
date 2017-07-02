@@ -28,4 +28,7 @@
     <string name="sala">ศาลา</string>
     <string name="sala_detail">ชื่อศาลา</string>
 
+    <string name="rad1">เจ้าภาพนำศพมาส่ง</string>
+    <string name="rad2">ทางวัดมารับศพ</string>
+
 </resources>

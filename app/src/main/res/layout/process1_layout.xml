@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btnSentData"
-        android:layout_below="@+id/linToolBar"
+        android:layout_below="@id/linTop"
         android:background="@color/colorPrimaryLight2">
 
         <LinearLayout
@@ -111,38 +111,73 @@
                 android:textSize="@dimen/h2"
                 android:textStyle="bold" />
 
+            <!--เลือกศาลา-->
             <Spinner
                 android:id="@+id/spnPavilion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <RadioGroup
+                android:id="@+id/ragGroup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/my_padding">
 
-                <TextView
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
+                <RadioButton
+                    android:id="@+id/rad0"
+                    android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rad1" />
+
+                <RadioButton
+                    android:id="@+id/rad1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rad1" />
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:text="23/04/2017"
                     android:textSize="@dimen/h2"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:src="@mipmap/ic_calendar"
+                <TextView
+                    android:id="@+id/txtTime"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="12:30"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_calendar" />
 
             </LinearLayout>
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></Spinner>
-
-
-
 
 
         </LinearLayout>
@@ -159,7 +194,6 @@
         android:textColor="@color/white"
         android:textSize="@dimen/h2"
         android:textStyle="bold" />
-
 
 
 </RelativeLayout>

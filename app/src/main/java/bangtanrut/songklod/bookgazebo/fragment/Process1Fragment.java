@@ -1,13 +1,19 @@
 package bangtanrut.songklod.bookgazebo.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 import bangtanrut.songklod.bookgazebo.MyConstant;
 import bangtanrut.songklod.bookgazebo.R;
@@ -22,6 +28,9 @@ public class Process1Fragment extends Fragment{
     private Spinner spinner;
     private MyConstant myConstant;
     private String[] pavilionStrings;
+    private String nameString,pavilionString, radioString="0",dateString,timeString;
+    private TextView dateTextView, timeTextView;
+    private int dayAnInt,monthAnInt,yearAnInt,hourAnInt, minusAnInt;
 
     @Nullable
     @Override
@@ -42,7 +51,58 @@ public class Process1Fragment extends Fragment{
         //Create pavilion Spinner
         createPavilionSpinner();
 
+        //Create RadioGroup
+        createRadioGroup();
+
+        //Setup dateTime
+        setupDateTime();
+
     }//on Activity Create
+
+    private void setupDateTime() {
+        Calendar calendar = Calendar.getInstance();
+        dayAnInt = calendar.get(Calendar.DAY_OF_MONTH);
+        monthAnInt = calendar.get(Calendar.MONTH);
+        yearAnInt = calendar.get(Calendar.YEAR);
+        hourAnInt = calendar.get(Calendar.HOUR_OF_DAY);
+        minusAnInt = calendar.get(Calendar.MINUTE);
+
+        showDate(dayAnInt,monthAnInt,yearAnInt);
+
+        showTime(hourAnInt, minusAnInt);
+
+    }
+
+    private void showTime(int hourAnInt, int minusAnInt) {
+        timeTextView = (TextView) getView().findViewById(R.id.txtTime);
+        timeString = Integer.toString(hourAnInt) + " : " + Integer.toString(minusAnInt);
+        timeTextView.setText(timeString);
+    }
+
+    private void showDate(int dayAnInt, int monthAnInt, int yearAnInt) {
+        dateTextView = (TextView) getView().findViewById(R.id.txtDate);
+        dateString = Integer.toString(dayAnInt) + "/" + Integer.toString(monthAnInt + 1) + "/" + Integer.toString(yearAnInt);
+        dateTextView.setText(dateString);
+    }
+
+    private void createRadioGroup() {
+        RadioGroup radioGroup =(RadioGroup) getView().findViewById(R.id.ragGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                switch (i) {
+                    case R.id.rad0:
+                        //เจ้าภาพนำศพมาเอง
+                        radioString = "0";
+                        break;
+                    case R.id.rad1:
+                        //วัดไปรับ
+                        radioString = "1";
+                        break;
+                }
+            }
+        });
+    }
 
     private void createPavilionSpinner() {
         pavilionStrings = myConstant.getPavilionStrings();
@@ -50,6 +110,19 @@ public class Process1Fragment extends Fragment{
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,pavilionStrings);
         spinner.setAdapter(stringArrayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                pavilionString = pavilionStrings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                pavilionString = pavilionStrings[0];
+            }
+        });
+
     }
 
     private void setupConstance() {
