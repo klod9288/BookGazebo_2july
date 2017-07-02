@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);//Inflace XML activity_main
 
         //Initial View
         initialView();
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(MainActivity.this);
     }
 
+
+    //ผูกความสัมพันธ์ รัหว่างตัวแปรและวิวที่อยู่บน activity
     private void initialView() {
         userEditText = (EditText) findViewById(R.id.edtUser);
         passwordEditText = (EditText) findViewById(R.id.edtPassword);
@@ -56,14 +58,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //for button
         if (view == button) {
 
+          //Get Value From Edit Text
             userString = userEditText.getText().toString().trim();
             passwordString = passwordEditText.getText().toString().trim();
 
+            //Check Space
             if (userString.equals("") || passwordString.equals("")) {
                 // Have Space
                 MyAlert myAlert = new MyAlert(MainActivity.this);
                 myAlert.myDialog(getResources().getString(R.string.title_HaveSpace),
-                        getResources().getString(R.string.title_HaveSpace));
+                        getResources().getString(R.string.message_HaveSpace));
             } else {
                 // No Space
                 checkUserAnPassword();
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }   // onClick
 
+
+    //Synchronize Value From MySQL Server Check Authen
     private void checkUserAnPassword() {
 
         boolean b = true;
