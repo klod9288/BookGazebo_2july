@@ -32,6 +32,12 @@ public class MyConstant {
     //เวลาในการรดน้ำศพและเผาศพ
     private String[] timeWashAndBurn = new String[]{"16:30", "17:00", "17:30", "18:00"};
 
+    //เวลาในการย้ายศพ
+    private String[] timeMoveBody = new String[]{"15:30","16:00","16:30","17:00"};
+
+    public String[] getTimeMoveBody() {
+        return timeMoveBody;
+    }
 
     public String[] getTimeWashAndBurn() {
         return timeWashAndBurn;

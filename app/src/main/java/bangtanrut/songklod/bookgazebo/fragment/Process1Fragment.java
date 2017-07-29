@@ -77,12 +77,49 @@ public class Process1Fragment extends Fragment {
         //Wash bady Spinner
         washBadySpinner();
 
+        //Burn Body Spinner
+        burnBodySpinner();
+
 
         //Create Sent Controller
         createSentController();
 
 
     }//on Activity Create
+
+    private void burnBodySpinner() {
+        Spinner spinner = (Spinner) getView().findViewById(R.id.spnBurnbody);
+        final TextView textView = (TextView) getView().findViewById(R.id.txtMoveBody);
+        final String[] strings = myConstant.getTimeWashAndBurn();
+        final String[] timeMoveStrings1 = myConstant.getTimeMoveBody();
+        moveBodyString = timeMoveStrings1[0];
+        textView.setText(moveBodyString);
+        buenBodyString = strings[0];
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                buenBodyString = strings[i];
+                moveBodyString = timeMoveStrings1[i];
+                textView.setText(moveBodyString);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+                buenBodyString = strings[0];
+                moveBodyString = timeMoveStrings1[0];
+                textView.setText(moveBodyString);
+            }
+
+
+
+        });
+
+
+    }
 
     private void washBadySpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnWashBody);
