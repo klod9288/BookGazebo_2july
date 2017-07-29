@@ -397,6 +397,117 @@
 
                 </LinearLayout>
 
+                <!--ศาลาตั้งศพยกเว้น10-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="2200"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--ศาลาตั้งศพศาลา10-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="3"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail3"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="3000"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--ค่าจัดสถานที่รับศพ-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="4"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail4"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="1200"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
