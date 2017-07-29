@@ -46,5 +46,15 @@
     <string name="detail3">ศาลาตั้งศพ 10</string>
     <string name="detail4">ค่าสถานที่รับศพ</string>
     <string name="detail5">รถรับศพ (เฉพราะเขตกรุงเทพ และ ปริมณฑล)</string>
+    <string name="box1">หีบศพ</string>
+    <string name="box2">หีบรองสัก ขนาด 20 นิ้ว มีฐาน 8500 บาท</string>
+    <string name="box3">หีบมุข ขาว ดำ ทอง ขนาด 20 นิ้ว มีฐาน 8000 บาท</string>
+    <string name="box4">หีบไม้เนื้อแข็งเทพนม สีขาว ขนาด 20 นิ้ว มีฐาน 7000 บาท</string>
+    <string name="box5">หีบไม้เนื้อแข็งพิเศษ สีขาว ขนาด 20 นิ้ว มีฐาน 6000 บาท</string>
+    <string name="box6">บุผ้าด่วน</string>
+    <string name="box7">ราคา</string>
+    <string name="box8">อุปกรณ์ยาหีบ,ผ้าขาว,ด้ายดิบ</string>
+    <string name="box9">ผ้าคลุมหีบ</string>
+    <string name="flower1">จัดดอกไม้ หน้าศพ, หน้าพระ, กรอบรูป</string>
 
 </resources>
