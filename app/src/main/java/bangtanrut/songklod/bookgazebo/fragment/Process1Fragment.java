@@ -37,7 +37,8 @@ public class Process1Fragment extends Fragment {
     private MyConstant myConstant;
     private String[] pavilionStrings;
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
-            timeWorkString,bodyWhereString,deadCardString="0";
+            timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
+            buenBodyString, moveBodyString;
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
 
@@ -73,7 +74,8 @@ public class Process1Fragment extends Fragment {
         //Create TimeWork Spinner
         createTimeWorkSpinner();
 
-
+        //Wash bady Spinner
+        washBadySpinner();
 
 
         //Create Sent Controller
@@ -81,6 +83,31 @@ public class Process1Fragment extends Fragment {
 
 
     }//on Activity Create
+
+    private void washBadySpinner() {
+        Spinner spinner = (Spinner) getView().findViewById(R.id.spnWashBody);
+        final String[] strings = myConstant.getTimeWashAndBurn();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        timeWashBodyString = strings[0];
+
+        spinner.setAdapter(stringArrayAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeWashBodyString = strings[i];
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+                timeWashBodyString = strings[0];
+            }
+        });
+
+    }
 
     private void createSentController() {
         Button button = (Button) getView().findViewById(R.id.btnSentData);
@@ -92,17 +119,15 @@ public class Process1Fragment extends Fragment {
                 EditText nameEditText = (EditText) getView().findViewById(R.id.edtName);
                 nameString = nameEditText.getText().toString().trim();
 
-                EditText bodyWhereEditText =(EditText) getView().findViewById(R.id.edtBodyWhere);
+                EditText bodyWhereEditText = (EditText) getView().findViewById(R.id.edtBodyWhere);
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
-
-
 
 
                 //Get Value From Check Box
                 CheckBox deadCardCheckBox = (CheckBox) getView().findViewById(R.id.chbDeadCard);
                 if (deadCardCheckBox.isChecked()) {
                     deadCardString = "1";
-                }else {
+                } else {
                     deadCardString = "0";
                 }
             }//OnClick
@@ -115,7 +140,7 @@ public class Process1Fragment extends Fragment {
         timeWorkString = strings[0];
 
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,strings);
+                android.R.layout.simple_list_item_1, strings);
         spinner.setAdapter(stringArrayAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

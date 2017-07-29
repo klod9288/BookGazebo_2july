@@ -29,6 +29,13 @@ public class MyConstant {
     //เวลาในการตั้งสวด
     private String[]timeWork =new String[]{"3 คืน","5 คืน","7 คืน","9 คืน"};
 
+    //เวลาในการรดน้ำศพและเผาศพ
+    private String[] timeWashAndBurn = new String[]{"16:30", "17:00", "17:30", "18:00"};
+
+
+    public String[] getTimeWashAndBurn() {
+        return timeWashAndBurn;
+    }
 
     public String[] getTimeWork() {
         return timeWork;
