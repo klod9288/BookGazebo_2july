@@ -30,5 +30,6 @@
 
     <string name="rad1">เจ้าภาพนำศพมาส่ง</string>
     <string name="rad2">ทางวัดมารับศพ</string>
+    <string name="time_work">เวลาในการตั้งสวด</string>
 
 </resources>

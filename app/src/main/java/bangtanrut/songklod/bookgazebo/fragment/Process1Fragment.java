@@ -27,15 +27,16 @@ import bangtanrut.songklod.bookgazebo.R;
  * Created by Administrator on 2/7/2560.
  */
 
-public class Process1Fragment extends Fragment{
+public class Process1Fragment extends Fragment {
 
     //Explicit
     private Spinner spinner;
     private MyConstant myConstant;
     private String[] pavilionStrings;
-    private String nameString,pavilionString, radioString="0",dateString,timeString;
+    private String nameString, pavilionString, radioString = "0", dateString, timeString,
+            timeWorkString;
     private TextView dateTextView, timeTextView;
-    private int dayAnInt,monthAnInt,yearAnInt,hourAnInt, minusAnInt;
+    private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
 
 
     @Nullable
@@ -66,10 +67,36 @@ public class Process1Fragment extends Fragment{
         //Create Date Time Picker
         creatDateTimePicker();
 
+        //Create TimeWork Spinner
+        createTimeWorkSpinner();
+
     }//on Activity Create
 
+    private void createTimeWorkSpinner() {
+        Spinner spinner = (Spinner) getView().findViewById(R.id.spnTimeWork);
+        final String[] strings = myConstant.getTimeWork();
+        timeWorkString = strings[0];
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1,strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeWorkString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                timeWorkString = strings[0];
+
+            }
+        });
+
+    }
+
     private void creatDateTimePicker() {
-        ImageView imageView =(ImageView) getView().findViewById(R.id.imvDateTime);
+        ImageView imageView = (ImageView) getView().findViewById(R.id.imvDateTime);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,10 +109,10 @@ public class Process1Fragment extends Fragment{
         DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int intYear, int intMonth, int intDay) {
-                showDate(intDay,intMonth,intYear);
+                showDate(intDay, intMonth, intYear);
                 showTimeDialog();
             }
-        }, yearAnInt,monthAnInt,dayAnInt);
+        }, yearAnInt, monthAnInt, dayAnInt);
         datePickerDialog.show();
     }
 
@@ -93,10 +120,10 @@ public class Process1Fragment extends Fragment{
         TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int intHour, int intMinus) {
-                showTime(intHour,intMinus);
+                showTime(intHour, intMinus);
 
             }
-        }, hourAnInt,minusAnInt,false);
+        }, hourAnInt, minusAnInt, false);
         timePickerDialog.show();
     }
 
@@ -108,7 +135,7 @@ public class Process1Fragment extends Fragment{
         hourAnInt = calendar.get(Calendar.HOUR_OF_DAY);
         minusAnInt = calendar.get(Calendar.MINUTE);
 
-        showDate(dayAnInt,monthAnInt,yearAnInt);
+        showDate(dayAnInt, monthAnInt, yearAnInt);
 
         showTime(hourAnInt, minusAnInt);
 
@@ -127,7 +154,7 @@ public class Process1Fragment extends Fragment{
     }
 
     private void createRadioGroup() {
-        RadioGroup radioGroup =(RadioGroup) getView().findViewById(R.id.ragGroup);
+        RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragGroup);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -147,9 +174,9 @@ public class Process1Fragment extends Fragment{
 
     private void createPavilionSpinner() {
         pavilionStrings = myConstant.getPavilionStrings();
-        Spinner spinner =  (Spinner) getView().findViewById(R.id.spnPavilion);
+        Spinner spinner = (Spinner) getView().findViewById(R.id.spnPavilion);
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,pavilionStrings);
+                android.R.layout.simple_list_item_1, pavilionStrings);
         spinner.setAdapter(stringArrayAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
