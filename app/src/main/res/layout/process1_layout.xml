@@ -661,6 +661,190 @@
 
                 </LinearLayout>
 
+                <!--น้ำอบไทย-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="8"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/waterThai1"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="30"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--ไทยธรรม-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="9"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+                        android:layout_weight="5"
+                        android:text="@string/thaitum"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="1200"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--น้ำดื่มถ้วย-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="10"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail6"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="150"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--น้ำแข็งบด-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="11"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail7"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="70"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--น้ำแข็งบด-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="12"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail8"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:text="70"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

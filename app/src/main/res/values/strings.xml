@@ -56,5 +56,10 @@
     <string name="box8">อุปกรณ์ยาหีบ,ผ้าขาว,ด้ายดิบ</string>
     <string name="box9">ผ้าคลุมหีบ</string>
     <string name="flower1">จัดดอกไม้ หน้าศพ, หน้าพระ, กรอบรูป</string>
+    <string name="waterThai1">น้ำอบไทย (ขวดละ 30 บาท)</string>
+    <string name="thaitum">ของไทยธรรม ถวายพระ(4 ชุด ชุดละ 300 บาท)</string>
+    <string name="detail6">น้ำดื่มถ้วย (48 ถ้วย/ลัง 150 บาท)</string>
+    <string name="detail7">น้ำแข็ง</string>
+    <string name="detail8">น้ำแข็งบด</string>
 
 </resources>
