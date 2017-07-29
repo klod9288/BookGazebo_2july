@@ -38,7 +38,8 @@ public class Process1Fragment extends Fragment {
     private String[] pavilionStrings;
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
-            buenBodyString, moveBodyString;
+            buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
+            carReceiveBodyString;
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
 
@@ -115,7 +116,6 @@ public class Process1Fragment extends Fragment {
             }
 
 
-
         });
 
 
@@ -161,15 +161,48 @@ public class Process1Fragment extends Fragment {
 
 
                 //Get Value From Check Box
-                CheckBox deadCardCheckBox = (CheckBox) getView().findViewById(R.id.chbDeadCard);
-                if (deadCardCheckBox.isChecked()) {
-                    deadCardString = "1";
-                } else {
-                    deadCardString = "0";
-                }
+                checkBoxController();
             }//OnClick
         });
     }
+
+    private void checkBoxController() {
+
+
+        //ใบมรณะ
+        CheckBox deadCardCheckBox = (CheckBox) getView().findViewById(R.id.chbDeadCard);
+        if (deadCardCheckBox.isChecked()) {
+            deadCardString = "1";
+        } else {
+            deadCardString = "0";
+        }
+
+        //นิมนต์พระนำศพ
+        CheckBox montLeadCheckBox = (CheckBox) getView().findViewById(R.id.chbMontLead);
+        if (montLeadCheckBox.isChecked()) {
+            montLeadString = "1";
+        } else {
+            montLeadString = "0";
+        }
+
+        //ค่าจัดสถานที่รับศพ
+        CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
+        if (montLeadCheckBox.isChecked()) {
+            placeReceiveBodyString = "1";
+        } else {
+            placeReceiveBodyString = "0";
+        }
+
+        //รถรับศพ
+        CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
+        if (montLeadCheckBox.isChecked()) {
+            carReceiveBodyString = "1";
+        } else {
+            carReceiveBodyString = "0";
+        }
+
+
+    }//Check box
 
     private void createTimeWorkSpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnTimeWork);

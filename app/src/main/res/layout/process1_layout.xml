@@ -378,7 +378,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbMontLead"
                         android:layout_weight="5"
                         android:text="@string/detail1"
                         android:textStyle="bold"
@@ -488,7 +488,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbPlaceReceiveBody"
                         android:layout_weight="5"
                         android:text="@string/detail4"
                         android:textStyle="bold"
@@ -525,7 +525,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/carReceiveBody"
                         android:layout_weight="5"
                         android:text="@string/detail5"
                         android:textStyle="bold"
