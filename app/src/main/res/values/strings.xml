@@ -31,5 +31,12 @@
     <string name="rad1">เจ้าภาพนำศพมาส่ง</string>
     <string name="rad2">ทางวัดมารับศพ</string>
     <string name="time_work">เวลาในการตั้งสวด</string>
+    <string name="bodyform">ศพมาจาก</string>
+    <string name="sample_body">บ้าน หรือ โรงพยาบาล</string>
+    <string name="dead_card">ใบมรณบัตร</string>
+    <string name="watch_body">เวลารดน้ำศพ</string>
+    <string name="burn_body">เวลาเผาศพ</string>
+    <string name="pack_body">เวลาบรรจุศพ</string>
+    <string name="move_body">เวลาในการย้ายศพ</string>
 
 </resources>

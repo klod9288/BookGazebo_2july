@@ -23,6 +23,7 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
     <!--Unknow-->
     <LinearLayout
         android:id="@+id/linToolBar"
@@ -79,6 +80,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <!--Content-->
     <ScrollView
         android:layout_width="match_parent"
@@ -92,6 +94,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/my_padding">
+
             <!--Name-->
             <TextView
                 android:layout_width="wrap_content"
@@ -118,6 +121,7 @@
                 android:id="@+id/spnPavilion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <!--เลือกนำศพมาส่งหรือเปล่า-->
             <RadioGroup
                 android:id="@+id/ragGroup"
@@ -142,6 +146,7 @@
                     android:text="@string/rad1" />
 
             </RadioGroup>
+
             <!--เลือกวันเวลา-->
             <LinearLayout
                 android:gravity="center_vertical"
@@ -191,6 +196,123 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></Spinner>
 
+            <!--ศพมาจาก-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <TextView
+                    android:text="@string/bodyform"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtBodyWhere"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/sample_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                
+            </LinearLayout>
+
+            <!--ใบมรณะ-->
+            <CheckBox
+                android:id="@+id/chbDeadCard"
+                android:text="@string/dead_card"
+                android:textSize="@dimen/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--รดน้ำศพ-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/watch_body"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--เวลาที่บรรจุศพ-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/pack_body"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="19.00"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!--เวลาที่เผาศพ-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/burn_body"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--เวลาที่ย้ายศพ-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/move_body"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Test"
+                    android:textSize="@dimen/h2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

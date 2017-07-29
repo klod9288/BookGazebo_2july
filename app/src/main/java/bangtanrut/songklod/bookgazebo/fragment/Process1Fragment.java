@@ -11,7 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -34,7 +37,7 @@ public class Process1Fragment extends Fragment {
     private MyConstant myConstant;
     private String[] pavilionStrings;
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
-            timeWorkString;
+            timeWorkString,bodyWhereString,deadCardString="0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
 
@@ -70,7 +73,41 @@ public class Process1Fragment extends Fragment {
         //Create TimeWork Spinner
         createTimeWorkSpinner();
 
+
+
+
+        //Create Sent Controller
+        createSentController();
+
+
     }//on Activity Create
+
+    private void createSentController() {
+        Button button = (Button) getView().findViewById(R.id.btnSentData);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Get Value From edit Text
+                EditText nameEditText = (EditText) getView().findViewById(R.id.edtName);
+                nameString = nameEditText.getText().toString().trim();
+
+                EditText bodyWhereEditText =(EditText) getView().findViewById(R.id.edtBodyWhere);
+                bodyWhereString = bodyWhereEditText.getText().toString().trim();
+
+
+
+
+                //Get Value From Check Box
+                CheckBox deadCardCheckBox = (CheckBox) getView().findViewById(R.id.chbDeadCard);
+                if (deadCardCheckBox.isChecked()) {
+                    deadCardString = "1";
+                }else {
+                    deadCardString = "0";
+                }
+            }//OnClick
+        });
+    }
 
     private void createTimeWorkSpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnTimeWork);
