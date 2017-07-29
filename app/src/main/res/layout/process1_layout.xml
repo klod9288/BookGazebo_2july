@@ -317,6 +317,49 @@
 
             </LinearLayout>
 
+            <!--Check Price-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Title-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="@string/series"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <TextView
+                        android:layout_weight="5"
+                        android:text="@string/item"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
+                        android:layout_weight="2"
+                        android:text="@string/price"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>

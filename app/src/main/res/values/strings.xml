@@ -38,5 +38,8 @@
     <string name="burn_body">เวลาเผาศพ</string>
     <string name="pack_body">เวลาบรรจุศพ</string>
     <string name="move_body">เวลาในการย้ายศพ</string>
+    <string name="series">ลำดับ</string>
+    <string name="item">รายการ</string>
+    <string name="price">ราคา</string>
 
 </resources>
