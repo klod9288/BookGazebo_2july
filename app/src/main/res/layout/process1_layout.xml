@@ -713,7 +713,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbCinamol"
                         android:layout_weight="5"
                         android:text="@string/waterThai1"
                         android:textStyle="bold"
@@ -723,7 +723,8 @@
 
                     <!--ราคา-->
                     <TextView
-
+                        android:text="0"
+                        android:id="@+id/txtCinamol"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -750,6 +751,7 @@
 
                     <!--รายการ-->
                     <CheckBox
+                        android:id="@+id/chbThaiTum"
                         android:layout_weight="5"
                         android:text="@string/thaitum"
                         android:textStyle="bold"
@@ -759,7 +761,8 @@
 
                     <!--ราคา-->
                     <TextView
-
+                        android:text="0"
+                        android:id="@+id/txtThaiTum"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -786,7 +789,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbWaterDrink"
                         android:layout_weight="5"
                         android:text="@string/detail6"
                         android:textStyle="bold"
@@ -796,7 +799,8 @@
 
                     <!--ราคา-->
                     <TextView
-
+                        android:text="0"
+                        android:id="@+id/txtWaterDrink"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -823,7 +827,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbIce1"
                         android:layout_weight="5"
                         android:text="@string/detail7"
                         android:textStyle="bold"
@@ -833,7 +837,8 @@
 
                     <!--ราคา-->
                     <TextView
-
+                        android:text="0"
+                        android:id="@+id/txtIce1"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -860,7 +865,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbIce2"
                         android:layout_weight="5"
                         android:text="@string/detail8"
                         android:textStyle="bold"
@@ -870,7 +875,8 @@
 
                     <!--ราคา-->
                     <TextView
-
+                        android:text="0"
+                        android:id="@+id/txtIce2"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"

@@ -43,11 +43,11 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString = "0", packageBodyString = "",flowerString="0";
+            carReceiveBodyString = "0", packageBodyString = "", flowerString = "0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
-            packageBodyTextView,flowerTextView;
+            packageBodyTextView, flowerTextView, cinamalTextView, thaiTumTextView, waterDrinkTextView, ice1TextView, ice2TextView;
     private EditText flowerEditText;
     private boolean flowerABoolean = false;
     private Button flowerButton;
@@ -109,8 +109,27 @@ public class Process1Fragment extends Fragment {
         //Flower Controller
         flowerController();
 
+        //Cinamal ConTroller
+        cinamalConTroller();
+
 
     }//on Activity Create
+
+    private void cinamalConTroller() {
+        final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbCinamol);
+        cinamalTextView = (TextView) getView().findViewById(R.id.txtCinamol);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    cinamalTextView.setText("30");
+                } else {
+                    cinamalTextView.setText("0");
+                }
+                calculatePrice();
+            }//On Click
+        });
+    }//Method Cinamal
 
     private void flowerController() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbFlower);
@@ -290,17 +309,23 @@ public class Process1Fragment extends Fragment {
 
     private void calculatePrice() {
 
-        TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
+        try {
+            TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
 
-        int intTotalPrice = 0;
+            int intTotalPrice = 0;
 
-        intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
-        intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
-        intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
-        intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
-        intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
 
-        textView.setText(Integer.toString(intTotalPrice));
+            textView.setText(Integer.toString(intTotalPrice));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }   // calculatePrice
 
     private void burnBodySpinner() {
@@ -403,7 +428,8 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "นิมนต์พระนำศพ ==> " + montLeadString);
         Log.d(tag, "ค่าสถานที่รับศพ ==> " + placeReceiveBodyString);
         Log.d(tag, "รถรับศพ ==> " + carReceiveBodyString);
-        Log.d(tag, "หีบศพที่เลือก ==>"+packageBodyString);
+        Log.d(tag, "หีบศพที่เลือก ==>" + packageBodyString);
+        Log.d(tag, "ดอกไม้ที่เลือก ==>" + flowerTextView.getText().toString());
 
 
     }   // showLog
