@@ -325,13 +325,15 @@
 
                 <!--Title-->
                 <LinearLayout
-
+                    android:layout_margin="10dp"
+                    android:background="@color/colorPrimary"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:textColor="@color/white"
                         android:layout_weight="1"
                         android:text="@string/series"
                         android:textStyle="bold"
@@ -341,6 +343,7 @@
 
                     <!--รายการ-->
                     <TextView
+                        android:textColor="@color/white"
                         android:gravity="center_horizontal"
                         android:layout_weight="5"
                         android:text="@string/item"
@@ -351,6 +354,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:textColor="@color/white"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:text="@string/price"
@@ -413,61 +417,39 @@
                         android:layout_height="wrap_content" />
 
                     <!--รายการ-->
-                    <CheckBox
-
+                    <RadioGroup
+                        android:id="@+id/ragPavilien"
+                        android:orientation="vertical"
                         android:layout_weight="5"
-                        android:text="@string/detail2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/radPavilien"
+                            android:textSize="@dimen/h2"
+                            android:text="@string/detail2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/radPavilien10"
+                            android:textSize="@dimen/h2"
+                            android:text="@string/detail3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
 
                     <!--ราคา-->
                     <TextView
-                        android:text="2200"
-                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:id="@+id/txtPricePavilien"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <!--ศาลาตั้งศพศาลา10-->
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <!--ลำดับ-->
-                    <TextView
-                        android:layout_weight="1"
-                        android:text="3"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <!--รายการ-->
-                    <CheckBox
-
-                        android:layout_weight="5"
-                        android:text="@string/detail3"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <!--ราคา-->
-                    <TextView
-                        android:text="3000"
                         android:gravity="center_horizontal"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -480,7 +462,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="4"
+                        android:text="3"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -498,7 +480,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="1200"
+                        android:text="0"
+                        android:id="@+id/txtPlaceReceiveBody"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -517,7 +500,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="5"
+                        android:text="4"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -535,7 +518,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="1200"
+                        android:id="@+id/txtCarReceiveBody"
+                        android:text="0"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -554,7 +538,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="6"
+                        android:text="5"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -615,6 +599,8 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtPackageBody"
+                        android:text="0"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -633,7 +619,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="7"
+                        android:text="6"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -651,6 +637,7 @@
 
                     <!--ราคา-->
                     <EditText
+                        android:visibility="invisible"
                         android:hint="7000-20000"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
@@ -670,7 +657,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="8"
+                        android:text="7"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -688,7 +675,6 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="30"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -707,7 +693,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="9"
+                        android:text="8"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -724,7 +710,6 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="1200"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -743,7 +728,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="10"
+                        android:text="9"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -761,7 +746,42 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="150"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!--น้ำแข็งบด-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--ลำดับ-->
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="10"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--รายการ-->
+                    <CheckBox
+
+                        android:layout_weight="5"
+                        android:text="@string/detail7"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/h2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <!--ราคา-->
+                    <TextView
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -790,7 +810,7 @@
                     <CheckBox
 
                         android:layout_weight="5"
-                        android:text="@string/detail7"
+                        android:text="@string/detail8"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -798,7 +818,7 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="70"
+
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -808,34 +828,34 @@
 
                 </LinearLayout>
 
-                <!--น้ำแข็งบด-->
+                <!--รวมราคา-->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <!--ลำดับ-->
-                    <TextView
-                        android:layout_weight="1"
-                        android:text="12"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
 
                     <!--รายการ-->
-                    <CheckBox
-
-                        android:layout_weight="5"
-                        android:text="@string/detail8"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
+                    <RelativeLayout
+                        android:layout_weight="6"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@color/colorPrimaryDark"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/detai19"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/h1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
 
                     <!--ราคา-->
                     <TextView
-                        android:text="70"
+                        android:id="@+id/txtTotalPrice"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"

@@ -42,10 +42,10 @@
     <string name="item">รายการ</string>
     <string name="price">ราคา</string>
     <string name="detail1">นิมนต์พระนำศพ</string>
-    <string name="detail2">ศาลาตั้งศพ 1,2,3,4,5,6,7,8,9,11,12</string>
-    <string name="detail3">ศาลาตั้งศพ 10</string>
-    <string name="detail4">ค่าสถานที่รับศพ</string>
-    <string name="detail5">รถรับศพ (เฉพราะเขตกรุงเทพ และ ปริมณฑล)</string>
+    <string name="detail2">ศาลาตั้งศพ 1,2,3,4,5,6,7,8,9,11,12 (2200)</string>
+    <string name="detail3">ศาลาตั้งศพ 10 (3000)</string>
+    <string name="detail4">ค่าสถานที่รับศพ (1200)</string>
+    <string name="detail5">รถรับศพ (เฉพราะเขตกรุงเทพ และ ปริมณฑล) (1200)</string>
     <string name="box1">หีบศพ</string>
     <string name="box2">หีบรองสัก ขนาด 20 นิ้ว มีฐาน 8500 บาท</string>
     <string name="box3">หีบมุข ขาว ดำ ทอง ขนาด 20 นิ้ว มีฐาน 8000 บาท</string>
@@ -59,7 +59,8 @@
     <string name="waterThai1">น้ำอบไทย (ขวดละ 30 บาท)</string>
     <string name="thaitum">ของไทยธรรม ถวายพระ(4 ชุด ชุดละ 300 บาท)</string>
     <string name="detail6">น้ำดื่มถ้วย (48 ถ้วย/ลัง 150 บาท)</string>
-    <string name="detail7">น้ำแข็ง</string>
-    <string name="detail8">น้ำแข็งบด</string>
+    <string name="detail7">น้ำแข็ง (70)</string>
+    <string name="detail8">น้ำแข็งบด (70)</string>
+    <string name="detai19">รวมราคา :</string>
 
 </resources>

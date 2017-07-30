@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -32,7 +34,6 @@ import bangtanrut.songklod.bookgazebo.R;
 
 public class Process1Fragment extends Fragment {
 
-
     //Explicit
     private Spinner spinner;
     private MyConstant myConstant;
@@ -43,6 +44,7 @@ public class Process1Fragment extends Fragment {
             carReceiveBodyString;
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
+    private  TextView pricePavilienTextView,placeReceiveBodyTextView;
 
 
     @Nullable
@@ -82,12 +84,79 @@ public class Process1Fragment extends Fragment {
         //Burn Body Spinner
         burnBodySpinner();
 
+        //Choose Price Pavilien
+        choosePricePavilien();
+
 
         //Create Sent Controller
         createSentController();
 
+        //PlecereceiveBody Checkebox
+        placeReceiveBody();
+
+
 
     }//on Activity Create
+
+    private void placeReceiveBody() {
+        final CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
+        placeReceiveBodyTextView = (TextView) getView().findViewById(R.id.txtPlaceReceiveBody);
+        placeReceiveBodyCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (placeReceiveBodyCheckBox.isChecked()) {
+                    placeReceiveBodyString = "1";
+                    placeReceiveBodyTextView.setText("1200");
+
+                } else {
+                    placeReceiveBodyString = "0";
+                    placeReceiveBodyTextView.setText("0");
+                }
+                calculatePrice();
+
+
+            }//View
+        });
+    }//PlaceReceive
+
+    private void choosePricePavilien() {
+        RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragPavilien);
+        pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
+        final String[] strPrice = {null};
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                switch(i){
+                    case R.id.radPavilien:
+                        strPrice[0] = "2200";
+                        break;
+                    case R.id.radPavilien10:
+                        strPrice[0] = "3000";
+                }
+                pricePavilienTextView.setText(strPrice[0]);
+                calculatePrice();
+
+            }
+        });
+
+
+    }
+
+    private void calculatePrice() {
+
+        TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
+
+        int intTotalPrice = 0;
+
+        intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
+        intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
+
+
+
+
+
+        textView.setText(Integer.toString(intTotalPrice));
+    }//CalculatePrice
 
     private void burnBodySpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnBurnbody);
@@ -163,9 +232,35 @@ public class Process1Fragment extends Fragment {
 
                 //Get Value From Check Box
                 checkBoxController();
+
+                showLog();
+
             }//OnClick
         });
     }
+
+    private void showLog() {
+
+        String tag = "30JulyV1";
+        Log.d(tag, "ชื่อ นามสกุลผู้ตาย ==>" + nameString);
+        Log.d(tag, "ศาลาที่วาง ==>" + pavilionString);
+        Log.d(tag, "เจ้าภาพนำมาส่ง ==>" + radioString);
+        Log.d(tag, "Date ==>" + dateString);
+        Log.d(tag, "Time ==>" + timeString);
+        Log.d(tag, "เวลาในการตั้งสวด ==>" + timeWorkString);
+        Log.d(tag, "ศพมาจาก ==>" + bodyWhereString);
+        Log.d(tag, "ใบมรณะบัตร ==>" + deadCardString);
+        Log.d(tag, "รดน้ำศพ ==>" + timeWashBodyString);
+        Log.d(tag, "บรรจุศพ ==>" + "19:00");
+        Log.d(tag, "เวลาเผา ==>" + buenBodyString);
+        Log.d(tag, "เวลาเครื่อนย้าย ==>" + moveBodyString);
+        Log.d(tag, "นิมนพระนำศพ ==>"+montLeadString);
+        Log.d(tag, "ค่าสถานที่รับศพ ==>" + placeReceiveBodyString);
+
+
+
+
+    }//ShowLog
 
     private void checkBoxController() {
 
@@ -186,17 +281,11 @@ public class Process1Fragment extends Fragment {
             montLeadString = "0";
         }
 
-        //ค่าจัดสถานที่รับศพ
-        CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
-        if (montLeadCheckBox.isChecked()) {
-            placeReceiveBodyString = "1";
-        } else {
-            placeReceiveBodyString = "0";
-        }
+
 
         //รถรับศพ
         CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
-        if (montLeadCheckBox.isChecked()) {
+        if (carReceiveBodyCheckBox.isChecked()) {
             carReceiveBodyString = "1";
         } else {
             carReceiveBodyString = "0";
@@ -307,6 +396,7 @@ public class Process1Fragment extends Fragment {
 
     private void createPavilionSpinner() {
         pavilionStrings = myConstant.getPavilionStrings();
+        pavilionString = pavilionStrings[0];
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnPavilion);
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, pavilionStrings);
