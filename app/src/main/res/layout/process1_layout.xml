@@ -104,6 +104,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/detail_name"
@@ -630,7 +631,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbFlower"
                         android:layout_weight="5"
                         android:text="@string/flower1"
                         android:textStyle="bold"

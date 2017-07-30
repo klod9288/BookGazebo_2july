@@ -42,7 +42,7 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString = "0", packageBodyString = "0";
+            carReceiveBodyString = "0", packageBodyString = "";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
@@ -135,9 +135,11 @@ public class Process1Fragment extends Fragment {
         if (!bolStatus) {
             radioGroup.clearCheck();
             packageBodyTextView.setText("0");
+            packageBodyString = "";
         } else {
             radioButton0.setChecked(true);
             packageBodyTextView.setText("8500");
+            packageBodyString = "0";
         }
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -148,15 +150,19 @@ public class Process1Fragment extends Fragment {
 
                     case R.id.radPackage0:
                         packageBodyTextView.setText("8500");
+                        packageBodyString = "0";
                         break;
                     case R.id.radPackage1:
                         packageBodyTextView.setText("8000");
+                        packageBodyString = "1";
                         break;
                     case R.id.radPackage2:
                         packageBodyTextView.setText("7000");
+                        packageBodyString = "2";
                         break;
                     case R.id.radPackage3:
                         packageBodyTextView.setText("6000");
+                        packageBodyString = "3";
                         break;
 
                 }   // switch
@@ -349,6 +355,7 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "นิมนต์พระนำศพ ==> " + montLeadString);
         Log.d(tag, "ค่าสถานที่รับศพ ==> " + placeReceiveBodyString);
         Log.d(tag, "รถรับศพ ==> " + carReceiveBodyString);
+        Log.d(tag, "หีบศพที่เลือก ==>"+packageBodyString);
 
 
     }   // showLog
