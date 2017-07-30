@@ -41,10 +41,10 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString;
+            carReceiveBodyString="0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
-    private  TextView pricePavilienTextView,placeReceiveBodyTextView;
+    private  TextView pricePavilienTextView,placeReceiveBodyTextView,carReceiveBodyTextView;
 
 
     @Nullable
@@ -94,9 +94,34 @@ public class Process1Fragment extends Fragment {
         //PlecereceiveBody Checkebox
         placeReceiveBody();
 
+        //CarReceiveBody
+        carReceiveBody();
+
 
 
     }//on Activity Create
+
+    private void carReceiveBody() {
+        final CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
+        carReceiveBodyTextView = (TextView) getView().findViewById(R.id.txtCarReceiveBody);
+
+        carReceiveBodyCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (carReceiveBodyCheckBox.isChecked()) {
+                    carReceiveBodyString = "1";
+                    carReceiveBodyTextView.setText("1200");
+                } else {
+                    carReceiveBodyString = "0";
+                    carReceiveBodyTextView.setText("0");
+                }
+                calculatePrice();
+            }//View
+        });
+
+
+    }//CarReceive
 
     private void placeReceiveBody() {
         final CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
@@ -150,7 +175,7 @@ public class Process1Fragment extends Fragment {
 
         intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
-
+        intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
 
 
 
@@ -256,6 +281,7 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "เวลาเครื่อนย้าย ==>" + moveBodyString);
         Log.d(tag, "นิมนพระนำศพ ==>"+montLeadString);
         Log.d(tag, "ค่าสถานที่รับศพ ==>" + placeReceiveBodyString);
+        Log.d(tag, "รถรับศพ ==>"+carReceiveBodyString);
 
 
 
@@ -283,13 +309,7 @@ public class Process1Fragment extends Fragment {
 
 
 
-        //รถรับศพ
-        CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
-        if (carReceiveBodyCheckBox.isChecked()) {
-            carReceiveBodyString = "1";
-        } else {
-            carReceiveBodyString = "0";
-        }
+
 
 
     }//Check box
