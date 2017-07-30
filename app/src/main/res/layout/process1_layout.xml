@@ -553,6 +553,7 @@
 
                         <!--Check หีบศพ-->
                         <CheckBox
+                            android:id="@+id/chbPackageBody"
                             android:text="@string/box1"
                             android:textStyle="bold"
                             android:textSize="@dimen/h2"
@@ -562,35 +563,37 @@
                         <!--RadioButton-->
                         <RadioGroup
                             android:paddingLeft="8dp"
-                            android:id="@+id/ragBox"
+                            android:id="@+id/ragPackageBody"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <RadioButton
+                                android:id="@+id/radPackage0"
                                 android:text="@string/box2"
                                 android:textSize="@dimen/h2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
                             <RadioButton
+                                android:id="@+id/radPackage1"
                                 android:text="@string/box3"
                                 android:textSize="@dimen/h2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
                             <RadioButton
+                                android:id="@+id/radPackage2"
                                 android:text="@string/box4"
                                 android:textSize="@dimen/h2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
                             <RadioButton
+                                android:id="@+id/radPackage3"
                                 android:text="@string/box5"
                                 android:textSize="@dimen/h2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
-
-
 
                         </RadioGroup>
 

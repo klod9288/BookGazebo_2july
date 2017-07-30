@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -41,10 +42,11 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString="0";
+            carReceiveBodyString = "0", packageBodyString = "0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
-    private  TextView pricePavilienTextView,placeReceiveBodyTextView,carReceiveBodyTextView;
+    private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
+            packageBodyTextView;
 
 
     @Nullable
@@ -97,9 +99,49 @@ public class Process1Fragment extends Fragment {
         //CarReceiveBody
         carReceiveBody();
 
+        //PackageBody
+        packageBody();
 
 
     }//on Activity Create
+
+    private void packageBody() {
+        final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbPackageBody);
+        packageBodyTextView = (TextView) getView().findViewById(R.id.txtPackageBody);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (checkBox.isChecked()) {
+                    choosePackageBody(true);
+
+                } else {
+                    choosePackageBody(false);
+                }
+
+            }//On Click
+        });
+
+    }//PackageBody
+
+    private void choosePackageBody(boolean bolStatus) {
+
+        RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragPackageBody);
+        RadioButton radioButton0 = (RadioButton) getView().findViewById(R.id.radPackage0);
+        RadioButton radioButton1 = (RadioButton) getView().findViewById(R.id.radPackage1);
+        RadioButton radioButton2 = (RadioButton) getView().findViewById(R.id.radPackage2);
+        RadioButton radioButton3 = (RadioButton) getView().findViewById(R.id.radPackage3);
+
+        if (!bolStatus) {
+            radioGroup.clearCheck();
+
+        } else {
+            radioButton0.setChecked(true);
+
+        }
+
+
+    }//Choose Package
 
     private void carReceiveBody() {
         final CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
@@ -151,7 +193,7 @@ public class Process1Fragment extends Fragment {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                switch(i){
+                switch (i) {
                     case R.id.radPavilien:
                         strPrice[0] = "2200";
                         break;
@@ -176,8 +218,6 @@ public class Process1Fragment extends Fragment {
         intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
-
-
 
 
         textView.setText(Integer.toString(intTotalPrice));
@@ -279,11 +319,9 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "บรรจุศพ ==>" + "19:00");
         Log.d(tag, "เวลาเผา ==>" + buenBodyString);
         Log.d(tag, "เวลาเครื่อนย้าย ==>" + moveBodyString);
-        Log.d(tag, "นิมนพระนำศพ ==>"+montLeadString);
+        Log.d(tag, "นิมนพระนำศพ ==>" + montLeadString);
         Log.d(tag, "ค่าสถานที่รับศพ ==>" + placeReceiveBodyString);
-        Log.d(tag, "รถรับศพ ==>"+carReceiveBodyString);
-
-
+        Log.d(tag, "รถรับศพ ==>" + carReceiveBodyString);
 
 
     }//ShowLog
@@ -306,10 +344,6 @@ public class Process1Fragment extends Fragment {
         } else {
             montLeadString = "0";
         }
-
-
-
-
 
 
     }//Check box
