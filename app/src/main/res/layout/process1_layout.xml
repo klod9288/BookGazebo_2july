@@ -202,7 +202,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                
+
                 <TextView
                     android:text="@string/bodyform"
                     android:textStyle="bold"
@@ -216,7 +216,7 @@
                     android:hint="@string/sample_body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-                
+
             </LinearLayout>
 
             <!--ใบมรณะ-->
@@ -326,7 +326,7 @@
 
                 <!--Title-->
                 <LinearLayout
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
                     android:background="@color/colorPrimary"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -439,20 +439,23 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+
                     </RadioGroup>
 
                     <!--ราคา-->
                     <TextView
                         android:text="0"
                         android:id="@+id/txtPricePavilien"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:textStyle="bold" />
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
+
+
 
                 <!--ค่าจัดสถานที่รับศพ-->
                 <LinearLayout
@@ -519,8 +522,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:id="@+id/txtCarReceiveBody"
                         android:text="0"
+                        android:id="@+id/txtCarReceiveBody"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -596,6 +599,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
+
+
                         </RadioGroup>
 
 
@@ -603,8 +608,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:id="@+id/txtPackageBody"
                         android:text="0"
+                        android:id="@+id/txtPackageBody"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -630,26 +635,64 @@
                         android:layout_height="wrap_content" />
 
                     <!--รายการ-->
-                    <CheckBox
-                        android:id="@+id/chbFlower"
+
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_weight="5"
-                        android:text="@string/flower1"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content">
+
+                        <CheckBox
+                            android:id="@+id/chbFlower"
+                            android:text="@string/flower1"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/h2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:inputType="number"
+                                android:id="@+id/edtFlower"
+                                android:hint="7000-20000"
+                                android:gravity="center_horizontal"
+                                android:layout_weight="2"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/h2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <Button
+                                android:clickable="false"
+                                android:id="@+id/btnOK"
+                                android:text="OK"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
 
                     <!--ราคา-->
-                    <EditText
-                        android:id="@+id/edtFlower"
-                        android:visibility="invisible"
-                        android:hint="7000-20000"
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/txtFlower"
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
+
+
 
                 </LinearLayout>
 
@@ -680,6 +723,7 @@
 
                     <!--ราคา-->
                     <TextView
+
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -715,6 +759,7 @@
 
                     <!--ราคา-->
                     <TextView
+
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -751,6 +796,7 @@
 
                     <!--ราคา-->
                     <TextView
+
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -787,6 +833,7 @@
 
                     <!--ราคา-->
                     <TextView
+
                         android:gravity="center_horizontal"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -840,6 +887,7 @@
                     android:layout_height="wrap_content">
 
 
+
                     <!--รายการ-->
                     <RelativeLayout
                         android:layout_weight="6"
@@ -854,6 +902,7 @@
                             android:textSize="@dimen/h1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
+
 
                     </RelativeLayout>
 

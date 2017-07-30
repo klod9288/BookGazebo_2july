@@ -25,6 +25,7 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 
+import bangtanrut.songklod.bookgazebo.MyAlert;
 import bangtanrut.songklod.bookgazebo.MyConstant;
 import bangtanrut.songklod.bookgazebo.R;
 
@@ -46,8 +47,10 @@ public class Process1Fragment extends Fragment {
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
-            packageBodyTextView;
+            packageBodyTextView,flowerTextView;
     private EditText flowerEditText;
+    private boolean flowerABoolean = false;
+    private Button flowerButton;
 
 
     @Nullable
@@ -112,21 +115,43 @@ public class Process1Fragment extends Fragment {
     private void flowerController() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbFlower);
         flowerEditText = (EditText) getView().findViewById(R.id.edtFlower);
+        flowerButton = (Button) getView().findViewById(R.id.btnOK);
+        flowerTextView = (TextView) getView().findViewById(R.id.txtFlower);
 
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (checkBox.isChecked()) {
-                    flowerEditText.setVisibility(View.VISIBLE);
+                    flowerButton.setClickable(true);
+                    flowerButtonController();
                 } else {
-                    flowerEditText.setVisibility(View.INVISIBLE);
+                    flowerButton.setClickable(false);
                 }
 
             }//OnClick
         });
 
+        calculatePrice();
+
     }//Flower
+
+    private void flowerButtonController() {
+        flowerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String strFlower = flowerEditText.getText().toString().trim();
+                if (strFlower.equals("")) {
+                    MyAlert myAlert = new MyAlert(getActivity());
+                    myAlert.myDialog(getResources().getString(R.string.title_HaveSpace),
+                            getResources().getString(R.string.message_HaveSpace));
+                } else {
+                    flowerTextView.setText(strFlower);
+                    calculatePrice();
+                }
+            }
+        });
+    }
 
     private void packageBody() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbPackageBody);
@@ -273,7 +298,7 @@ public class Process1Fragment extends Fragment {
         intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
-
+        intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
 
         textView.setText(Integer.toString(intTotalPrice));
     }   // calculatePrice
