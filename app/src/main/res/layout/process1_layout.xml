@@ -641,6 +641,7 @@
 
                     <!--ราคา-->
                     <EditText
+                        android:id="@+id/edtFlower"
                         android:visibility="invisible"
                         android:hint="7000-20000"
                         android:gravity="center_horizontal"

@@ -42,11 +42,12 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString = "0", packageBodyString = "";
+            carReceiveBodyString = "0", packageBodyString = "",flowerString="0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
             packageBodyTextView;
+    private EditText flowerEditText;
 
 
     @Nullable
@@ -102,8 +103,30 @@ public class Process1Fragment extends Fragment {
         //PackageBody
         packageBody();
 
+        //Flower Controller
+        flowerController();
+
 
     }//on Activity Create
+
+    private void flowerController() {
+        final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbFlower);
+        flowerEditText = (EditText) getView().findViewById(R.id.edtFlower);
+
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (checkBox.isChecked()) {
+                    flowerEditText.setVisibility(View.VISIBLE);
+                } else {
+                    flowerEditText.setVisibility(View.INVISIBLE);
+                }
+
+            }//OnClick
+        });
+
+    }//Flower
 
     private void packageBody() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbPackageBody);
