@@ -32,6 +32,7 @@ import bangtanrut.songklod.bookgazebo.R;
 
 public class Process1Fragment extends Fragment {
 
+
     //Explicit
     private Spinner spinner;
     private MyConstant myConstant;
