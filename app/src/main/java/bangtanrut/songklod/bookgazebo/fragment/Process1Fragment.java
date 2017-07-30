@@ -43,7 +43,8 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString = "0", packageBodyString = "", flowerString = "0";
+            carReceiveBodyString = "0", packageBodyString = "", cinamalString="0",thaiTumString="0",
+    waterSDrinkString="0",ice1String="0",ice2String="0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
@@ -113,7 +114,28 @@ public class Process1Fragment extends Fragment {
         cinamalConTroller();
 
 
+        //ThaiTum
+        thaiTum();
+
     }//on Activity Create
+
+    private void thaiTum() {
+        final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbThaiTum);
+        thaiTumTextView = (TextView) getView().findViewById(R.id.txtThaiTum);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    thaiTumString = "1";
+                    thaiTumTextView.setText("1200");
+                } else {
+                    thaiTumString = "0";
+                    thaiTumTextView.setText("0");
+                }
+                calculatePrice();
+            }
+        });
+    }
 
     private void cinamalConTroller() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbCinamol);
@@ -122,8 +144,10 @@ public class Process1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
+                    cinamalString = "1";
                     cinamalTextView.setText("30");
                 } else {
+                    cinamalString = "0";
                     cinamalTextView.setText("0");
                 }
                 calculatePrice();
@@ -320,6 +344,9 @@ public class Process1Fragment extends Fragment {
             intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
             intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
             intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
+            intTotalPrice = intTotalPrice + Integer.parseInt(thaiTumTextView.getText().toString());
+
+
 
             textView.setText(Integer.toString(intTotalPrice));
 
@@ -430,6 +457,12 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "รถรับศพ ==> " + carReceiveBodyString);
         Log.d(tag, "หีบศพที่เลือก ==>" + packageBodyString);
         Log.d(tag, "ดอกไม้ที่เลือก ==>" + flowerTextView.getText().toString());
+        Log.d(tag, "น้ำอบไทย ==>" + cinamalString);
+        Log.d(tag, "ไทยธรรม ==>" + thaiTumString);
+        Log.d(tag, "น้ำดื่ม ==>" + waterSDrinkString);
+        Log.d(tag, "น้ำแข็ง ==>" + ice1String);
+        Log.d(tag, "น้ำแข็งบด ==>" + ice2String);
+
 
 
     }   // showLog
