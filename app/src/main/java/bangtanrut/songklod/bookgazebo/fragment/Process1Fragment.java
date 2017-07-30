@@ -20,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -34,6 +33,7 @@ import bangtanrut.songklod.bookgazebo.R;
  */
 
 public class Process1Fragment extends Fragment {
+
 
     //Explicit
     private Spinner spinner;
@@ -93,7 +93,7 @@ public class Process1Fragment extends Fragment {
         //Create Sent Controller
         createSentController();
 
-        //PlecereceiveBody Checkebox
+        //PlaceReceiveBody CheckBox
         placeReceiveBody();
 
         //CarReceiveBody
@@ -114,15 +114,15 @@ public class Process1Fragment extends Fragment {
 
                 if (checkBox.isChecked()) {
                     choosePackageBody(true);
-
                 } else {
                     choosePackageBody(false);
                 }
 
-            }//On Click
+            }   // onClick
         });
 
-    }//PackageBody
+
+    }   // packageBody
 
     private void choosePackageBody(boolean bolStatus) {
 
@@ -134,14 +134,41 @@ public class Process1Fragment extends Fragment {
 
         if (!bolStatus) {
             radioGroup.clearCheck();
-
+            packageBodyTextView.setText("0");
         } else {
             radioButton0.setChecked(true);
-
+            packageBodyTextView.setText("8500");
         }
 
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-    }//Choose Package
+                switch (i) {
+
+                    case R.id.radPackage0:
+                        packageBodyTextView.setText("8500");
+                        break;
+                    case R.id.radPackage1:
+                        packageBodyTextView.setText("8000");
+                        break;
+                    case R.id.radPackage2:
+                        packageBodyTextView.setText("7000");
+                        break;
+                    case R.id.radPackage3:
+                        packageBodyTextView.setText("6000");
+                        break;
+
+                }   // switch
+
+                calculatePrice();
+
+            }   // onCheck
+        });
+
+        calculatePrice();
+
+    }   // choosePackage
 
     private void carReceiveBody() {
         final CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
@@ -150,7 +177,6 @@ public class Process1Fragment extends Fragment {
         carReceiveBodyCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (carReceiveBodyCheckBox.isChecked()) {
                     carReceiveBodyString = "1";
                     carReceiveBodyTextView.setText("1200");
@@ -159,11 +185,11 @@ public class Process1Fragment extends Fragment {
                     carReceiveBodyTextView.setText("0");
                 }
                 calculatePrice();
-            }//View
+            }   // View
         });
 
 
-    }//CarReceive
+    }   // carReceive
 
     private void placeReceiveBody() {
         final CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
@@ -174,17 +200,15 @@ public class Process1Fragment extends Fragment {
                 if (placeReceiveBodyCheckBox.isChecked()) {
                     placeReceiveBodyString = "1";
                     placeReceiveBodyTextView.setText("1200");
-
                 } else {
                     placeReceiveBodyString = "0";
                     placeReceiveBodyTextView.setText("0");
                 }
                 calculatePrice();
 
-
-            }//View
+            }   // View
         });
-    }//PlaceReceive
+    }   // placeRecive
 
     private void choosePricePavilien() {
         RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragPavilien);
@@ -194,16 +218,17 @@ public class Process1Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 switch (i) {
+
                     case R.id.radPavilien:
                         strPrice[0] = "2200";
                         break;
                     case R.id.radPavilien10:
                         strPrice[0] = "3000";
-                }
+                        break;
+                }   // switch
                 pricePavilienTextView.setText(strPrice[0]);
                 calculatePrice();
-
-            }
+            }   // onCheck
         });
 
 
@@ -218,10 +243,11 @@ public class Process1Fragment extends Fragment {
         intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
         intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
+        intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
 
 
         textView.setText(Integer.toString(intTotalPrice));
-    }//CalculatePrice
+    }   // calculatePrice
 
     private void burnBodySpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnBurnbody);
@@ -300,6 +326,7 @@ public class Process1Fragment extends Fragment {
 
                 showLog();
 
+
             }//OnClick
         });
     }
@@ -307,24 +334,24 @@ public class Process1Fragment extends Fragment {
     private void showLog() {
 
         String tag = "30JulyV1";
-        Log.d(tag, "ชื่อ นามสกุลผู้ตาย ==>" + nameString);
-        Log.d(tag, "ศาลาที่วาง ==>" + pavilionString);
-        Log.d(tag, "เจ้าภาพนำมาส่ง ==>" + radioString);
-        Log.d(tag, "Date ==>" + dateString);
-        Log.d(tag, "Time ==>" + timeString);
-        Log.d(tag, "เวลาในการตั้งสวด ==>" + timeWorkString);
-        Log.d(tag, "ศพมาจาก ==>" + bodyWhereString);
-        Log.d(tag, "ใบมรณะบัตร ==>" + deadCardString);
-        Log.d(tag, "รดน้ำศพ ==>" + timeWashBodyString);
-        Log.d(tag, "บรรจุศพ ==>" + "19:00");
-        Log.d(tag, "เวลาเผา ==>" + buenBodyString);
-        Log.d(tag, "เวลาเครื่อนย้าย ==>" + moveBodyString);
-        Log.d(tag, "นิมนพระนำศพ ==>" + montLeadString);
-        Log.d(tag, "ค่าสถานที่รับศพ ==>" + placeReceiveBodyString);
-        Log.d(tag, "รถรับศพ ==>" + carReceiveBodyString);
+        Log.d(tag, "ชื่อ นามสกุลผู้ตาย ==> " + nameString);
+        Log.d(tag, "ศาลา ==> " + pavilionString);
+        Log.d(tag, "เจ้าภาพนำมาส่ง ==> " + radioString);
+        Log.d(tag, "Data ==> " + dateString);
+        Log.d(tag, "Time ==> " + timeString);
+        Log.d(tag, "เวลาในการตั้งสวด ==> " + timeWorkString);
+        Log.d(tag, "ศพมาจาก ==> " + bodyWhereString);
+        Log.d(tag, "ใบมรณะ ==> " + deadCardString);
+        Log.d(tag, "รดน้ำศพ ==> " + timeWashBodyString);
+        Log.d(tag, "บรรจุศพ ==> " + "19:00");
+        Log.d(tag, "เวลาเผา ==> " + buenBodyString);
+        Log.d(tag, "เวลาเครื่อนย้าย ==> " + moveBodyString);
+        Log.d(tag, "นิมนต์พระนำศพ ==> " + montLeadString);
+        Log.d(tag, "ค่าสถานที่รับศพ ==> " + placeReceiveBodyString);
+        Log.d(tag, "รถรับศพ ==> " + carReceiveBodyString);
 
 
-    }//ShowLog
+    }   // showLog
 
     private void checkBoxController() {
 
