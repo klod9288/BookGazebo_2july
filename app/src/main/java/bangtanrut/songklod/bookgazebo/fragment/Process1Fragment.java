@@ -114,10 +114,31 @@ public class Process1Fragment extends Fragment {
         cinamalConTroller();
 
 
-        //ThaiTum
+        //ThaiTum Controller
         thaiTum();
 
+        //WaterDrink Controller
+        waterDrinkController();
+
     }//on Activity Create
+
+    private void waterDrinkController() {
+        final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbWaterDrink);
+        waterDrinkTextView = (TextView) getView().findViewById(R.id.txtWaterDrink);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    waterSDrinkString = "1";
+                    waterDrinkTextView.setText("150");
+                } else {
+                    waterSDrinkString = "0";
+                    waterDrinkTextView.setText("0");
+                }
+                calculatePrice();
+            }//OnClick
+        });
+    }
 
     private void thaiTum() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbThaiTum);
@@ -345,7 +366,7 @@ public class Process1Fragment extends Fragment {
             intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
             intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
             intTotalPrice = intTotalPrice + Integer.parseInt(thaiTumTextView.getText().toString());
-
+            intTotalPrice = intTotalPrice + Integer.parseInt(waterDrinkTextView.getText().toString());
 
 
             textView.setText(Integer.toString(intTotalPrice));
