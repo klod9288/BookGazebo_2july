@@ -4,7 +4,14 @@
     <string name="user">User :</string>
     <string name="password">Password :</string>
     <string name="new_register">New Register</string>
+
+
     <string name="name">Name</string>
+    <string name="box2_1">พระราชทานเพลงศพ</string>
+    <string name="box2_2">ฌาปณกิจศพ</string>
+
+
+
     <string name="surname">Surname</string>
     <string name="id_card">id-Card</string>
     <string name="address">Address</string>
@@ -24,7 +31,14 @@
     <string name="wait_user">User Wait</string>
     <string name="wait_admin">Admin Wait</string>
     <string name="sent">Sent Data</string>
+
+
     <string name="detail_name">ชื่อ นามสกุล (ผู้ตาย)</string>
+    <string name="detail_name1">ชื่อ นามสกุล (ศพฌาปนกิจ)</string>
+
+
+
+
     <string name="sala">ศาลา</string>
     <string name="sala_detail">ชื่อศาลา</string>
 
