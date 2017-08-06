@@ -9,7 +9,7 @@
     <string name="name">Name</string>
     <string name="box2_1">พระราชทานเพลงศพ</string>
     <string name="box2_2">ฌาปณกิจศพ</string>
-
+    <string name="box2_3">สบง - ชุดกาแฟ(ชุดละ300บาท)</string>
 
 
     <string name="surname">Surname</string>
@@ -34,7 +34,7 @@
 
 
     <string name="detail_name">ชื่อ นามสกุล (ผู้ตาย)</string>
-    <string name="detail_name1">ชื่อ นามสกุล (ศพฌาปนกิจ)</string>
+    <string name="detail_name2">ชื่อ นามสกุล (ศพฌาปนกิจ)</string>
 
 
 
@@ -44,8 +44,16 @@
 
     <string name="rad1">เจ้าภาพนำศพมาส่ง</string>
     <string name="rad2">ทางวัดมารับศพ</string>
+
+
     <string name="time_work">เวลาในการตั้งสวด</string>
+    <string name="time_work2">สวดอภิธรรม นิมนต์พระ 4 รูป</string>
+
+
     <string name="bodyform">ศพมาจาก</string>
+    <string name="bodyform2">เชิญศพจาก</string>
+
+
     <string name="sample_body">บ้าน หรือ โรงพยาบาล</string>
     <string name="dead_card">ใบมรณบัตร</string>
     <string name="watch_body">เวลารดน้ำศพ</string>
@@ -69,6 +77,9 @@
     <string name="box7">ราคา</string>
     <string name="box8">อุปกรณ์ยาหีบ,ผ้าขาว,ด้ายดิบ</string>
     <string name="box9">ผ้าคลุมหีบ</string>
+
+
+
     <string name="flower1">จัดดอกไม้ หน้าศพ, หน้าพระ, กรอบรูป</string>
     <string name="waterThai1">น้ำอบไทย (ขวดละ 30 บาท)</string>
     <string name="thaitum">ของไทยธรรม ถวายพระ(4 ชุด ชุดละ 300 บาท)</string>

@@ -21,7 +21,7 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
+    <!--Content-->
     <ScrollView
 
         android:layout_alignParentLeft="true"
@@ -71,17 +71,133 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <!--ชื่อศพฌาปณกิจ-->
             <EditText
 
-                android:text="@string/detail_name1"
+                android:text="@string/detail_name2"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <!--เลือกศาลาฌาปณกิจศพ-->
+            <TextView
+                android:text="@string/sala"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!--เลือกวันที่-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:text="30/10/2017"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+
+                    android:text="09:00"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+
+                    android:src="@mipmap/ic_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--เชิญศพจาก-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:textStyle="bold"
+                    android:textSize="@dimen/h2"
+                    android:text="@string/bodyform2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+
+                    android:hint="@string/sample_body"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--สวดอภิธรรม-->
+            <TextView
+
+                android:text="@string/time_work2"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            <!--สบง-->
+            <CheckBox
+
+                android:text="@string/box2_3"
+                android:textSize="@dimen/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Check Price1-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-
-
     </ScrollView>
+
+    <!--Button SendData-->
+    <Button
+
+        android:text="@string/sent"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
