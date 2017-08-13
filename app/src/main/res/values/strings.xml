@@ -35,8 +35,17 @@
 
     <string name="detail_name">ชื่อ นามสกุล (ผู้ตาย)</string>
     <string name="detail_name2">ชื่อ นามสกุล (ศพฌาปนกิจ)</string>
-
-
+    <string name="ordain">บวชหน้าไฟ</string>
+    <string name="ordainedt">.............รูป</string>
+    <string name="ordain1">ไตรบวชเณร(ชุดละ600บาท)</string>
+    <string name="MonkDetail">พระเทศน์ นิมนต์ 1 รูป(เช้าและบ่าย)</string>
+    <string name="MonkDetail1">ไตรแบ่ง(ชุดละ500),ของแต่ละชุด600บาท</string>
+    <string name="MonkDetail2">สวดมนต์ฉันเพล มาติกาบังสกุล นิมยต์พระ10รูป</string>
+    <string name="MonkDetail3">สบงช-ุดกาแฟ(ชุดละ300)</string>
+    <string name="MonkDetail4">ซักผ้าบังสุล(ทอดผ้าใคร)นิมนต์พระ</string>
+    <string name="MonkDetail5">ไตรเต็ม(ชุดละ800บาท)</string>
+    <string name="MonkDetail6">สวดหน้าไฟ บนเมรุ นิมนต์พระ4รูป</string>
+    <string name="MonkDetail7">กาแฟ(ชุดละ150บาท)</string>
 
 
     <string name="sala">ศาลา</string>

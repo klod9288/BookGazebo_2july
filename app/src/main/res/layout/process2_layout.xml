@@ -23,7 +23,7 @@
     </LinearLayout>
     <!--Content-->
     <ScrollView
-
+        android:layout_marginBottom="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@color/colorPrimaryLight2"
@@ -176,10 +176,141 @@
 
             <!--Check Price1-->
             <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <TextView
+                    android:text="@string/ordain"
+                    android:layout_weight="3"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
 
+                <EditText
+                    android:hint="@string/ordainedt"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <CheckBox
+                    android:text="@string/ordain1"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/MonkDetail"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <CheckBox
+                    android:text="@string/MonkDetail1"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/MonkDetail2"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <CheckBox
+                    android:text="@string/MonkDetail3"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/MonkDetail4"
+                    android:layout_weight="3"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:hint="@string/ordainedt"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <CheckBox
+                    android:text="@string/MonkDetail5"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/MonkDetail6"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <CheckBox
+                    android:text="@string/MonkDetail7"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
