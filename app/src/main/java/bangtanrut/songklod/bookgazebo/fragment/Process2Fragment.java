@@ -34,14 +34,15 @@ public class Process2Fragment extends Fragment {
     //View
     private CheckBox cremationCheckBox, intermentCheckBox;
     private EditText nameEditText,bodyWhereEditText;
-    private Spinner pavilionSpinner;
+    private Spinner pavilionSpinner,timeBodyWhereSpinner;
     private TextView showdateTextView, showTimeTextView;
     private ImageView setDateTimeImageView;
 
     //Other
     private MyConstant myConstant;
     private MyAlert myAlert;
-    private String cremationString,intermentString, pavilionString,dateString,timeString;
+    private String cremationString,intermentString, pavilionString,
+            dateString,timeString,timeBodyWhereString;
 
 
     @Nullable
@@ -69,6 +70,30 @@ public class Process2Fragment extends Fragment {
         //SetDateTime Controller
         setDateTimeController();
 
+        //Set TimeBodyWhere
+        setTimeBodyWhere();
+
+    }
+
+    private void setTimeBodyWhere() {
+        final String[] strings = myConstant.getTimeBodyWhere();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                strings
+        );
+        timeBodyWhereSpinner.setAdapter(stringArrayAdapter);
+        timeBodyWhereSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeBodyWhereString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                timeBodyWhereString = strings[0];
+            }
+        });
     }
 
     private void setDateTimeController() {
@@ -153,5 +178,6 @@ public class Process2Fragment extends Fragment {
         showTimeTextView = getView().findViewById(R.id.txtShowTime);
         setDateTimeImageView = getView().findViewById(R.id.imvSetDateTime);
         bodyWhereEditText = getView().findViewById(R.id.edtBodyWhere);
+        timeBodyWhereSpinner = getActivity().findViewById(R.id.spnTimeBodyWhere);
     }
 }//Main Class
