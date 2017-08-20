@@ -33,7 +33,7 @@ import bangtanrut.songklod.bookgazebo.R;
 public class Process2Fragment extends Fragment {
     //View
     private CheckBox cremationCheckBox, intermentCheckBox;
-    private EditText nameEditText;
+    private EditText nameEditText,bodyWhereEditText;
     private Spinner pavilionSpinner;
     private TextView showdateTextView, showTimeTextView;
     private ImageView setDateTimeImageView;
@@ -152,5 +152,6 @@ public class Process2Fragment extends Fragment {
         showdateTextView = getView().findViewById(R.id.txtShowDate);
         showTimeTextView = getView().findViewById(R.id.txtShowTime);
         setDateTimeImageView = getView().findViewById(R.id.imvSetDateTime);
+        bodyWhereEditText = getView().findViewById(R.id.edtBodyWhere);
     }
 }//Main Class

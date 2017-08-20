@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
-
+                    android:id="@+id/edtBodyWhere"
                     android:hint="@string/sample_body"
                     android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"

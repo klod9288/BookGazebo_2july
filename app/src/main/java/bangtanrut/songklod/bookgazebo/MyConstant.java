@@ -23,9 +23,7 @@ public class MyConstant {
             "Password",
             "Status"};
 
-    public String getUrlPostProcess1() {
-        return urlPostProcess1;
-    }
+
 
     //ชื่อศาลา
     private String[] pavilionStrings = new String[]{"ศาลา 1","ศาลา 2","ศาลา 3","ศาลา 4","ศาลา 5"};
@@ -38,6 +36,24 @@ public class MyConstant {
 
     //เวลาในการย้ายศพ
     private String[] timeMoveBody = new String[]{"15:30","16:00","16:30","17:00"};
+
+    //เวลาเชิญศพ
+    private String[] timeBodyWhere = new String[]{"ก่อนเที่ยง","หลังเที่ยง"};
+
+    //เวลาสวดอภิธรรม
+    private String[] timeSong = new String[]{"10:00","14:30","17:00","19:00"};
+
+    public String[] getTimeBodyWhere() {
+        return timeBodyWhere;
+    }
+
+    public String[] getTimeSong() {
+        return timeSong;
+    }
+
+    public String getUrlPostProcess1() {
+        return urlPostProcess1;
+    }
 
     public String[] getTimeMoveBody() {
         return timeMoveBody;
