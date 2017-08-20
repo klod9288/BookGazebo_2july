@@ -22,11 +22,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
 import bangtanrut.songklod.bookgazebo.MyAlert;
 import bangtanrut.songklod.bookgazebo.MyConstant;
+import bangtanrut.songklod.bookgazebo.PostProcess1;
 import bangtanrut.songklod.bookgazebo.R;
 
 /**
@@ -50,7 +52,7 @@ public class Process1Fragment extends Fragment {
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
             packageBodyTextView, flowerTextView, cinamalTextView, thaiTumTextView, waterDrinkTextView, ice1TextView, ice2TextView;
     private EditText flowerEditText;
-    private boolean flowerABoolean = false;
+    private boolean flowerABoolean = false,statusABoolean=true;
     private Button flowerButton;
 
 
@@ -484,9 +486,65 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "น้ำแข็ง ==>" + ice1String);
         Log.d(tag, "น้ำแข็งบด ==>" + ice2String);
 
+        if (statusABoolean) {
+            //Can Upload Value to server
+            uploadValueToServer();
+        } else {
+            //Cannot Uplpad
+            MyAlert myAlert = new MyAlert(getActivity());
+            myAlert.myDialog(getString(R.string.titi_upload),getString(R.string.message_upload));
 
+        }
 
     }   // showLog
+
+    private void uploadValueToServer() {
+
+        String tag = "20AugV1";
+
+        try {
+            MyConstant myConstant = new MyConstant();
+            PostProcess1 postProcess1 = new PostProcess1(getActivity());
+            postProcess1.execute(
+
+                    nameString,
+                    pavilionString,
+                    radioString,
+                    dateString,
+                    timeString,
+                    timeWorkString,
+                    bodyWhereString,
+                    deadCardString,
+                    timeWashBodyString,
+                    "19:00",
+                    buenBodyString,
+                    moveBodyString,
+                    montLeadString,
+                    placeReceiveBodyString,
+                    carReceiveBodyString,
+                    packageBodyString,
+                    flowerTextView.getText().toString(),
+                    cinamalString,
+                    thaiTumString,
+                    waterSDrinkString,
+                    ice1String,
+                    ice2String,
+                    myConstant.getUrlPostProcess1()
+            );
+            if (Boolean.parseBoolean(postProcess1.get())) {
+                statusABoolean = false;
+            } else {
+                Toast.makeText(getActivity(),"Please Try Again False",
+                        Toast.LENGTH_LONG).show();
+            }
+            Log.d(tag, "Result ==>" + postProcess1.get());
+            Log.d(tag, "Status ==>" + statusABoolean);
+
+        } catch (Exception e) {
+            Log.d(tag, "e upload==>" + e.toString());
+        }
+
+    }
 
     private void checkBoxController() {
 

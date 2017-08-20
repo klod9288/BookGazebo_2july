@@ -9,7 +9,7 @@ public class MyConstant {
     //For URL
     private String urlPostUser = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/postUser.php";
     private String urlGetUser = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/getUser.php";
-
+    private String urlPostProcess1 = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/addProcess1.php";
 
     //For General
     private String[] columnUserStrings = new String[]{
@@ -22,6 +22,10 @@ public class MyConstant {
             "User",
             "Password",
             "Status"};
+
+    public String getUrlPostProcess1() {
+        return urlPostProcess1;
+    }
 
     //ชื่อศาลา
     private String[] pavilionStrings = new String[]{"ศาลา 1","ศาลา 2","ศาลา 3","ศาลา 4","ศาลา 5"};
