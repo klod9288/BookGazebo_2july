@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <CheckBox
-
+                android:id="@+id/chbCremation"
                 android:layout_weight="1"
                 android:text="@string/box2_1"
                 android:textSize="18dp"
@@ -54,6 +54,7 @@
                 android:layout_height="wrap_content" />
 
             <CheckBox
+                android:id="@+id/chbinterment"
                 android:layout_weight="1"
                 android:textSize="18dp"
                 android:text="@string/box2_2"
@@ -73,7 +74,7 @@
 
             <!--ชื่อศพฌาปณกิจ-->
             <EditText
-
+                android:id="@+id/edtName"
                 android:text="@string/detail_name2"
                 android:inputType="text"
                 android:layout_width="match_parent"
@@ -88,7 +89,7 @@
                 android:layout_height="wrap_content" />
 
             <Spinner
-
+                android:id="@+id/spnPavilion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -98,7 +99,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-
+                    android:id="@+id/txtShowDate"
                     android:textStyle="bold"
                     android:textSize="18dp"
                     android:text="30/10/2017"
@@ -108,7 +109,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-
+                    android:id="@+id/txtShowTime"
                     android:text="09:00"
                     android:textStyle="bold"
                     android:textSize="18dp"
@@ -118,7 +119,7 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
-
+                    android:id="@+id/imvSetDateTime"
                     android:src="@mipmap/ic_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
