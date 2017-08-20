@@ -34,7 +34,7 @@ public class Process2Fragment extends Fragment {
     //View
     private CheckBox cremationCheckBox, intermentCheckBox;
     private EditText nameEditText,bodyWhereEditText;
-    private Spinner pavilionSpinner,timeBodyWhereSpinner;
+    private Spinner pavilionSpinner,timeBodyWhereSpinner,timeSongSpinner;
     private TextView showdateTextView, showTimeTextView;
     private ImageView setDateTimeImageView;
 
@@ -42,7 +42,7 @@ public class Process2Fragment extends Fragment {
     private MyConstant myConstant;
     private MyAlert myAlert;
     private String cremationString,intermentString, pavilionString,
-            dateString,timeString,timeBodyWhereString;
+            dateString,timeString,timeBodyWhereString,timeSongString;
 
 
     @Nullable
@@ -73,6 +73,30 @@ public class Process2Fragment extends Fragment {
         //Set TimeBodyWhere
         setTimeBodyWhere();
 
+        //Set TimeSong
+        setTimeSong();
+
+    }
+
+    private void setTimeSong() {
+        final String[] strings = myConstant.getTimeSong();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                strings
+        );
+        timeSongSpinner.setAdapter(stringArrayAdapter);
+        timeSongSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeSongString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                timeSongString = strings[0];
+            }
+        });
     }
 
     private void setTimeBodyWhere() {
@@ -179,5 +203,7 @@ public class Process2Fragment extends Fragment {
         setDateTimeImageView = getView().findViewById(R.id.imvSetDateTime);
         bodyWhereEditText = getView().findViewById(R.id.edtBodyWhere);
         timeBodyWhereSpinner = getActivity().findViewById(R.id.spnTimeBodyWhere);
+        timeSongSpinner = getActivity().findViewById(R.id.spnTimeSong);
+
     }
 }//Main Class
