@@ -38,19 +38,18 @@ public class PostProcess1 extends AsyncTask<String,Void,String> {
                     .add("Timepackage", strings[9])
                     .add("Buenbody", strings[10])
                     .add("Movebody", strings[11])
-                    .add("Montlead", strings[12])
-                    .add("Placrecive", strings[13])
-                    .add("Carrecive", strings[14])
-                    .add("Packagebody", strings[15])
-                    .add("Flower", strings[16])
-                    .add("Cinamal", strings[17])
-                    .add("Thaitum", strings[18])
-                    .add("Waterdrink", strings[19])
-                    .add("Ice1", strings[20])
-                    .add("Ice2", strings[21])
+                    .add("Placrecive", strings[12])
+                    .add("Carrecive", strings[13])
+                    .add("Packagebody", strings[14])
+                    .add("Flower", strings[15])
+                    .add("Cinamal", strings[16])
+                    .add("Thaitum", strings[17])
+                    .add("Waterdrink", strings[18])
+                    .add("Ice1", strings[19])
+                    .add("Ice2", strings[20])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[22]).post(requestBody).build();
+            Request request = builder.url(strings[21]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 

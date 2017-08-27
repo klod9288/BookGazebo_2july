@@ -457,7 +457,6 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "บรรจุศพ ==> " + "19:00");
         Log.d(tag, "เวลาเผา ==> " + buenBodyString);
         Log.d(tag, "เวลาเครื่อนย้าย ==> " + moveBodyString);
-        Log.d(tag, "นิมนต์พระนำศพ ==> " + montLeadString);
         Log.d(tag, "ค่าสถานที่รับศพ ==> " + placeReceiveBodyString);
         Log.d(tag, "รถรับศพ ==> " + carReceiveBodyString);
         Log.d(tag, "หีบศพที่เลือก ==>" + packageBodyString);
@@ -468,6 +467,12 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "น้ำแข็ง ==>" + ice1String);
         Log.d(tag, "น้ำแข็งบด ==>" + ice2String);
 
+        //ส่่วนที่ต้องทำหลังจาก String ทุกตัว OK
+       // preUpdateToServer();
+
+    }   // showLog
+
+    private void preUpdateToServer() {
         if (statusABoolean) {
             //Can Upload Value to server
             uploadValueToServer();
@@ -477,8 +482,7 @@ public class Process1Fragment extends Fragment {
             myAlert.myDialog(getString(R.string.titi_upload),getString(R.string.message_upload));
 
         }
-
-    }   // showLog
+    }
 
     private void uploadValueToServer() {
 
@@ -501,7 +505,6 @@ public class Process1Fragment extends Fragment {
                     "19:00",
                     buenBodyString,
                     moveBodyString,
-                    montLeadString,
                     placeReceiveBodyString,
                     carReceiveBodyString,
                     packageBodyString,
@@ -530,21 +533,12 @@ public class Process1Fragment extends Fragment {
 
     private void checkBoxController() {
 
-
         //ใบมรณะ
         CheckBox deadCardCheckBox = (CheckBox) getView().findViewById(R.id.chbDeadCard);
         if (deadCardCheckBox.isChecked()) {
             deadCardString = "1";
         } else {
             deadCardString = "0";
-        }
-
-        //นิมนต์พระนำศพ
-        CheckBox montLeadCheckBox = (CheckBox) getView().findViewById(R.id.chbMontLead);
-        if (montLeadCheckBox.isChecked()) {
-            montLeadString = "1";
-        } else {
-            montLeadString = "0";
         }
 
 
