@@ -113,6 +113,7 @@
     <string name="titi_upload">รับศพและจัดงาน บันทึกไปแล้ว</string>
     <string name="message_upload">คุณได้บันทึกไปแล้ว ไม่สามรถบันทึกได้อีก ให้รอ Confirm จากวัด</string>
     <string name="choose_sala">โปรดเลือก ศาลา </string>
+    <string name="title_alert">โปรแลือกจำนวนที่ต้องการ</string>
 
 
 </resources>

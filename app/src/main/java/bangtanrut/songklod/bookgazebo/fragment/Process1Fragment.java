@@ -2,10 +2,12 @@ package bangtanrut.songklod.bookgazebo.fragment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,7 +117,46 @@ public class Process1Fragment extends Fragment {
         //WaterDrink Controller
         waterDrinkController();
 
+        //Ice1 Controller
+        ice1Controller();
+
+        //Ice2 Controller
+        ice2Controller();
+
     }//on Activity Create
+
+    private void ice2Controller() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbIce2);
+        ice2TextView = getView().findViewById(R.id.txtIce2);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    singleChooseItem(4);
+                } else {
+                    ice2String = "0";
+                    ice2TextView.setText("0");
+                }
+            }
+        });
+    }
+
+
+    private void ice1Controller() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbIce1);
+        ice1TextView = getView().findViewById(R.id.txtIce1);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    singleChooseItem(3);
+                } else {
+                    ice1String = "0";
+                    ice1TextView.setText("0");
+                }
+            }
+        });
+    }
 
     private void waterDrinkController() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbWaterDrink);
@@ -125,7 +166,7 @@ public class Process1Fragment extends Fragment {
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
                     waterSDrinkString = "1";
-                    waterDrinkTextView.setText("150");
+                    singleChooseItem(2);
                 } else {
                     waterSDrinkString = "0";
                     waterDrinkTextView.setText("0");
@@ -143,7 +184,7 @@ public class Process1Fragment extends Fragment {
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
                     thaiTumString = "1";
-                    thaiTumTextView.setText("1200");
+                    singleChooseItem(1);
                 } else {
                     thaiTumString = "0";
                     thaiTumTextView.setText("0");
@@ -154,6 +195,7 @@ public class Process1Fragment extends Fragment {
     }
 
     private void cinamalConTroller() {
+        final String tag = "27AugV1";
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbCinamol);
         cinamalTextView = (TextView) getView().findViewById(R.id.txtCinamol);
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +203,7 @@ public class Process1Fragment extends Fragment {
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
                     cinamalString = "1";
-                    cinamalTextView.setText("30");
+                    singleChooseItem(0);//0==>น้ำอบ
                 } else {
                     cinamalString = "0";
                     cinamalTextView.setText("0");
@@ -170,6 +212,71 @@ public class Process1Fragment extends Fragment {
             }//On Click
         });
     }//Method Cinamal
+
+    private void singleChooseItem(final int index) {
+
+
+        CharSequence[] charSequences = null;
+        switch (index) {
+            case 0://==>น้ำอบ
+                charSequences = new CharSequence[]{"1 ขวด","2 ขวด","3 ขวด","4 ขวด","5 ขวด",};
+                break;
+            case 1://==>ไทยธรรม
+                charSequences = new CharSequence[]{"1 ชุด","2 ชุด","3 ชุด","4 ชุด","5 ชุด",};
+                break;
+            case 2://==>น้ำถ้วย
+                charSequences = new CharSequence[]{"1 ลัง","2 ลัง","3 ลัง","4 ลัง","5 ลัง",};
+                break;
+            case 3://==>น้ำแข็ง
+                charSequences = new CharSequence[]{"1 ถุง","2 ถุง","3 ถุง","4 ถุง","5 ถุง",};
+                break;
+            case 4://==>น้ำแข็งบด
+                charSequences = new CharSequence[]{"1 ถุง","2 ถุง","3 ถุง","4 ถุง","5 ถุง",};
+                break;
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(false);
+        builder.setIcon(R.mipmap.ic_user);
+        builder.setTitle(getResources().getString(R.string.title_alert));
+        builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                switch (index) {
+                    case 0:
+                        cinamalString=Integer.toString((i + 1));
+                        cinamalTextView.setText(Integer.toString((i+1)*30));
+                        dialogInterface.dismiss();
+                        break;
+                    case 1:
+                        thaiTumString=Integer.toString((i + 1));
+                        thaiTumTextView.setText(Integer.toString((i+1)*300));
+                        dialogInterface.dismiss();
+                        break;
+                    case 2:
+                        waterSDrinkString=Integer.toString((i + 1));
+                        waterDrinkTextView.setText(Integer.toString((i+1)*150));
+                        dialogInterface.dismiss();
+                        break;
+                    case 3:
+                        ice1String = Integer.toString((i + 1));
+                        ice1TextView.setText(Integer.toString((i+1)*70));
+                        dialogInterface.dismiss();
+                        break;
+                    case 4:
+                        ice2String=Integer.toString((i + 1));
+                        ice2TextView.setText(Integer.toString((i+1)*70));
+                        dialogInterface.dismiss();
+                        break;
+                }
+
+            }
+        });
+
+        builder.show();
+
+    }
 
     private void flowerController() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbFlower);
