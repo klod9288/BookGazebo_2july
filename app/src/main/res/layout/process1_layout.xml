@@ -423,6 +423,7 @@
                     <!--รายการ-->
                    <TextView
                        android:id="@+id/txtChooseSala"
+                       android:textStyle="bold"
                        android:layout_weight="5"
                        android:text="@string/choose_sala"
                        android:textSize="@dimen/h2"

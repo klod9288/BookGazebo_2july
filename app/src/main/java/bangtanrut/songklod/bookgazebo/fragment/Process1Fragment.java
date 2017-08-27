@@ -93,10 +93,6 @@ public class Process1Fragment extends Fragment {
         //Burn Body Spinner
         burnBodySpinner();
 
-        //Choose Price Pavilien
-        choosePricePavilien();
-
-
         //Create Sent Controller
         createSentController();
 
@@ -330,38 +326,34 @@ public class Process1Fragment extends Fragment {
         });
     }   // placeRecive
 
-    private void choosePricePavilien() {
+    private void choosePricePavilien(String strPricePavilien) {
 
         pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
-
-
-
-
-
-
-        pricePavilienTextView.setText("1111");
+        pricePavilienTextView.setText(strPricePavilien);
         calculatePrice();
 
     }//ChoosePricePavilien
 
     private void calculatePrice() {
 
+        TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
+
         try {
-            TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
-
-            int intTotalPrice = 0;
-
-            intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(thaiTumTextView.getText().toString());
-            intTotalPrice = intTotalPrice + Integer.parseInt(waterDrinkTextView.getText().toString());
 
 
-            textView.setText(Integer.toString(intTotalPrice));
+//            int intTotalPrice = 0;
+//
+//            intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(thaiTumTextView.getText().toString());
+//            intTotalPrice = intTotalPrice + Integer.parseInt(waterDrinkTextView.getText().toString());
+
+
+            textView.setText("test");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -673,12 +665,18 @@ public class Process1Fragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 pavilionString = pavilionStrings[i];
                 textView.setText(pavilionString);
+                if (i == 9) {
+                    choosePricePavilien("3,000.00");
+                } else {
+                    choosePricePavilien("2,200.00");
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 pavilionString = pavilionStrings[0];
                 textView.setText(pavilionString);
+                choosePricePavilien("2,200.00");
             }
 
 
