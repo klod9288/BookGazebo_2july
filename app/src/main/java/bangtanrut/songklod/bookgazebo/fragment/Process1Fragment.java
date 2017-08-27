@@ -502,7 +502,6 @@ public class Process1Fragment extends Fragment {
                     bodyWhereString,
                     deadCardString,
                     timeWashBodyString,
-                    "19:00",
                     buenBodyString,
                     moveBodyString,
                     placeReceiveBodyString,
@@ -662,7 +661,7 @@ public class Process1Fragment extends Fragment {
                 if (i == 9) {
                     choosePricePavilien("3,000.00");
                 } else {
-                    choosePricePavilien("2,200.00F");
+                    choosePricePavilien("2,200.00");
                 }
             }
 
