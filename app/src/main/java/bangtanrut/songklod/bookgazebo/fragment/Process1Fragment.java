@@ -58,6 +58,7 @@ public class Process1Fragment extends Fragment {
     private Button flowerButton;
 
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -137,6 +138,7 @@ public class Process1Fragment extends Fragment {
                     ice2String = "0";
                     ice2TextView.setText("0");
                 }
+                calculatePrice(ice2TextView.getText().toString());
             }
         });
     }
@@ -154,6 +156,7 @@ public class Process1Fragment extends Fragment {
                     ice1String = "0";
                     ice1TextView.setText("0");
                 }
+                calculatePrice(ice1TextView.getText().toString());
             }
         });
     }
@@ -171,7 +174,7 @@ public class Process1Fragment extends Fragment {
                     waterSDrinkString = "0";
                     waterDrinkTextView.setText("0");
                 }
-                calculatePrice();
+                calculatePrice(waterDrinkTextView.getText().toString());
             }//OnClick
         });
     }
@@ -189,7 +192,7 @@ public class Process1Fragment extends Fragment {
                     thaiTumString = "0";
                     thaiTumTextView.setText("0");
                 }
-                calculatePrice();
+                calculatePrice(thaiTumTextView.getText().toString());
             }
         });
     }
@@ -208,7 +211,7 @@ public class Process1Fragment extends Fragment {
                     cinamalString = "0";
                     cinamalTextView.setText("0");
                 }
-                calculatePrice();
+                calculatePrice(cinamalTextView.getText().toString());
             }//On Click
         });
     }//Method Cinamal
@@ -298,7 +301,7 @@ public class Process1Fragment extends Fragment {
             }//OnClick
         });
 
-        calculatePrice();
+        calculatePrice(flowerTextView.getText().toString());
 
     }//Flower
 
@@ -313,7 +316,7 @@ public class Process1Fragment extends Fragment {
                             getResources().getString(R.string.message_HaveSpace));
                 } else {
                     flowerTextView.setText(strFlower+".00");
-                    calculatePrice();
+                    calculatePrice(flowerTextView.getText().toString());
                 }
             }
         });
@@ -352,7 +355,7 @@ public class Process1Fragment extends Fragment {
             packageBodyString = "";
         } else {
             radioButton0.setChecked(true);
-            packageBodyTextView.setText("8,500.00");
+            packageBodyTextView.setText("8500.00");
             packageBodyString = "0";
         }
 
@@ -363,30 +366,30 @@ public class Process1Fragment extends Fragment {
                 switch (i) {
 
                     case R.id.radPackage0:
-                        packageBodyTextView.setText("8,500.00");
+                        packageBodyTextView.setText("8500.00");
                         packageBodyString = "0";
                         break;
                     case R.id.radPackage1:
-                        packageBodyTextView.setText("8,000.00");
+                        packageBodyTextView.setText("8000.00");
                         packageBodyString = "1";
                         break;
                     case R.id.radPackage2:
-                        packageBodyTextView.setText("7,000.00");
+                        packageBodyTextView.setText("7000.00");
                         packageBodyString = "2";
                         break;
                     case R.id.radPackage3:
-                        packageBodyTextView.setText("6,000.00");
+                        packageBodyTextView.setText("6000.00");
                         packageBodyString = "3";
                         break;
 
                 }   // switch
 
-                calculatePrice();
+                calculatePrice(packageBodyTextView.getText().toString());
 
             }   // onCheck
         });
 
-        calculatePrice();
+        calculatePrice(packageBodyTextView.getText().toString());
 
     }   // choosePackage
 
@@ -400,12 +403,12 @@ public class Process1Fragment extends Fragment {
             public void onClick(View view) {
                 if (placeReceiveBodyCheckBox.isChecked()) {
                     placeReceiveBodyString = "1";
-                    placeReceiveBodyTextView.setText("1,200.00");
+                    placeReceiveBodyTextView.setText("1200.00");
                 } else {
                     placeReceiveBodyString = "0";
                     placeReceiveBodyTextView.setText("0");
                 }
-                calculatePrice();
+                calculatePrice(placeReceiveBodyTextView.getText().toString());
 
             }   // View
         });
@@ -415,35 +418,49 @@ public class Process1Fragment extends Fragment {
 
         pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
         pricePavilienTextView.setText(strPricePavilien);
-        calculatePrice();
+        calculatePrice(pricePavilienTextView.getText().toString());
 
     }//ChoosePricePavilien
 
-    private void calculatePrice() {
+    private void calculatePrice(String strTextView) {
 
+        String tag = "27AugV1";
+        Log.d(tag, "strTextView ที่รับมา ==>" + strTextView);
         TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
+        String strResult = null;
+        double priceADouble = 0;
 
         try {
+            priceADouble = priceADouble +
+                    Double.parseDouble(checkText(pricePavilienTextView.getText().toString()))+
+                    Double.parseDouble(placeReceiveBodyTextView.getText().toString())+
+                    Double.parseDouble(carReceiveBodyTextView.getText().toString())+
+                    Double.parseDouble(packageBodyTextView.getText().toString())+
+                    Double.parseDouble(flowerTextView.getText().toString())+
+                    Double.parseDouble(cinamalTextView.getText().toString())+
+                    Double.parseDouble(thaiTumTextView.getText().toString())+
+                    Double.parseDouble(waterDrinkTextView.getText().toString())+
+                    Double.parseDouble(ice1TextView.getText().toString())+
+                    Double.parseDouble(ice2TextView.getText().toString());
 
 
-//            int intTotalPrice = 0;
-//
-//            intTotalPrice = intTotalPrice + Integer.parseInt(pricePavilienTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(placeReceiveBodyTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(carReceiveBodyTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(packageBodyTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(flowerTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(cinamalTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(thaiTumTextView.getText().toString());
-//            intTotalPrice = intTotalPrice + Integer.parseInt(waterDrinkTextView.getText().toString());
 
-
-            textView.setText("test");
+            textView.setText(Double.toString(priceADouble));
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.d(tag, "e calculate ==>" + e.toString());
         }
     }   // calculatePrice
+
+    private String checkText(String s) {
+
+        String strResult = s;
+        if (strResult.equals("0")) {
+            strResult = "0.0";
+        }
+
+        return strResult;
+    }
 
     private void burnBodySpinner() {
         Spinner spinner = (Spinner) getView().findViewById(R.id.spnBurnbody);
@@ -726,7 +743,7 @@ public class Process1Fragment extends Fragment {
                         //วัดไปรับ
                         carReceiveBodyString = "1";
                         textView.setText(getResources().getString(R.string.detail5));
-                        carTextView1.setText("1,200.00");
+                        carTextView1.setText("1200.00");
                         break;
                 }
             }
@@ -749,9 +766,9 @@ public class Process1Fragment extends Fragment {
                 pavilionString = pavilionStrings[i];
                 textView.setText(pavilionString);
                 if (i == 9) {
-                    choosePricePavilien("3,000.00");
+                    choosePricePavilien("3000.00");
                 } else {
-                    choosePricePavilien("2,200.00");
+                    choosePricePavilien("2200.00");
                 }
             }
 
@@ -759,7 +776,7 @@ public class Process1Fragment extends Fragment {
             public void onNothingSelected(AdapterView<?> adapterView) {
                 pavilionString = pavilionStrings[0];
                 textView.setText(pavilionString);
-                choosePricePavilien("2,200.00");
+                choosePricePavilien("2200.00");
             }
 
 
