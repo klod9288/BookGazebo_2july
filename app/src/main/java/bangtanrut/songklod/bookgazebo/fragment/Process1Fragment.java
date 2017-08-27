@@ -331,28 +331,18 @@ public class Process1Fragment extends Fragment {
     }   // placeRecive
 
     private void choosePricePavilien() {
-        RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragPavilien);
+
         pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
-        final String[] strPrice = {null};
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                switch (i) {
-
-                    case R.id.radPavilien:
-                        strPrice[0] = "2200";
-                        break;
-                    case R.id.radPavilien10:
-                        strPrice[0] = "3000";
-                        break;
-                }   // switch
-                pricePavilienTextView.setText(strPrice[0]);
-                calculatePrice();
-            }   // onCheck
-        });
 
 
-    }
+
+
+
+
+        pricePavilienTextView.setText("1111");
+        calculatePrice();
+
+    }//ChoosePricePavilien
 
     private void calculatePrice() {
 
@@ -667,7 +657,6 @@ public class Process1Fragment extends Fragment {
             }
         });
     }
-
     private void createPavilionSpinner() {
         pavilionStrings = myConstant.getPavilionStrings();
         pavilionString = pavilionStrings[0];
@@ -676,16 +665,25 @@ public class Process1Fragment extends Fragment {
                 android.R.layout.simple_list_item_1, pavilionStrings);
         spinner.setAdapter(stringArrayAdapter);
 
+        //Show Text
+        final TextView textView = getView().findViewById(R.id.txtChooseSala);
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 pavilionString = pavilionStrings[i];
+                textView.setText(pavilionString);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 pavilionString = pavilionStrings[0];
+                textView.setText(pavilionString);
             }
+
+
+
+
         });
 
     }

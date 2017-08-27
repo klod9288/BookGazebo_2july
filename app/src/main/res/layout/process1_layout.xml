@@ -421,29 +421,13 @@
                         android:layout_height="wrap_content" />
 
                     <!--รายการ-->
-                    <RadioGroup
-                        android:id="@+id/ragPavilien"
-                        android:orientation="vertical"
-                        android:layout_weight="5"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/radPavilien"
-                            android:textSize="@dimen/h2"
-                            android:text="@string/detail2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <RadioButton
-                            android:id="@+id/radPavilien10"
-                            android:textSize="@dimen/h2"
-                            android:text="@string/detail3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-                    </RadioGroup>
+                   <TextView
+                       android:id="@+id/txtChooseSala"
+                       android:layout_weight="5"
+                       android:text="@string/choose_sala"
+                       android:textSize="@dimen/h2"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content" />
 
                     <!--ราคา-->
                     <TextView
@@ -457,8 +441,6 @@
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
-
-
 
                 <!--ค่าจัดสถานที่รับศพ-->
                 <LinearLayout
