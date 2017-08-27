@@ -133,10 +133,10 @@
 
                 <RadioButton
                     android:id="@+id/rad0"
-                    android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:text="@string/rad1" />
 
                 <RadioButton
@@ -453,14 +453,14 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
                         android:id="@+id/txtCarReceiveBody"
-                        android:gravity="center_horizontal"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

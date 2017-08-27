@@ -205,7 +205,7 @@ public class Process1Fragment extends Fragment {
                     myAlert.myDialog(getResources().getString(R.string.title_HaveSpace),
                             getResources().getString(R.string.message_HaveSpace));
                 } else {
-                    flowerTextView.setText(strFlower);
+                    flowerTextView.setText(strFlower+".00");
                     calculatePrice();
                 }
             }
@@ -245,7 +245,7 @@ public class Process1Fragment extends Fragment {
             packageBodyString = "";
         } else {
             radioButton0.setChecked(true);
-            packageBodyTextView.setText("8500");
+            packageBodyTextView.setText("8,500.00");
             packageBodyString = "0";
         }
 
@@ -256,19 +256,19 @@ public class Process1Fragment extends Fragment {
                 switch (i) {
 
                     case R.id.radPackage0:
-                        packageBodyTextView.setText("8500");
+                        packageBodyTextView.setText("8,500.00");
                         packageBodyString = "0";
                         break;
                     case R.id.radPackage1:
-                        packageBodyTextView.setText("8000");
+                        packageBodyTextView.setText("8,000.00");
                         packageBodyString = "1";
                         break;
                     case R.id.radPackage2:
-                        packageBodyTextView.setText("7000");
+                        packageBodyTextView.setText("7,000.00");
                         packageBodyString = "2";
                         break;
                     case R.id.radPackage3:
-                        packageBodyTextView.setText("6000");
+                        packageBodyTextView.setText("6,000.00");
                         packageBodyString = "3";
                         break;
 
