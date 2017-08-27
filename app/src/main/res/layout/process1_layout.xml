@@ -369,41 +369,7 @@
 
                 </LinearLayout>
 
-                <!--นิมนพระนำศพ-->
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <!--ลำดับ-->
-                    <TextView
-                        android:layout_weight="1"
-                        android:text="1"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <!--รายการ-->
-                    <CheckBox
-                        android:id="@+id/chbMontLead"
-                        android:layout_weight="5"
-                        android:text="@string/detail1"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <!--ราคา-->
-                    <TextView
-                        android:gravity="center_horizontal"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
 
                 <!--ศาลาตั้งศพยกเว้น10-->
                 <LinearLayout
@@ -414,7 +380,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="2"
+                        android:text="1"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -452,7 +418,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="3"
+                        android:text="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -490,7 +456,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="4"
+                        android:text="3"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -528,7 +494,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="5"
+                        android:text="4"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -614,7 +580,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="6"
+                        android:text="5"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -691,7 +657,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="7"
+                        android:text="6"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -729,7 +695,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="8"
+                        android:text="7"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -767,7 +733,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="9"
+                        android:text="8"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -805,7 +771,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="10"
+                        android:text="9"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
@@ -843,7 +809,7 @@
                     <!--ลำดับ-->
                     <TextView
                         android:layout_weight="1"
-                        android:text="11"
+                        android:text="10"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"
