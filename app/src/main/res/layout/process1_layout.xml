@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rad1" />
+                    android:text="@string/rad2" />
 
             </RadioGroup>
 
@@ -442,10 +442,10 @@
                         android:layout_height="wrap_content" />
 
                     <!--รายการ-->
-                    <CheckBox
-                        android:id="@+id/carReceiveBody"
+                    <TextView
+                        android:id="@+id/txtItemCarReceiveBody"
                         android:layout_weight="5"
-                        android:text="@string/detail5"
+                        android:text="@string/rad1"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
                         android:layout_width="0dp"

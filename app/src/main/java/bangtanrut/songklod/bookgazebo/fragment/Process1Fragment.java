@@ -99,9 +99,6 @@ public class Process1Fragment extends Fragment {
         //PlaceReceiveBody CheckBox
         placeReceiveBody();
 
-        //CarReceiveBody
-        carReceiveBody();
-
         //PackageBody
         packageBody();
 
@@ -286,26 +283,7 @@ public class Process1Fragment extends Fragment {
 
     }   // choosePackage
 
-    private void carReceiveBody() {
-        final CheckBox carReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.carReceiveBody);
-        carReceiveBodyTextView = (TextView) getView().findViewById(R.id.txtCarReceiveBody);
 
-        carReceiveBodyCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (carReceiveBodyCheckBox.isChecked()) {
-                    carReceiveBodyString = "1";
-                    carReceiveBodyTextView.setText("1200");
-                } else {
-                    carReceiveBodyString = "0";
-                    carReceiveBodyTextView.setText("0");
-                }
-                calculatePrice();
-            }   // View
-        });
-
-
-    }   // carReceive
 
     private void placeReceiveBody() {
         final CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
@@ -495,7 +473,6 @@ public class Process1Fragment extends Fragment {
 
                     nameString,
                     pavilionString,
-                    radioString,
                     dateString,
                     timeString,
                     timeWorkString,
@@ -626,17 +603,23 @@ public class Process1Fragment extends Fragment {
 
     private void createRadioGroup() {
         RadioGroup radioGroup = (RadioGroup) getView().findViewById(R.id.ragGroup);
+        final TextView textView = getView().findViewById(R.id.txtItemCarReceiveBody);
+        final TextView carTextView1 = getView().findViewById(R.id.txtCarReceiveBody);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 switch (i) {
                     case R.id.rad0:
                         //เจ้าภาพนำศพมาเอง
-                        radioString = "0";
+                        carReceiveBodyString = "0";
+                        textView.setText(getResources().getString(R.string.rad1));
+                        carTextView1.setText("0");
                         break;
                     case R.id.rad1:
                         //วัดไปรับ
-                        radioString = "1";
+                        carReceiveBodyString = "1";
+                        textView.setText(getResources().getString(R.string.detail5));
+                        carTextView1.setText("1,200.00");
                         break;
                 }
             }
