@@ -668,7 +668,7 @@ public class Process1Fragment extends Fragment {
                 if (i == 9) {
                     choosePricePavilien("3,000.00");
                 } else {
-                    choosePricePavilien("2,200.00");
+                    choosePricePavilien("2,200.00F");
                 }
             }
 
