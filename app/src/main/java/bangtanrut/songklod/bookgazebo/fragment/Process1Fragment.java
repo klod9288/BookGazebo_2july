@@ -315,7 +315,7 @@ public class Process1Fragment extends Fragment {
             public void onClick(View view) {
                 if (placeReceiveBodyCheckBox.isChecked()) {
                     placeReceiveBodyString = "1";
-                    placeReceiveBodyTextView.setText("1200");
+                    placeReceiveBodyTextView.setText("1,200.00");
                 } else {
                     placeReceiveBodyString = "0";
                     placeReceiveBodyTextView.setText("0");
@@ -468,7 +468,7 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "น้ำแข็งบด ==>" + ice2String);
 
         //ส่่วนที่ต้องทำหลังจาก String ทุกตัว OK
-       // preUpdateToServer();
+       preUpdateToServer();
 
     }   // showLog
 
