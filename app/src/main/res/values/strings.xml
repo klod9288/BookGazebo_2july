@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">Book Gazebo</string>
-    <string name="login">Login</string>
-    <string name="user">User :</string>
-    <string name="password">Password :</string>
-    <string name="new_register">New Register</string>
+    <string name="login">เข้าสู่ระบบ</string>
+    <string name="user">ชื่อผู้ใช้ :</string>
+    <string name="password">รหัสผู้ใช้ :</string>
+    <string name="new_register">สมัครสมาชิก</string>
 
-    <string name="name">Name</string>
+    <string name="name">ชื่อ</string>
     <string name="box2_1">พระราชทานเพลงศพ</string>
     <string name="box2_2">ฌาปณกิจศพ</string>
     <string name="box2_3">สบง - ชุดกาแฟ(ชุดละ300บาท)</string>
 
-    <string name="surname">Surname</string>
-    <string name="id_card">id-Card</string>
-    <string name="address">Address</string>
-    <string name="phone">Phone</string>
-    <string name="save">save</string>
+    <string name="surname">นามสกุล</string>
+    <string name="id_card">รหัสบัตรประชาชน</string>
+    <string name="address">ที่อยู่</string>
+    <string name="phone">เบอร์โทรศัพท์</string>
+    <string name="save">บันทึก</string>
     <string name="title_HaveSpace">Have Space</string>
     <string name="message_HaveSpace">Please Fill All Every Blank</string>
     <string name="title_FalseIDcard">ID=Card False</string>
