@@ -26,7 +26,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import bangtanrut.songklod.bookgazebo.MyAlert;
 import bangtanrut.songklod.bookgazebo.MyConstant;
@@ -471,7 +473,9 @@ public class Process1Fragment extends Fragment {
                 intTotal = intTotal + ints[i];
             }
 
-            textView.setText(Integer.toString(intTotal) + ".00");
+            String showInt = NumberFormat.getNumberInstance(Locale.US).format(Double.parseDouble(Integer.toString(intTotal)));
+
+            textView.setText(showInt + ".00");
 
 //            priceADouble = priceADouble +
 //                    Double.parseDouble(checkText(pricePavilienTextView.getText().toString())) +
