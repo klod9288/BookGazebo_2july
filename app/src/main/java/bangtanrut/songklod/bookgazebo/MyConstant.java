@@ -39,6 +39,8 @@ public class MyConstant {
             "ศาลา 11 (2,200.00 บาท)",
             "ศาลา 12 (2,200.00 บาท)",};
 
+    //เวลาสำหรับบวชหน้าไฟ
+    private String[] bwchnafiStrings = new String[]{"10:00", "10:30", "14:00", "17:00", "18:00"};
 
     //เวลาในการตั้งสวด
     private String[]timeWork =new String[]{"3 คืน","5 คืน","7 คืน","9 คืน"};
@@ -54,6 +56,11 @@ public class MyConstant {
 
     //เวลาสวดอภิธรรม
     private String[] timeSong = new String[]{"10:00","14:30","17:00","19:00"};
+
+
+    public String[] getBwchnafiStrings() {
+        return bwchnafiStrings;
+    }
 
     public String[] getTimeBodyWhere() {
         return timeBodyWhere;

@@ -33,9 +33,9 @@ import bangtanrut.songklod.bookgazebo.R;
 
 public class Process2Fragment extends Fragment {
     //View
-    private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox;
-    private EditText nameEditText,bodyWhereEditText;
-    private Spinner pavilionSpinner,timeBodyWhereSpinner,timeSongSpinner;
+    private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox, bwchnafiCheckBox;
+    private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText;
+    private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
     private TextView showdateTextView, showTimeTextView;
     private ImageView setDateTimeImageView;
 
@@ -43,9 +43,10 @@ public class Process2Fragment extends Fragment {
     private MyConstant myConstant;
     private MyAlert myAlert;
 
-    private String cremationString,intermentString, nameString , pavilionString,
-            dateString,timeString, bodyWhereString ,timeBodyWhereString,
-            timeSongString, coffeeGroupString;
+    private String cremationString, intermentString, nameString, pavilionString,
+            dateString, timeString, bodyWhereString, timeBodyWhereString,
+            timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
+            timeBwchnafiString;
 
 
     @Nullable
@@ -86,6 +87,54 @@ public class Process2Fragment extends Fragment {
         setTimeSong();
 
         //CoffeeGroup Controller
+        coffeeGroupController();
+
+        //TimeBwchnafi Controller
+        timeBwchanafiController();
+
+        //Bwchnafi CheckBox
+        bwchnafiCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (bwchnafiCheckBox.isChecked()) {
+                    bwchnafiString = "1";
+                } else {
+                    bwchnafiString = "0";
+                }
+            }
+        });
+
+
+
+
+        //Sent Data Controller
+        sentDataController();
+
+    }
+
+    private void timeBwchanafiController() {
+
+        final String[] strings = myConstant.getBwchnafiStrings();
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+
+        timeBwchanafiSpinner.setAdapter(stringArrayAdapter);
+
+        timeBwchanafiSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeBwchnafiString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                timeBwchnafiString = strings[0];
+            }
+        });
+    }
+
+    private void coffeeGroupController() {
         coffeeGroupCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,10 +145,6 @@ public class Process2Fragment extends Fragment {
                 }
             }
         });
-
-        //Sent Data Controller
-        sentDataController();
-
     }
 
     private void sentDataController() {
@@ -111,6 +156,8 @@ public class Process2Fragment extends Fragment {
                 //Get Value From EditText
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
+                amountBwchanfiString = amountBwchnafiEditText.getText().toString().trim();
+
 
 
             }
@@ -205,16 +252,16 @@ public class Process2Fragment extends Fragment {
                                 Integer.toString(intYear);
 
                         showdateTextView.setText(dateString);
-                        setTime(hourAint, minusAint,calendar);
+                        setTime(hourAint, minusAint, calendar);
 
                     }
-                },yearAint,monthAint,dayAint);
+                }, yearAint, monthAint, dayAint);
                 datePickerDialog.show();
             }//onClick
         });
     }
 
-    private void  setTime(int hourAint, int minusAint, final Calendar calendar) {
+    private void setTime(int hourAint, int minusAint, final Calendar calendar) {
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -227,7 +274,7 @@ public class Process2Fragment extends Fragment {
                 timeString = dateFormat.format(calendar.getTime());
                 showTimeTextView.setText(timeString);
             }
-        },hourAint,minusAint,false);
+        }, hourAint, minusAint, false);
         timePickerDialog.show();
 
     }
@@ -270,6 +317,9 @@ public class Process2Fragment extends Fragment {
         timeBodyWhereSpinner = getView().findViewById(R.id.spnTimeBodyWhere);
         timeSongSpinner = getView().findViewById(R.id.spnTimeSong);
         coffeeGroupCheckBox = getView().findViewById(R.id.chbCoffeeGroup);
+        amountBwchnafiEditText = getView().findViewById(R.id.edtBwchnafi);
+        timeBwchanafiSpinner = getView().findViewById(R.id.spnBwchnafi);
+        bwchnafiCheckBox = getView().findViewById(R.id.chbBwchnafi);
 
     }
 }//Main Class
