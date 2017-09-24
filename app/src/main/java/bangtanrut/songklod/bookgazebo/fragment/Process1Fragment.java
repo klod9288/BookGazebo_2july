@@ -47,16 +47,16 @@ public class Process1Fragment extends Fragment {
     private String nameString, pavilionString, radioString = "0", dateString, timeString,
             timeWorkString, bodyWhereString, deadCardString = "0", timeWashBodyString,
             buenBodyString, moveBodyString, montLeadString = "0", placeReceiveBodyString = "0",
-            carReceiveBodyString = "0", packageBodyString = "", cinamalString="0",thaiTumString="0",
-    waterSDrinkString="0",ice1String="0",ice2String="0";
+            carReceiveBodyString = "0", packageBodyString = "", cinamalString = "0", thaiTumString = "0",
+            waterSDrinkString = "0", ice1String = "0", ice2String = "0";
     private TextView dateTextView, timeTextView;
     private int dayAnInt, monthAnInt, yearAnInt, hourAnInt, minusAnInt;
     private TextView pricePavilienTextView, placeReceiveBodyTextView, carReceiveBodyTextView,
-            packageBodyTextView, flowerTextView, cinamalTextView, thaiTumTextView, waterDrinkTextView, ice1TextView, ice2TextView;
+            packageBodyTextView, flowerTextView, cinamalTextView, thaiTumTextView,
+            waterDrinkTextView, ice1TextView, ice2TextView;
     private EditText flowerEditText;
-    private boolean flowerABoolean = false,statusABoolean=true;
+    private boolean flowerABoolean = false, statusABoolean = true;
     private Button flowerButton;
-
 
 
     @Nullable
@@ -74,6 +74,9 @@ public class Process1Fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         //Setup Constance
         setupConstance();
+
+        //Initial View
+        initialView();
 
         //Create pavilion Spinner
         createPavilionSpinner();
@@ -126,9 +129,22 @@ public class Process1Fragment extends Fragment {
 
     }//on Activity Create
 
+    private void initialView() {
+        pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
+        placeReceiveBodyTextView = (TextView) getView().findViewById(R.id.txtPlaceReceiveBody);
+        carReceiveBodyTextView = getView().findViewById(R.id.txtCarReceiveBody);
+        flowerTextView = (TextView) getView().findViewById(R.id.txtFlower);
+        packageBodyTextView = (TextView) getView().findViewById(R.id.txtPackageBody);
+        cinamalTextView = (TextView) getView().findViewById(R.id.txtCinamol);
+        thaiTumTextView = (TextView) getView().findViewById(R.id.txtThaiTum);
+        waterDrinkTextView = (TextView) getView().findViewById(R.id.txtWaterDrink);
+        ice1TextView = getView().findViewById(R.id.txtIce1);
+        ice2TextView = getView().findViewById(R.id.txtIce2);
+    }
+
     private void ice2Controller() {
         final CheckBox checkBox = getView().findViewById(R.id.chbIce2);
-        ice2TextView = getView().findViewById(R.id.txtIce2);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -146,7 +162,7 @@ public class Process1Fragment extends Fragment {
 
     private void ice1Controller() {
         final CheckBox checkBox = getView().findViewById(R.id.chbIce1);
-        ice1TextView = getView().findViewById(R.id.txtIce1);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,7 +179,7 @@ public class Process1Fragment extends Fragment {
 
     private void waterDrinkController() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbWaterDrink);
-        waterDrinkTextView = (TextView) getView().findViewById(R.id.txtWaterDrink);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,7 +197,7 @@ public class Process1Fragment extends Fragment {
 
     private void thaiTum() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbThaiTum);
-        thaiTumTextView = (TextView) getView().findViewById(R.id.txtThaiTum);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -200,7 +216,7 @@ public class Process1Fragment extends Fragment {
     private void cinamalConTroller() {
         final String tag = "27AugV1";
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbCinamol);
-        cinamalTextView = (TextView) getView().findViewById(R.id.txtCinamol);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,19 +238,19 @@ public class Process1Fragment extends Fragment {
         CharSequence[] charSequences = null;
         switch (index) {
             case 0://==>น้ำอบ
-                charSequences = new CharSequence[]{"1 ขวด","2 ขวด","3 ขวด","4 ขวด","5 ขวด",};
+                charSequences = new CharSequence[]{"1 ขวด", "2 ขวด", "3 ขวด", "4 ขวด", "5 ขวด",};
                 break;
             case 1://==>ไทยธรรม
-                charSequences = new CharSequence[]{"1 ชุด","2 ชุด","3 ชุด","4 ชุด","5 ชุด",};
+                charSequences = new CharSequence[]{"1 ชุด", "2 ชุด", "3 ชุด", "4 ชุด", "5 ชุด",};
                 break;
             case 2://==>น้ำถ้วย
-                charSequences = new CharSequence[]{"1 ลัง","2 ลัง","3 ลัง","4 ลัง","5 ลัง",};
+                charSequences = new CharSequence[]{"1 ลัง", "2 ลัง", "3 ลัง", "4 ลัง", "5 ลัง",};
                 break;
             case 3://==>น้ำแข็ง
-                charSequences = new CharSequence[]{"1 ถุง","2 ถุง","3 ถุง","4 ถุง","5 ถุง",};
+                charSequences = new CharSequence[]{"1 ถุง", "2 ถุง", "3 ถุง", "4 ถุง", "5 ถุง",};
                 break;
             case 4://==>น้ำแข็งบด
-                charSequences = new CharSequence[]{"1 ถุง","2 ถุง","3 ถุง","4 ถุง","5 ถุง",};
+                charSequences = new CharSequence[]{"1 ถุง", "2 ถุง", "3 ถุง", "4 ถุง", "5 ถุง",};
                 break;
         }
 
@@ -248,32 +264,32 @@ public class Process1Fragment extends Fragment {
 
                 switch (index) {
                     case 0:
-                        cinamalString=Integer.toString((i + 1));
+                        cinamalString = Integer.toString((i + 1));
                         double v = Double.parseDouble(Integer.toString((i + 1) * 30));
-                        cinamalTextView.setText(Double.toString(v)+ "0");
+                        cinamalTextView.setText(Double.toString(v) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 1:
-                        thaiTumString=Integer.toString((i + 1));
-                        double v1 = Double.parseDouble(Integer.toString((i+1)*300));
+                        thaiTumString = Integer.toString((i + 1));
+                        double v1 = Double.parseDouble(Integer.toString((i + 1) * 300));
                         thaiTumTextView.setText(Double.toString(v1) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 2:
-                        waterSDrinkString=Integer.toString((i + 1));
-                        double v2 = Double.parseDouble(Integer.toString((i+1)*150));
+                        waterSDrinkString = Integer.toString((i + 1));
+                        double v2 = Double.parseDouble(Integer.toString((i + 1) * 150));
                         waterDrinkTextView.setText(Double.toString(v2) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 3:
                         ice1String = Integer.toString((i + 1));
-                        double v3 = Double.parseDouble(Integer.toString((i+1)*70));
+                        double v3 = Double.parseDouble(Integer.toString((i + 1) * 70));
                         ice1TextView.setText(Double.toString(v3) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 4:
-                        ice2String=Integer.toString((i + 1));
-                        double v4 = Double.parseDouble(Integer.toString((i+1)*70));
+                        ice2String = Integer.toString((i + 1));
+                        double v4 = Double.parseDouble(Integer.toString((i + 1) * 70));
                         ice2TextView.setText(Double.toString(v4) + "0");
                         dialogInterface.dismiss();
                         break;
@@ -290,7 +306,7 @@ public class Process1Fragment extends Fragment {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbFlower);
         flowerEditText = (EditText) getView().findViewById(R.id.edtFlower);
         flowerButton = (Button) getView().findViewById(R.id.btnOK);
-        flowerTextView = (TextView) getView().findViewById(R.id.txtFlower);
+
 
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -320,7 +336,7 @@ public class Process1Fragment extends Fragment {
                     myAlert.myDialog(getResources().getString(R.string.title_HaveSpace),
                             getResources().getString(R.string.message_HaveSpace));
                 } else {
-                    flowerTextView.setText(strFlower+".00");
+                    flowerTextView.setText(strFlower + ".00");
                     calculatePrice(flowerTextView.getText().toString());
                 }
             }
@@ -329,7 +345,7 @@ public class Process1Fragment extends Fragment {
 
     private void packageBody() {
         final CheckBox checkBox = (CheckBox) getView().findViewById(R.id.chbPackageBody);
-        packageBodyTextView = (TextView) getView().findViewById(R.id.txtPackageBody);
+
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -399,10 +415,9 @@ public class Process1Fragment extends Fragment {
     }   // choosePackage
 
 
-
     private void placeReceiveBody() {
         final CheckBox placeReceiveBodyCheckBox = (CheckBox) getView().findViewById(R.id.chbPlaceReceiveBody);
-        placeReceiveBodyTextView = (TextView) getView().findViewById(R.id.txtPlaceReceiveBody);
+
         placeReceiveBodyCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -421,7 +436,7 @@ public class Process1Fragment extends Fragment {
 
     private void choosePricePavilien(String strPricePavilien) {
 
-        pricePavilienTextView = (TextView) getView().findViewById(R.id.txtPricePavilien);
+
         pricePavilienTextView.setText(strPricePavilien);
         calculatePrice(pricePavilienTextView.getText().toString());
 
@@ -432,30 +447,68 @@ public class Process1Fragment extends Fragment {
         String tag = "27AugV1";
         Log.d(tag, "strTextView ที่รับมา ==>" + strTextView);
         TextView textView = (TextView) getView().findViewById(R.id.txtTotalPrice);
-        String strResult = null;
-        double priceADouble = 0;
+
+        int intTotal = 0;
 
         try {
-            priceADouble = priceADouble +
-                    Double.parseDouble(checkText(pricePavilienTextView.getText().toString()))+
-                    Double.parseDouble(placeReceiveBodyTextView.getText().toString())+
-                    Double.parseDouble(carReceiveBodyTextView.getText().toString())+
-                    Double.parseDouble(packageBodyTextView.getText().toString())+
-                    Double.parseDouble(flowerTextView.getText().toString())+
-                    Double.parseDouble(cinamalTextView.getText().toString())+
-                    Double.parseDouble(thaiTumTextView.getText().toString())+
-                    Double.parseDouble(waterDrinkTextView.getText().toString())+
-                    Double.parseDouble(ice1TextView.getText().toString())+
-                    Double.parseDouble(ice2TextView.getText().toString());
+
+            int[] ints = new int[10];
+            ints[0] = findIntTextView(pricePavilienTextView.getText().toString());
+            ints[1] = findIntTextView(placeReceiveBodyTextView.getText().toString());
+            ints[2] = findIntTextView(carReceiveBodyTextView.getText().toString());
+            ints[3] = findIntTextView(packageBodyTextView.getText().toString());
+            ints[4] = findIntTextView(flowerTextView.getText().toString());
+            ints[5] = findIntTextView(cinamalTextView.getText().toString());
+            ints[6] = findIntTextView(thaiTumTextView.getText().toString());
+            ints[7] = findIntTextView(waterDrinkTextView.getText().toString());
+            ints[8] = findIntTextView(ice1TextView.getText().toString());
+            ints[9] = findIntTextView(ice2TextView.getText().toString());
+
+            for (int i=0; i<ints.length; i+=1) {
+
+                Log.d(tag, "ints[" + i + "] ==> " + ints[i]);
+
+                intTotal = intTotal + ints[i];
+            }
+
+            textView.setText(Integer.toString(intTotal) + ".00");
+
+//            priceADouble = priceADouble +
+//                    Double.parseDouble(checkText(pricePavilienTextView.getText().toString())) +
+//                    Double.parseDouble(placeReceiveBodyTextView.getText().toString()) +
+//                    Double.parseDouble(carReceiveBodyTextView.getText().toString()) +
+//                    Double.parseDouble(packageBodyTextView.getText().toString()) +
+//                    Double.parseDouble(flowerTextView.getText().toString()) +
+//                    Double.parseDouble(cinamalTextView.getText().toString()) +
+//                    Double.parseDouble(thaiTumTextView.getText().toString()) +
+//                    Double.parseDouble(waterDrinkTextView.getText().toString()) +
+//                    Double.parseDouble(ice1TextView.getText().toString()) +
+//                    Double.parseDouble(ice2TextView.getText().toString());
 
 
 
-            textView.setText(Double.toString(priceADouble));
 
         } catch (Exception e) {
             Log.d(tag, "e calculate ==>" + e.toString());
         }
     }   // calculatePrice
+
+    private int findIntTextView(String strTextView) {
+
+        Log.d("27AugV1", "ค่าที่รับได้จาก findIntTextView ==> " + strTextView);
+
+        int result = 0;
+        if (!strTextView.equals("0")) {
+            String[] strings = strTextView.split("\\.");
+            Log.d("27AugV1", "strings[0] ==> " + strings[0]);
+            result = Integer.parseInt(strings[0]);
+            return result;
+        } else {
+            return 0;
+        }
+
+
+    }
 
     private String checkText(String s) {
 
@@ -575,7 +628,7 @@ public class Process1Fragment extends Fragment {
         Log.d(tag, "น้ำแข็งบด ==>" + ice2String);
 
         //ส่่วนที่ต้องทำหลังจาก String ทุกตัว OK
-       preUpdateToServer();
+        preUpdateToServer();
 
     }   // showLog
 
@@ -586,7 +639,7 @@ public class Process1Fragment extends Fragment {
         } else {
             //Cannot Uplpad
             MyAlert myAlert = new MyAlert(getActivity());
-            myAlert.myDialog(getString(R.string.titi_upload),getString(R.string.message_upload));
+            myAlert.myDialog(getString(R.string.titi_upload), getString(R.string.message_upload));
 
         }
     }
@@ -624,7 +677,7 @@ public class Process1Fragment extends Fragment {
             if (Boolean.parseBoolean(postProcess1.get())) {
                 statusABoolean = false;
             } else {
-                Toast.makeText(getActivity(),"Please Try Again False",
+                Toast.makeText(getActivity(), "Please Try Again False",
                         Toast.LENGTH_LONG).show();
             }
             Log.d(tag, "Result ==>" + postProcess1.get());
@@ -754,6 +807,7 @@ public class Process1Fragment extends Fragment {
             }
         });
     }
+
     private void createPavilionSpinner() {
         pavilionStrings = myConstant.getPavilionStrings();
         pavilionString = pavilionStrings[0];
@@ -783,8 +837,6 @@ public class Process1Fragment extends Fragment {
                 textView.setText(pavilionString);
                 choosePricePavilien("2200.00");
             }
-
-
 
 
         });
