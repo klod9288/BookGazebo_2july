@@ -249,27 +249,32 @@ public class Process1Fragment extends Fragment {
                 switch (index) {
                     case 0:
                         cinamalString=Integer.toString((i + 1));
-                        cinamalTextView.setText(Integer.toString((i+1)*30));
+                        double v = Double.parseDouble(Integer.toString((i + 1) * 30));
+                        cinamalTextView.setText(Double.toString(v)+ "0");
                         dialogInterface.dismiss();
                         break;
                     case 1:
                         thaiTumString=Integer.toString((i + 1));
-                        thaiTumTextView.setText(Integer.toString((i+1)*300));
+                        double v1 = Double.parseDouble(Integer.toString((i+1)*300));
+                        thaiTumTextView.setText(Double.toString(v1) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 2:
                         waterSDrinkString=Integer.toString((i + 1));
-                        waterDrinkTextView.setText(Integer.toString((i+1)*150));
+                        double v2 = Double.parseDouble(Integer.toString((i+1)*150));
+                        waterDrinkTextView.setText(Double.toString(v2) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 3:
                         ice1String = Integer.toString((i + 1));
-                        ice1TextView.setText(Integer.toString((i+1)*70));
+                        double v3 = Double.parseDouble(Integer.toString((i+1)*70));
+                        ice1TextView.setText(Double.toString(v3) + "0");
                         dialogInterface.dismiss();
                         break;
                     case 4:
                         ice2String=Integer.toString((i + 1));
-                        ice2TextView.setText(Integer.toString((i+1)*70));
+                        double v4 = Double.parseDouble(Integer.toString((i+1)*70));
+                        ice2TextView.setText(Double.toString(v4) + "0");
                         dialogInterface.dismiss();
                         break;
                 }
