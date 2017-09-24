@@ -171,10 +171,10 @@
 
             <!--สบง-->
             <CheckBox
-
+                android:id="@+id/chbCoffeeGroup"
                 android:text="@string/box2_3"
                 android:textSize="@dimen/h2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <!--Check Price1-->
@@ -184,27 +184,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!--Title-->
                 <TextView
                     android:text="@string/ordain"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:textSize="@dimen/h2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
+                <!--Amount-->
                 <EditText
+                    android:id="@+id/edtBwchnafi"
                     android:hint="@string/ordainedt"
                     android:inputType="number"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
+                <!--Time-->
                 <Spinner
-
-                    android:layout_weight="1"
+                    android:id="@+id/spnBwchnafi"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"></Spinner>
 
+
                 <CheckBox
+                    android:id="@+id/chbBwchnafi"
                     android:text="@string/ordain1"
                     android:layout_weight="2"
                     android:layout_width="0dp"
@@ -1024,7 +1030,7 @@
 
     <!--Button SendData-->
     <Button
-
+        android:id="@+id/btnSentData"
         android:text="@string/sent"
         android:textSize="18dp"
         android:textStyle="bold"
