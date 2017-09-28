@@ -36,7 +36,8 @@ public class Process2Fragment extends Fragment {
     private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox, bwchnafiCheckBox;
     private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText, amountChantPlant;
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
-    private TextView showdateTextView, showTimeTextView;
+    private TextView showdateTextView, showTimeTextView,
+            burnBuildTextView, burnOldTextView, burnBananaTextView;
     private ImageView setDateTimeImageView;
 
     //Other
@@ -47,7 +48,8 @@ public class Process2Fragment extends Fragment {
             dateString, timeString, bodyWhereString, timeBodyWhereString,
             timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
             timeBwchnafiString, timeMonkSongString, monkSongString,
-            amountChantPlantString, chantPlantString, chutnatfaiString;
+            amountChantPlantString, chantPlantString, chutnatfaiString,
+            burnBuildString, burnOldString, burnBananaString;
 
 
     @Nullable
@@ -108,10 +110,67 @@ public class Process2Fragment extends Fragment {
         //ChutNatFai CheckBox
         chutNatFaiCheckBox();
 
+        //BurnBuild CheckBox
+        burnBuildCheckBox();
+
+        //BurnOld CheckBox
+        burnOldCheckBox();
+
+        //BurnBanana CheckBox
+        burnBananaCheckBox();
+
 
         //Sent Data Controller
         sentDataController();
 
+    }
+
+    private void burnBananaCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBurnBanana);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    burnBananaString = "1";
+                    burnBananaTextView.setText("700.00");
+                } else {
+                    burnBananaString = "0";
+                    burnBananaTextView.setText("0");
+                }
+            }
+        });
+    }
+
+    private void burnOldCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbButnOld);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    burnOldString = "1";
+                    burnOldTextView.setText("3000.00");
+                } else {
+                    burnOldString = "0";
+                    burnOldTextView.setText("0");
+                }
+            }
+        });
+    }
+
+    private void burnBuildCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBurnBuild);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    burnBuildString = "1";
+                    burnBuildTextView.setText("3300.00");
+                } else {
+                    burnBuildString = "0";
+                    burnBuildTextView.setText("0");
+                }
+            }
+        });
     }
 
     private void chutNatFaiCheckBox() {
@@ -235,7 +294,6 @@ public class Process2Fragment extends Fragment {
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
                 amountBwchanfiString = amountBwchnafiEditText.getText().toString().trim();
                 amountChantPlantString = amountChantPlant.getText().toString().trim();
-
 
 
             }
@@ -399,6 +457,9 @@ public class Process2Fragment extends Fragment {
         timeBwchanafiSpinner = getView().findViewById(R.id.spnBwchnafi);
         bwchnafiCheckBox = getView().findViewById(R.id.chbBwchnafi);
         amountChantPlant = getView().findViewById(R.id.edtChantPlant);
+        burnBuildTextView = getView().findViewById(R.id.txtBurnBuild);
+        burnOldTextView = getView().findViewById(R.id.txtBurnOld);
+        burnBananaTextView = getView().findViewById(R.id.txtBurnBanana);
 
 
     }

@@ -390,7 +390,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbBurnBuild"
                         android:text="@string/crematorium"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -400,6 +400,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBurnBuild"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -425,7 +426,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbButnOld"
                         android:text="@string/Oil_burial"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -435,6 +436,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBurnOld"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -460,7 +462,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbBurnBanana"
                         android:text="@string/banana_stalk_pith"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -470,12 +472,13 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
+                        android:id="@+id/txtBurnBanana"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--ศาลาตั้งศพ-->
