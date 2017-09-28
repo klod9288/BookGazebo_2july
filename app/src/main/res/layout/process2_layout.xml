@@ -311,18 +311,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <CheckBox
+                    android:id="@+id/chbChuitnatFai"
                     android:text="@string/MonkDetail6"
                     android:layout_weight="5"
                     android:textSize="@dimen/h2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
-                <CheckBox
-                    android:text="@string/MonkDetail7"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                <!--<CheckBox-->
+                    <!--android:text="@string/MonkDetail7"-->
+                    <!--android:layout_weight="2"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content" />-->
 
             </LinearLayout>
 

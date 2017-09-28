@@ -47,7 +47,7 @@ public class Process2Fragment extends Fragment {
             dateString, timeString, bodyWhereString, timeBodyWhereString,
             timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
             timeBwchnafiString, timeMonkSongString, monkSongString,
-            amountChantPlantString, chantPlantString;
+            amountChantPlantString, chantPlantString, chutnatfaiString;
 
 
     @Nullable
@@ -105,10 +105,27 @@ public class Process2Fragment extends Fragment {
         //ChantPlan CheckBox
         chantPlanCheckBox();
 
+        //ChutNatFai CheckBox
+        chutNatFaiCheckBox();
+
 
         //Sent Data Controller
         sentDataController();
 
+    }
+
+    private void chutNatFaiCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbChuitnatFai);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    chutnatfaiString = "1";
+                } else {
+                    chutnatfaiString = "0";
+                }
+            }
+        });
     }
 
     private void chantPlanCheckBox() {
