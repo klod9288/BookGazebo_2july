@@ -498,7 +498,7 @@
 
                     <!--รายการ-->
                     <RadioGroup
-
+                        android:id="@+id/ragSalaPrice"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
                         android:textStyle="bold"
@@ -506,6 +506,8 @@
                         android:layout_height="wrap_content" >
 
                         <RadioButton
+                            android:id="@+id/rad3000"
+                            android:checked="true"
                             android:text="@string/sala_detail1"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -513,6 +515,7 @@
                             android:layout_height="wrap_content"/>
 
                         <RadioButton
+                            android:id="@+id/rad2200"
                             android:text="@string/sala_detail2"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -523,7 +526,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
+                        android:id="@+id/txtSalaPrice"
+                        android:text="3000.00"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
@@ -548,7 +552,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbManageBurnBuild"
                         android:text="@string/Cost_of_cremation"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -558,6 +562,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtManageBurnBuild"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -583,7 +588,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbCarBody"
                         android:text="@string/Funeral_car"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -593,6 +598,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtCarBody"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -624,7 +630,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-
+                            android:id="@+id/chbFlower"
                             android:text="@string/flower1"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -637,8 +643,8 @@
                         android:layout_height="wrap_content">
 
                         <EditText
-
-                            android:hint="12,000-40,000"
+                            android:id="@+id/edtFlower"
+                            android:text="12,000.00"
                             android:inputType="number"
                             android:gravity="center_horizontal"
                             android:textSize="@dimen/h2"
@@ -647,19 +653,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />
 
-                        <Button
 
-                            android:clickable="false"
-                            android:layout_weight="1"
-                            android:text="OK"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
 
                     </LinearLayout>
                     </LinearLayout>
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtFlower"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"

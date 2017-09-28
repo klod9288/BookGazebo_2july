@@ -3,6 +3,7 @@ package bangtanrut.songklod.bookgazebo.fragment;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -37,7 +39,8 @@ public class Process2Fragment extends Fragment {
     private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText, amountChantPlant;
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
     private TextView showdateTextView, showTimeTextView,
-            burnBuildTextView, burnOldTextView, burnBananaTextView;
+            burnBuildTextView, burnOldTextView, burnBananaTextView, salaPriceTextView,
+            manageBurnBuildTextView, carBodyTextView;
     private ImageView setDateTimeImageView;
 
     //Other
@@ -119,10 +122,68 @@ public class Process2Fragment extends Fragment {
         //BurnBanana CheckBox
         burnBananaCheckBox();
 
+        //SalaPrice Radio
+        salaPriceRadio();
+
+
+        //ManageBurnBuild CheckBox
+        manageBurnBuildChekcBox();
+
+
+        //CarBody CheckBox
+        carBodyCheckBox();
+
 
         //Sent Data Controller
         sentDataController();
 
+
+    }
+
+    private void carBodyCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbCarBody);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    carBodyTextView.setText("1200.00");
+                } else {
+                    carBodyTextView.setText("0");
+                }
+            }
+        });
+
+    }
+
+    private void manageBurnBuildChekcBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbManageBurnBuild);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    manageBurnBuildTextView.setText("1000.00");
+                } else {
+                    manageBurnBuildTextView.setText("0");
+                }
+            }
+        });
+    }
+
+    private void salaPriceRadio() {
+        RadioGroup radioGroup = getView().findViewById(R.id.ragSalaPrice);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                switch (i) {
+                    case R.id.rad3000:
+                        salaPriceTextView.setText("3000.00");
+                        break;
+                    case R.id.rad2200:
+                        salaPriceTextView.setText("2200.00");
+                        break;
+                }
+            }
+        });
     }
 
     private void burnBananaCheckBox() {
@@ -460,6 +521,9 @@ public class Process2Fragment extends Fragment {
         burnBuildTextView = getView().findViewById(R.id.txtBurnBuild);
         burnOldTextView = getView().findViewById(R.id.txtBurnOld);
         burnBananaTextView = getView().findViewById(R.id.txtBurnBanana);
+        salaPriceTextView = getView().findViewById(R.id.txtSalaPrice);
+        manageBurnBuildTextView = getView().findViewById(R.id.txtManageBurnBuild);
+        carBodyTextView = getView().findViewById(R.id.txtCarBody);
 
 
     }
