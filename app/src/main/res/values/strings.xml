@@ -37,7 +37,7 @@
     <string name="ordain1">ไตรบวชเณร(ชุดละ600บาท)</string>
     <string name="MonkDetail">พระเทศน์ นิมนต์ 1 รูป(เช้าและบ่าย)</string>
     <string name="MonkDetail1">ไตรแบ่ง(ชุดละ500),ของแต่ละชุด600บาท</string>
-    <string name="MonkDetail2">สวดมนต์ฉันเพล มาติกาบังสกุล นิมยต์พระ10รูป</string>
+    <string name="MonkDetail2">สวดมนต์ฉันเพล มาติกาบังสกุล</string>
     <string name="MonkDetail3">สบงช-ุดกาแฟ(ชุดละ300)</string>
     <string name="MonkDetail8">สบงช(ผืนละ๑๕๐)</string>
     <string name="MonkDetail4">ซักผ้าบังสุล(ทอดผ้าใคร)นิมนต์พระ</string>
@@ -136,6 +136,8 @@
     <string name="detailp35">น้ำแข็ง(ถุงละ70บาท)</string>
     <string name="detailp36">อาหารถวายพระและเลี้ยงแขก</string>
     <string name="detailp37">ยืมชุดถวายชามราคา300บาท</string>
+
+    <string name="rub">จำนวนรูป</string>
 
 
 </resources>

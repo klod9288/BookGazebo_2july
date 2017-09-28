@@ -75,7 +75,7 @@
             <!--ชื่อศพฌาปณกิจ-->
             <EditText
                 android:id="@+id/edtName"
-                android:text="@string/detail_name2"
+                android:hint="@string/detail_name2"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -225,18 +225,19 @@
 
                 <TextView
                     android:text="@string/MonkDetail"
-                    android:layout_weight="4"
+                    android:layout_weight="3"
                     android:textSize="@dimen/h2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
                 <Spinner
-
-                    android:layout_weight="1"
+                     android:id="@+id/spnMonkSong"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"></Spinner>
 
                 <CheckBox
+                    android:id="@+id/chbMonkSong"
                     android:text="@string/MonkDetail1"
                     android:layout_weight="2"
                     android:layout_width="0dp"
@@ -251,18 +252,20 @@
 
                 <TextView
                     android:text="@string/MonkDetail2"
-                    android:layout_weight="4"
+                    android:layout_weight="3"
                     android:textSize="@dimen/h2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
 
-                <Spinner
-
+                <EditText
+                    android:id="@+id/edtChantPlant"
+                    android:hint="@string/ordainedt"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="wrap_content"></EditText>
 
                 <CheckBox
+                    android:id="@+id/chbChantPlant"
                     android:text="@string/MonkDetail3"
                     android:layout_weight="2"
                     android:layout_width="0dp"
@@ -277,7 +280,7 @@
 
                 <TextView
                     android:text="@string/MonkDetail4"
-                    android:layout_weight="3"
+                    android:layout_weight="2"
                     android:textSize="@dimen/h2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
@@ -291,7 +294,7 @@
 
                 <Spinner
 
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"></Spinner>
 

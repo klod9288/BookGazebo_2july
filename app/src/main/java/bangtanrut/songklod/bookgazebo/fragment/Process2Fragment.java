@@ -34,7 +34,7 @@ import bangtanrut.songklod.bookgazebo.R;
 public class Process2Fragment extends Fragment {
     //View
     private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox, bwchnafiCheckBox;
-    private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText;
+    private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText, amountChantPlant;
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
     private TextView showdateTextView, showTimeTextView;
     private ImageView setDateTimeImageView;
@@ -46,7 +46,8 @@ public class Process2Fragment extends Fragment {
     private String cremationString, intermentString, nameString, pavilionString,
             dateString, timeString, bodyWhereString, timeBodyWhereString,
             timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
-            timeBwchnafiString;
+            timeBwchnafiString, timeMonkSongString, monkSongString,
+            amountChantPlantString, chantPlantString;
 
 
     @Nullable
@@ -93,6 +94,72 @@ public class Process2Fragment extends Fragment {
         timeBwchanafiController();
 
         //Bwchnafi CheckBox
+        bwchnafiCheckBox();
+
+        //MonkSong Time
+        monkSongTime();
+
+        //MoknSong CheckBox
+        moknSongCheckBox();
+
+        //ChantPlan CheckBox
+        chantPlanCheckBox();
+
+
+        //Sent Data Controller
+        sentDataController();
+
+    }
+
+    private void chantPlanCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbChantPlant);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    chantPlantString = "1";
+                } else {
+                    chantPlantString = "0";
+                }
+            }
+        });
+    }
+
+    private void moknSongCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbMonkSong);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    monkSongString = "1";
+                } else {
+                    monkSongString = "0";
+                }
+            }
+        });
+    }
+
+    private void monkSongTime() {
+        Spinner spinner = getView().findViewById(R.id.spnMonkSong);
+        final String[] strings = myConstant.getTimeBodyWhere();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                timeMonkSongString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                timeMonkSongString = strings[0];
+            }
+        });
+    }
+
+    private void bwchnafiCheckBox() {
         bwchnafiCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,13 +170,6 @@ public class Process2Fragment extends Fragment {
                 }
             }
         });
-
-
-
-
-        //Sent Data Controller
-        sentDataController();
-
     }
 
     private void timeBwchanafiController() {
@@ -157,6 +217,7 @@ public class Process2Fragment extends Fragment {
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
                 amountBwchanfiString = amountBwchnafiEditText.getText().toString().trim();
+                amountChantPlantString = amountChantPlant.getText().toString().trim();
 
 
 
@@ -320,6 +381,8 @@ public class Process2Fragment extends Fragment {
         amountBwchnafiEditText = getView().findViewById(R.id.edtBwchnafi);
         timeBwchanafiSpinner = getView().findViewById(R.id.spnBwchnafi);
         bwchnafiCheckBox = getView().findViewById(R.id.chbBwchnafi);
+        amountChantPlant = getView().findViewById(R.id.edtChantPlant);
+
 
     }
 }//Main Class
