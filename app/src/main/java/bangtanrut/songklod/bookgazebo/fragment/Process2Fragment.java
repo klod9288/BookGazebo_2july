@@ -686,6 +686,10 @@ public class Process2Fragment extends Fragment {
                                 Integer.toString(intYear);
 
                         showdateTextView.setText(dateString);
+
+                        TextView textView = getView().findViewById(R.id.txtDate2);
+                        textView.setText(dateString);
+
                         setTime(hourAint, minusAint, calendar);
 
                     }
