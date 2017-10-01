@@ -154,7 +154,17 @@ public class Process2Fragment extends Fragment {
     }
 
     private void flowerMoonPresident() {
-        CheckBox checkBox = getView().findViewById(R.id.chbFlower1);
+        final CheckBox checkBox = getView().findViewById(R.id.chbFlower1);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    flower1TextView.setText("30.00");
+                } else {
+                    flower1TextView.setText("0");
+                }
+            }
+        });
     }
 
     private void flowerMoon() {
