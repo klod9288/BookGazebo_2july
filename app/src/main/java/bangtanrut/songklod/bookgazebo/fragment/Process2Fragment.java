@@ -8,6 +8,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public class Process2Fragment extends Fragment {
 
     private String cremationString, intermentString, nameString, pavilionString,
             dateString, timeString, bodyWhereString, timeBodyWhereString,
-            timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
+            timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
             timeBwchnafiString, timeMonkSongString, monkSongString,
             amountChantPlantString, chantPlantString, chutnatfaiString,
             burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
@@ -103,7 +104,7 @@ public class Process2Fragment extends Fragment {
         //CoffeeGroup Controller    สบง-ชุดกาแฟ
         coffeeGroupController();
 
-        //TimeBwchnafi Controller
+        //TimeBwchnafi Controller   เวลาบวชหน้าไฟ
         timeBwchanafiController();
 
         //Bwchnafi CheckBox
@@ -619,10 +620,15 @@ public class Process2Fragment extends Fragment {
         bwchnafiCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                amountBwchanfiString = amountBwchnafiEditText.getText().toString().trim();
+
                 if (bwchnafiCheckBox.isChecked()) {
                     bwchnafiString = "1";
+                    calcualteMoney();
                 } else {
                     bwchnafiString = "0";
+                    calcualteMoney();
                 }
             }
         });
@@ -668,11 +674,21 @@ public class Process2Fragment extends Fragment {
     private void calcualteMoney() {
 
         int moneyAnInt = 0;     // จำนวนที่ต้องจ่าย
+        String tag = "1OctV1";
 
         //Add สบง-ชุดกาแฟ
         int[] coffeeGroupInts = new int[]{0, 300};
         moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
 
+        //Add บวชหน้าไฟ
+        Log.d(tag, "บวชหน้าไฟ ==> " + bwchnafiString);
+        if (bwchnafiString.equals("1")) {
+            Log.d(tag, "บวชหน้าไฟ True");
+            Log.d(tag, "จำนวนผู้บวช ==> " + amountBwchanfiString);
+            moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
+        } else {
+            Log.d(tag, "บวชหน้าไฟ false");
+        }
 
 
 
@@ -695,7 +711,6 @@ public class Process2Fragment extends Fragment {
                 //Get Value From EditText
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
-                amountBwchanfiString = amountBwchnafiEditText.getText().toString().trim();
                 amountChantPlantString = amountChantPlant.getText().toString().trim();
 
 
