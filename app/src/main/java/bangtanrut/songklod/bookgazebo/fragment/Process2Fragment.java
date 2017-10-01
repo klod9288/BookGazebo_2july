@@ -2,10 +2,12 @@ package bangtanrut.songklod.bookgazebo.fragment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +43,8 @@ public class Process2Fragment extends Fragment {
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
     private TextView showdateTextView, showTimeTextView, burnBuildTextView, burnOldTextView,
             burnBananaTextView, salaPriceTextView, manageBurnBuildTextView, carBodyTextView,
-            flowerTextView, flower0TextView, flower1TextView;
+            flowerTextView, flower0TextView, flower1TextView, powerSoundTextView, powerBandTextView,
+            waterDrinkTextView, iceTextView, foodTextView, candyTextView, bowTextView;
     private ImageView setDateTimeImageView;
 
     //Other
@@ -147,9 +150,115 @@ public class Process2Fragment extends Fragment {
         flowerMoonPresident();
 
 
+        //PowerSound
+        powerSound();
+
+
+        //Power Band
+        powerBand();
+
+        //Water Drink
+        waterDrink();
+
+        //Ice Controller
+        iceController();
+
+        //Food Controller
+        foodController();
+
+        //Candy Controller
+        candyController();
+
+        //Bow Controller
+        bowController();
+
+
         //Sent Data Controller
         sentDataController();
 
+
+    }
+
+    private void bowController() {
+        CheckBox checkBox = getView().findViewById(R.id.chbBow);
+    }
+
+    private void candyController() {
+        CheckBox checkBox = getView().findViewById(R.id.chbCandy);
+    }
+
+    private void foodController() {
+        CheckBox checkBox = getView().findViewById(R.id.chbFood);
+    }
+
+    private void iceController() {
+        CheckBox checkBox = getView().findViewById(R.id.chbIce);
+    }
+
+    private void waterDrink() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbWaterDring);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    chooseItem(waterDrinkTextView, 140);
+                } else {
+                    waterDrinkTextView.setText("0");
+                }
+            }
+        });
+    }
+
+    private void chooseItem(final TextView objTextView, final int intPrice) {
+
+        CharSequence[] charSequences = new CharSequence[]{"1", "2", "3", "4", "5"};
+        final int[] amountInts = new int[]{0};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(false);
+        builder.setIcon(R.mipmap.ic_user);
+        builder.setTitle("Please Choose Item");
+        builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                amountInts[0] = i + 1;
+                int intAnswer = amountInts[0] * intPrice;
+                objTextView.setText(Integer.toString(intAnswer) + ".00");
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+
+
+
+    }
+
+    private void powerBand() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbPowerSound2);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    powerBandTextView.setText("5000.00");
+                } else {
+                    powerBandTextView.setText("0");
+                }
+            }
+        });
+    }
+
+    private void powerSound() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbPowerSound);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    powerSoundTextView.setText("300.00");
+                } else {
+                    powerSoundTextView.setText("0");
+                }
+            }
+        });
 
     }
 
@@ -589,6 +698,13 @@ public class Process2Fragment extends Fragment {
         flowerTextView = getView().findViewById(R.id.txtFlower);
         flower0TextView = getView().findViewById(R.id.txtFlower0);
         flower1TextView = getView().findViewById(R.id.txtFlower1);
+        powerSoundTextView = getView().findViewById(R.id.txtSound0);
+        powerBandTextView = getView().findViewById(R.id.txtSound1);
+        waterDrinkTextView = getView().findViewById(R.id.txtWaterDrink0);
+        iceTextView = getView().findViewById(R.id.txtIce0);
+        foodTextView = getView().findViewById(R.id.txtFood0);
+        candyTextView = getView().findViewById(R.id.txtCandy0);
+        bowTextView = getView().findViewById(R.id.txtBow);
 
 
     }

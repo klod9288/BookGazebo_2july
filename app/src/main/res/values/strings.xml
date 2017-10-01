@@ -58,7 +58,7 @@
     <string name="IceBag">น้ำแข็ง(ถุงละ70)</string>
     <string name="Food">อาหารถวายพระและเลี้ยงแขก</string>
     <string name="FoodNull">อาหารว่าง</string>
-    <string name="Bowl">ยืมชุดถ้วยชาม(ราคา3000)</string>
+    <string name="Bowl">ยืมชุดถ้วยชาม(ราคา300)</string>
 
     <string name="sala">ศาลา</string>
     <string name="sala_detail">ชื่อศาลา</string>
