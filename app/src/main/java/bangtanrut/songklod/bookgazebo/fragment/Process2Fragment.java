@@ -33,6 +33,7 @@ import bangtanrut.songklod.bookgazebo.R;
  * Created by Administrator on 2/7/2560.
  */
 
+
 public class Process2Fragment extends Fragment {
     //View
     private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox, bwchnafiCheckBox;

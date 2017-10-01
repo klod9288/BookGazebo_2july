@@ -24,7 +24,8 @@
     <string name="title_PassFalse">Password False</string>
     <string name="message_PassFalse">Please Try Agains Password False</string>
     <string name="mode_one">รับศพและจัดงาน</string>
-    <string name="mode_two">รายการทำบุญ</string>
+    <string name="mode_two">กำหนดการพระราชทานเพลิงศพ กำหนดการณาปนกิจศพ</string>
+
     <string name="mode_three">รายการทำบญ</string>
     <string name="wait_user">User Wait</string>
     <string name="wait_admin">Admin Wait</string>
