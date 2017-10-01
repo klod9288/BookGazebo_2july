@@ -695,6 +695,7 @@
                         android:layout_height="wrap_content" >
 
                         <CheckBox
+                            android:id="@+id/chbFlower0"
                             android:text="@string/Flower"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -702,6 +703,7 @@
                             android:layout_height="wrap_content"/>
 
                         <CheckBox
+                            android:id="@+id/chbFlower1"
                             android:text="@string/Flower1"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -719,6 +721,7 @@
 
                         <!--ราคา-->
                         <TextView
+                            android:id="@+id/txtFlower0"
                             android:text="0"
                             android:layout_weight="1"
                             android:textStyle="bold"
@@ -727,6 +730,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/txtFlower1"
                             android:text="0"
                             android:layout_weight="1"
                             android:textStyle="bold"
