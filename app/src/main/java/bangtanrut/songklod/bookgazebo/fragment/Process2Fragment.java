@@ -180,7 +180,17 @@ public class Process2Fragment extends Fragment {
     }
 
     private void bowController() {
-        CheckBox checkBox = getView().findViewById(R.id.chbBow);
+        final CheckBox checkBox = getView().findViewById(R.id.chbBow);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    bowTextView.setText("300.00");
+                } else {
+                    bowTextView.setText("0");
+                }
+            }
+        });
     }
 
     private void candyController() {
@@ -188,11 +198,37 @@ public class Process2Fragment extends Fragment {
     }
 
     private void foodController() {
-        CheckBox checkBox = getView().findViewById(R.id.chbFood);
+        final CheckBox checkBox = getView().findViewById(R.id.chbFood);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+
+                    CharSequence[] charSequences = new CharSequence[]{
+                            "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 20 ท่าน",
+                            "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 50 ท่าน"};
+                    chooseItem(foodTextView, 300, charSequences, false);
+
+                } else {
+                    foodTextView.setText("0");
+                }
+            }
+        });
     }
 
     private void iceController() {
-        CheckBox checkBox = getView().findViewById(R.id.chbIce);
+        final CheckBox checkBox = getView().findViewById(R.id.chbIce);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    CharSequence[] charSequences = new CharSequence[]{"1", "2", "3", "4", "5"};
+                    chooseItem(iceTextView, 70, charSequences, true);
+                } else {
+                    iceTextView.setText("0");
+                }
+            }
+        });
     }
 
     private void waterDrink() {
@@ -201,7 +237,8 @@ public class Process2Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
-                    chooseItem(waterDrinkTextView, 140);
+                    CharSequence[] charSequences = new CharSequence[]{"1", "2", "3", "4", "5"};
+                    chooseItem(waterDrinkTextView, 140, charSequences, true);
                 } else {
                     waterDrinkTextView.setText("0");
                 }
@@ -209,9 +246,9 @@ public class Process2Fragment extends Fragment {
         });
     }
 
-    private void chooseItem(final TextView objTextView, final int intPrice) {
+    private void chooseItem(final TextView objTextView, final int intPrice, CharSequence[] charSequences, final boolean status) {
 
-        CharSequence[] charSequences = new CharSequence[]{"1", "2", "3", "4", "5"};
+
         final int[] amountInts = new int[]{0};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -221,9 +258,22 @@ public class Process2Fragment extends Fragment {
         builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                amountInts[0] = i + 1;
-                int intAnswer = amountInts[0] * intPrice;
-                objTextView.setText(Integer.toString(intAnswer) + ".00");
+
+                if (status) {
+                    amountInts[0] = i + 1;
+                    int intAnswer = amountInts[0] * intPrice;
+                    objTextView.setText(Integer.toString(intAnswer) + ".00");
+                } else {
+                    switch (i) {
+                        case 0:
+                            objTextView.setText("9000.00");
+                            break;
+                        case 1:
+                            objTextView.setText("13500.00");
+                            break;
+                    }
+                }
+
                 dialogInterface.dismiss();
             }
         });
