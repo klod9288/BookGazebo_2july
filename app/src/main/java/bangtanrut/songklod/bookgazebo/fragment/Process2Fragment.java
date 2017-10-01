@@ -39,9 +39,9 @@ public class Process2Fragment extends Fragment {
     private CheckBox cremationCheckBox, intermentCheckBox, coffeeGroupCheckBox, bwchnafiCheckBox;
     private EditText nameEditText, bodyWhereEditText, amountBwchnafiEditText, amountChantPlant;
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
-    private TextView showdateTextView, showTimeTextView,
-            burnBuildTextView, burnOldTextView, burnBananaTextView, salaPriceTextView,
-            manageBurnBuildTextView, carBodyTextView, flowerTextView;
+    private TextView showdateTextView, showTimeTextView, burnBuildTextView, burnOldTextView,
+            burnBananaTextView, salaPriceTextView, manageBurnBuildTextView, carBodyTextView,
+            flowerTextView, flower0TextView, flower1TextView;
     private ImageView setDateTimeImageView;
 
     //Other
@@ -139,10 +139,36 @@ public class Process2Fragment extends Fragment {
         flowerbodyCheckBox();
 
 
+        //Flower Moon
+        flowerMoon();
+
+
+        //Flower Moon President
+        flowerMoonPresident();
+
+
         //Sent Data Controller
         sentDataController();
 
 
+    }
+
+    private void flowerMoonPresident() {
+        CheckBox checkBox = getView().findViewById(R.id.chbFlower1);
+    }
+
+    private void flowerMoon() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbFlower0);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    flower0TextView.setText("400.00");
+                } else {
+                    flower0TextView.setText("0");
+                }
+            }
+        });
     }
 
     private void flowerbodyCheckBox() {
@@ -551,6 +577,8 @@ public class Process2Fragment extends Fragment {
         manageBurnBuildTextView = getView().findViewById(R.id.txtManageBurnBuild);
         carBodyTextView = getView().findViewById(R.id.txtCarBody);
         flowerTextView = getView().findViewById(R.id.txtFlower);
+        flower0TextView = getView().findViewById(R.id.txtFlower0);
+        flower1TextView = getView().findViewById(R.id.txtFlower1);
 
 
     }
