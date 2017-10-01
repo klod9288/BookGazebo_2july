@@ -194,7 +194,23 @@ public class Process2Fragment extends Fragment {
     }
 
     private void candyController() {
-        CheckBox checkBox = getView().findViewById(R.id.chbCandy);
+        final CheckBox checkBox = getView().findViewById(R.id.chbCandy);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (checkBox.isChecked()) {
+                    EditText editText = getView().findViewById(R.id.edtCandy);
+                    String amountString = editText.getText().toString().trim();
+                    int amountAint = Integer.parseInt(amountString);
+                    int answerAint = amountAint * 50;
+                    candyTextView.setText(Integer.toString(answerAint) + ".00");
+                } else {
+                    candyTextView.setText("0");
+                }
+
+            }
+        });
     }
 
     private void foodController() {

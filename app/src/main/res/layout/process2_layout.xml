@@ -919,13 +919,32 @@
                             android:textSize="@dimen/h2"
                             android:textStyle="bold" />
 
-                        <CheckBox
-                            android:id="@+id/chbCandy"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/FoodNull"
-                            android:textSize="@dimen/h2"
-                            android:textStyle="bold" />
+
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!--Candy-->
+                            <CheckBox
+                                android:id="@+id/chbCandy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/FoodNull"
+                                android:textSize="@dimen/h2"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/edtCandy"
+                                android:gravity="center_horizontal"
+                                android:text="30"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
