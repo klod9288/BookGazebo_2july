@@ -57,6 +57,13 @@ public class MyConstant {
     //เวลาสวดอภิธรรม
     private String[] timeSong = new String[]{"10:00","14:30","17:00","19:00"};
 
+    //เวลาบังสุกุล
+    private String[] bungSagunStrings = new String[]{"14:00", "15:00", "16:00"};
+
+
+    public String[] getBungSagunStrings() {
+        return bungSagunStrings;
+    }
 
     public String[] getBwchnafiStrings() {
         return bwchnafiStrings;

@@ -56,7 +56,8 @@ public class Process2Fragment extends Fragment {
             timeSongString, coffeeGroupString, amountBwchanfiString, bwchnafiString,
             timeBwchnafiString, timeMonkSongString, monkSongString,
             amountChantPlantString, chantPlantString, chutnatfaiString,
-            burnBuildString, burnOldString, burnBananaString;
+            burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
+            sabondString, rungString, pintoString;
 
 
     @Nullable
@@ -78,10 +79,10 @@ public class Process2Fragment extends Fragment {
         //Initial view
         initialView();
 
-        //Cremation Controller
+        //Cremation Controller  พระราชทานเพลงศพ
         cremationController();
 
-        //Interment Controller
+        //Interment Controller  ปณกิจ
         intermentController();
 
         //Create pavilion
@@ -173,10 +174,88 @@ public class Process2Fragment extends Fragment {
         bowController();
 
 
+        //BungSagung Spinner
+        bungSagungSpinner();
+
+
+        //Sabung
+        sabung();
+
+
+        //Rung
+        rung();
+
+
+        //Pinto
+        pinto();
+
+
         //Sent Data Controller
         sentDataController();
 
 
+    }
+
+    private void pinto() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbPinto);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    sabondString = "1";
+                } else {
+                    sabondString = "0";
+                }
+            }
+        });
+    }
+
+    private void rung() {
+       final CheckBox checkBox = getView().findViewById(R.id.chbRung);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    rungString = "1";
+                } else {
+                    rungString = "0";
+                }
+            }
+        });
+    }
+
+    private void sabung() {
+       final CheckBox checkBox = getView().findViewById(R.id.chbSabon);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()) {
+                    pintoString = "1";
+                } else {
+                    pintoString = "0";
+                }
+            }
+        });
+    }
+
+    private void bungSagungSpinner() {
+        Spinner spinner = getView().findViewById(R.id.spnSabon);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getBungSagunStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                bunSagungTimeString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                bunSagungTimeString = strings[0];
+            }
+        });
     }
 
     private void bowController() {
@@ -686,6 +765,10 @@ public class Process2Fragment extends Fragment {
                                 Integer.toString(intYear);
 
                         showdateTextView.setText(dateString);
+
+                        TextView textView = getView().findViewById(R.id.txtDate2);
+                        textView.setText(dateString);
+
                         setTime(hourAint, minusAint, calendar);
 
                     }

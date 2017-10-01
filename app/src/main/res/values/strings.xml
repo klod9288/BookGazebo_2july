@@ -40,7 +40,7 @@
     <string name="MonkDetail1">ไตรแบ่ง(ชุดละ500),ของแต่ละชุด600บาท</string>
     <string name="MonkDetail2">สวดมนต์ฉันเพล มาติกาบังสกุล</string>
     <string name="MonkDetail3">สบงช-ุดกาแฟ(ชุดละ300)</string>
-    <string name="MonkDetail8">สบงช(ผืนละ๑๕๐)</string>
+    <string name="MonkDetail8">สบงช(ผืนละ150)</string>
     <string name="MonkDetail4">ซักผ้าบังสุล(ทอดผ้าใคร)นิมนต์พระ</string>
     <string name="MonkDetail5">ไตรเต็ม(ชุดละ800บาท)</string>
     <string name="MonkDetail6">สวดหน้าไฟ บนเมรุ นิมนต์พระ4รูป</string>
@@ -113,8 +113,8 @@
     <!--บังสุกุล-->
     <string name="Date">วันที่</string>
     <string name="Requiem">บังสุกุลที่เมรุ(แปรอิฐ)นิมนต์พระ๓รูป</string>
-    <string name="Requiem1">ลุ้งผ้าขาว(ราคา๓๐๐)</string>
-    <string name="Requiem2">ปิ่นโต๓เถา(เถาละ๓๕๐)</string>
+    <string name="Requiem1">ลุ้งผ้าขาว(ราคา300)</string>
+    <string name="Requiem2">ปิ่นโต๓เถา(เถาละ350)</string>
     <string name="titi_upload">รับศพและจัดงาน บันทึกไปแล้ว</string>
     <string name="message_upload">คุณได้บันทึกไปแล้ว ไม่สามรถบันทึกได้อีก ให้รอ Confirm จากวัด</string>
     <string name="choose_sala">โปรดเลือก ศาลา </string>
