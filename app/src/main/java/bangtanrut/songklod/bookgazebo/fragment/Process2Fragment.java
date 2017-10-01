@@ -41,7 +41,7 @@ public class Process2Fragment extends Fragment {
     private Spinner pavilionSpinner, timeBodyWhereSpinner, timeSongSpinner, timeBwchanafiSpinner;
     private TextView showdateTextView, showTimeTextView,
             burnBuildTextView, burnOldTextView, burnBananaTextView, salaPriceTextView,
-            manageBurnBuildTextView, carBodyTextView;
+            manageBurnBuildTextView, carBodyTextView, flowerTextView;
     private ImageView setDateTimeImageView;
 
     //Other
@@ -135,9 +135,34 @@ public class Process2Fragment extends Fragment {
         carBodyCheckBox();
 
 
+        //Flowerbody CheckBox
+        flowerbodyCheckBox();
+
+
         //Sent Data Controller
         sentDataController();
 
+
+    }
+
+    private void flowerbodyCheckBox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbFlower);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText editText = getView().findViewById(R.id.edtFlower);
+                String strFlower = editText.getText().toString().trim();
+
+                if (checkBox.isChecked()) {
+                    flowerTextView.setText(strFlower);
+                } else {
+                    flowerTextView.setText("0");
+                }
+
+
+            }
+        });
 
     }
 
@@ -525,6 +550,7 @@ public class Process2Fragment extends Fragment {
         salaPriceTextView = getView().findViewById(R.id.txtSalaPrice);
         manageBurnBuildTextView = getView().findViewById(R.id.txtManageBurnBuild);
         carBodyTextView = getView().findViewById(R.id.txtCarBody);
+        flowerTextView = getView().findViewById(R.id.txtFlower);
 
 
     }
