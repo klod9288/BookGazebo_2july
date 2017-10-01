@@ -764,6 +764,7 @@
                         android:layout_height="wrap_content" >
 
                         <RadioButton
+                            android:id="@+id/chbPowerSound"
                             android:text="@string/Sound"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -771,6 +772,7 @@
                             android:layout_height="wrap_content"/>
 
                         <RadioButton
+                            android:id="@+id/chbPowerSound2"
                             android:text="@string/Sound1"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -814,6 +816,7 @@
                         android:layout_height="wrap_content" >
 
                         <RadioButton
+                            android:id="@+id/chbWaterDring"
                             android:text="@string/WaterCup"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -821,6 +824,7 @@
                             android:layout_height="wrap_content"/>
 
                         <RadioButton
+                            android:id="@+id/chbIce"
                             android:text="@string/IceBag"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -864,6 +868,7 @@
                         android:layout_height="wrap_content" >
 
                         <RadioButton
+                            android:id="@+id/chbFood"
                             android:text="@string/Food"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -871,6 +876,7 @@
                             android:layout_height="wrap_content"/>
 
                         <RadioButton
+                            android:id="@+id/chbCandy"
                             android:text="@string/FoodNull"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
