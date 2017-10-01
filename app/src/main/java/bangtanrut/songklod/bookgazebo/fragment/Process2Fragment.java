@@ -60,6 +60,9 @@ public class Process2Fragment extends Fragment {
             sabondString, rungString, pintoString;
 
 
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -85,19 +88,19 @@ public class Process2Fragment extends Fragment {
         //Interment Controller  ปณกิจ
         intermentController();
 
-        //Create pavilion
+        //Create pavilion   ศาลา
         createPavilion();
 
         //SetDateTime Controller
         setDateTimeController();
 
-        //Set TimeBodyWhere
+        //Set TimeBodyWhere เวลา เชิญศพจาก
         setTimeBodyWhere();
 
-        //Set TimeSong
+        //Set TimeSong  สวดอภิธรรท
         setTimeSong();
 
-        //CoffeeGroup Controller
+        //CoffeeGroup Controller    สบง-ชุดกาแฟ
         coffeeGroupController();
 
         //TimeBwchnafi Controller
@@ -653,11 +656,34 @@ public class Process2Fragment extends Fragment {
             public void onClick(View view) {
                 if (coffeeGroupCheckBox.isChecked()) {
                     coffeeGroupString = "1";
+                    calcualteMoney();
                 } else {
                     coffeeGroupString = "0";
+                    calcualteMoney();
                 }
             }
         });
+    }
+
+    private void calcualteMoney() {
+
+        int moneyAnInt = 0;     // จำนวนที่ต้องจ่าย
+
+        //Add สบง-ชุดกาแฟ
+        int[] coffeeGroupInts = new int[]{0, 300};
+        moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
+
+
+
+
+
+
+
+
+        //Show Text
+        TextView textView = getView().findViewById(R.id.txtShowMoney);
+        textView.setText(Integer.toString(moneyAnInt));
+
     }
 
     private void sentDataController() {
