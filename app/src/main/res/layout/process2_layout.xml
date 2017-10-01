@@ -23,74 +23,73 @@
     </LinearLayout>
     <!--Content-->
     <ScrollView
-        android:background="@color/colorPrimaryLight2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_above="@+id/btnSentData"
+        android:background="@color/colorPrimaryLight2">
 
 
         <LinearLayout
 
-            android:padding="10dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <LinearLayout
 
-                android:padding="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <CheckBox
-                android:id="@+id/chbCremation"
-                android:layout_weight="1"
-                android:text="@string/box2_1"
-                android:textSize="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-            <CheckBox
-                android:id="@+id/chbinterment"
-                android:layout_weight="1"
-                android:textSize="18dp"
-                android:text="@string/box2_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/chbCremation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/box2_1"
+                    android:textSize="18dp" />
+
+                <CheckBox
+                    android:id="@+id/chbinterment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/box2_2"
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
 
             <TextView
 
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:text="@string/name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
             <!--ชื่อศพฌาปณกิจ-->
             <EditText
                 android:id="@+id/edtName"
-                android:hint="@string/detail_name2"
-                android:inputType="text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="@string/detail_name2"
+                android:inputType="text" />
 
             <!--เลือกศาลาฌาปณกิจศพ-->
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/sala"
                 android:textSize="@dimen/h2"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spnPavilion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <!--เลือกวันที่-->
             <LinearLayout
@@ -99,52 +98,52 @@
 
                 <TextView
                     android:id="@+id/txtShowDate"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:text="30/10/2017"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="30/10/2017"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtShowTime"
-                    android:text="09:00"
-                    android:textStyle="bold"
-                    android:textSize="18dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="09:00"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imvSetDateTime"
-                    android:src="@mipmap/ic_calendar"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_calendar" />
 
             </LinearLayout>
 
             <!--เชิญศพจาก-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
 
-                    android:textStyle="bold"
-                    android:textSize="@dimen/h2"
-                    android:text="@string/bodyform2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/bodyform2"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/edtBodyWhere"
-                    android:hint="@string/sample_body"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="@string/sample_body" />
 
                 <Spinner
                     android:id="@+id/spnTimeBodyWhere"
@@ -156,12 +155,12 @@
             <!--สวดอภิธรรม-->
             <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="@string/time_work2"
                 android:textSize="@dimen/h2"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spnTimeSong"
@@ -171,303 +170,307 @@
             <!--สบง-->
             <CheckBox
                 android:id="@+id/chbCoffeeGroup"
-                android:text="@string/box2_3"
-                android:textSize="@dimen/h2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/box2_3"
+                android:textSize="@dimen/h2" />
 
             <!--Check Price1-->
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <!--Title-->
                 <TextView
-                    android:text="@string/ordain"
-                    android:layout_weight="2"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/ordain"
+                    android:textSize="@dimen/h2" />
 
                 <!--Amount-->
                 <EditText
                     android:id="@+id/edtBwchnafi"
-                    android:hint="@string/ordainedt"
-                    android:inputType="number"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/ordainedt"
+                    android:inputType="number" />
 
                 <!--Time-->
                 <Spinner
                     android:id="@+id/spnBwchnafi"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></Spinner>
 
 
                 <CheckBox
                     android:id="@+id/chbBwchnafi"
-                    android:text="@string/ordain1"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/ordain1" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/MonkDetail"
-                    android:layout_weight="3"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/MonkDetail"
+                    android:textSize="@dimen/h2" />
 
                 <Spinner
-                     android:id="@+id/spnMonkSong"
-                    android:layout_weight="2"
+                    android:id="@+id/spnMonkSong"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></Spinner>
 
                 <CheckBox
                     android:id="@+id/chbMonkSong"
-                    android:text="@string/MonkDetail1"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/MonkDetail1" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/MonkDetail2"
-                    android:layout_weight="3"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/MonkDetail2"
+                    android:textSize="@dimen/h2" />
 
                 <EditText
                     android:id="@+id/edtChantPlant"
-                    android:hint="@string/ordainedt"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"></EditText>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/ordainedt"></EditText>
 
                 <CheckBox
                     android:id="@+id/chbChantPlant"
-                    android:text="@string/MonkDetail3"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/MonkDetail3" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/MonkDetail4"
-                    android:layout_weight="2"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/MonkDetail4"
+                    android:textSize="@dimen/h2" />
 
                 <EditText
-                    android:hint="@string/ordainedt"
-                    android:inputType="number"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/ordainedt"
+                    android:inputType="number" />
 
                 <Spinner
 
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"></Spinner>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"></Spinner>
 
                 <CheckBox
-                    android:text="@string/MonkDetail5"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/MonkDetail5" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/chbChuitnatFai"
-                    android:text="@string/MonkDetail6"
-                    android:layout_weight="5"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:text="@string/MonkDetail6"
+                    android:textSize="@dimen/h2" />
 
                 <!--<CheckBox-->
-                    <!--android:text="@string/MonkDetail7"-->
-                    <!--android:layout_weight="2"-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:layout_height="wrap_content" />-->
+                <!--android:text="@string/MonkDetail7"-->
+                <!--android:layout_weight="2"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content" />-->
 
             </LinearLayout>
 
             <!--Table Check Price-->
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <!--Title-->
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@color/colorPrimary"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="@string/series"
                         android:textColor="@color/white"
                         android:textSize="@dimen/h2"
-                        android:textStyle="bold"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <TextView
-                        android:text="@string/item"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
-                        android:textColor="@color/white"
-                        android:gravity="center_horizontal"
-                        android:layout_weight="5"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:gravity="center_horizontal"
+                        android:text="@string/item"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
-                        android:text="@string/price"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_weight="2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/price"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--ค่าปนสถาน-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="2"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
                         android:id="@+id/chbBurnBuild"
-                        android:text="@string/crematorium"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/crematorium"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtBurnBuild"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--ค่าน้ำมันเผาศพ-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="1"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
                         android:id="@+id/chbButnOld"
-                        android:text="@string/Oil_burial"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/Oil_burial"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtBurnOld"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--หยวก-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="3"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
                         android:id="@+id/chbBurnBanana"
-                        android:text="@string/banana_stalk_pith"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/banana_stalk_pith"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
@@ -482,455 +485,510 @@
                 </LinearLayout>
                 <!--ศาลาตั้งศพ-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="4"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <RadioGroup
                         android:id="@+id/ragSalaPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
-                        android:textStyle="bold"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" >
+                        android:textStyle="bold">
 
                         <RadioButton
                             android:id="@+id/rad3000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:checked="true"
                             android:text="@string/sala_detail1"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:id="@+id/rad2200"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/sala_detail2"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
                     </RadioGroup>
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtSalaPrice"
-                        android:text="3000.00"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="3000.00"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--ค่าจัดสถานที่เผาศพ-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="5"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
                         android:id="@+id/chbManageBurnBuild"
-                        android:text="@string/Cost_of_cremation"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/Cost_of_cremation"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtManageBurnBuild"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--รถรับศพ-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="6"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
                         android:id="@+id/chbCarBody"
-                        android:text="@string/Funeral_car"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/Funeral_car"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtCarBody"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--ค่าจัดดอกไม้-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="7"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="5"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
 
                         <CheckBox
                             android:id="@+id/chbFlower"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/flower1"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/edtFlower"
-                            android:text="12000.00"
-                            android:inputType="number"
-                            android:gravity="center_horizontal"
-                            android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_weight="2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
+                            <EditText
+                                android:id="@+id/edtFlower"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:text="12000.00"
+                                android:textSize="@dimen/h2"
+                                android:textStyle="bold" />
 
 
-
-                    </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
 
                     <!--ราคา-->
                     <TextView
                         android:id="@+id/txtFlower"
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <!--ดอกไม้จันทร์-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="8"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold">
 
                         <CheckBox
                             android:id="@+id/chbFlower0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/Flower"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
                         <CheckBox
                             android:id="@+id/chbFlower1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/Flower1"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
                     <!--ราคา-->
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="2"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
 
                         <!--ราคา-->
                         <TextView
                             android:id="@+id/txtFlower0"
-                            android:text="0"
-                            android:layout_weight="1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/h2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/txtFlower1"
-                            android:text="0"
-                            android:layout_weight="1"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/h2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
-
 
 
                 </LinearLayout>
                 <!--เครื่องขยายเสียงหน้าเมรุ-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="9"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
-                    <RadioGroup
-
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold">
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbPowerSound"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/Sound"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbPowerSound2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/Sound1"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                    </RadioGroup>
+                    </LinearLayout>
 
                     <!--ราคา-->
-                    <TextView
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <!--ราคา-->
+                        <TextView
+                            android:id="@+id/txtSound0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtSound1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
                 <!--น้ำถ้วย-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="10"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
-                    <RadioGroup
-
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold">
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbWaterDring"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/WaterCup"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbIce"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/IceBag"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                    </RadioGroup>
+                    </LinearLayout>
 
                     <!--ราคา-->
-                    <TextView
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <!--ราคา-->
+                        <TextView
+                            android:id="@+id/txtWaterDrink0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtIce0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
                 <!--อาหารถวาย-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="11"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
-                    <RadioGroup
-
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold">
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbFood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/Food"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                        <RadioButton
+                        <CheckBox
                             android:id="@+id/chbCandy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/FoodNull"
                             android:textSize="@dimen/h2"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textStyle="bold" />
 
-                    </RadioGroup>
+                    </LinearLayout>
 
                     <!--ราคา-->
-                    <TextView
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <!--ราคา-->
+                        <TextView
+                            android:id="@+id/txtFood0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCandy0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textSize="@dimen/h2"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
                 <!--ค่ายืมถ้วยชาม-->
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--ลำดับ-->
                     <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="๑๒"
-                        android:textStyle="bold"
                         android:textSize="@dimen/h2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                     <!--รายการ-->
                     <CheckBox
 
-                        android:text="@string/Bowl"
-                        android:layout_weight="5"
-                        android:textSize="@dimen/h2"
-                        android:textStyle="bold"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="@string/Bowl"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
-                        android:layout_weight="2"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/h2"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="0"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -938,125 +996,128 @@
 
             <!--บังสุกล-->
             <LinearLayout
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
 
-                    android:textStyle="bold"
-                    android:text="@string/Date"
-                    android:layout_marginLeft="150dp"
-                    android:textSize="@dimen/h2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginLeft="10dp"
-                    android:hint="30/08/2017"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:text="@string/Date"
                     android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:hint="30/08/2017"
+                    android:textSize="@dimen/h2" />
 
                 <ImageView
 
-                    android:src="@mipmap/ic_calendar"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_calendar" />
 
             </LinearLayout>
+
             <LinearLayout
-               android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/Requiem"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/Requiem" />
 
                 <Spinner
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
                 <CheckBox
-                    android:text="@string/MonkDetail8"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/MonkDetail8" />
 
                 <!--ราคา-->
                 <TextView
-                    android:text="0"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/Requiem1"
-                    android:layout_weight="3"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/Requiem1" />
 
                 <CheckBox
-                    android:text="@string/Requiem2"
-                    android:layout_weight="2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/Requiem2" />
                 <!--ราคา-->
                 <TextView
-                    android:text="0"
-                    android:layout_weight="1"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/h2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <!--รวมราคา-->
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_weight="6"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6">
 
                     <TextView
-                        android:text="@string/detai19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:textStyle="bold"
+                        android:text="@string/detai19"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="@dimen/h1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
                 <!--Total-->
                 <TextView
 
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -1068,13 +1129,13 @@
     <!--Button SendData-->
     <Button
         android:id="@+id/btnSentData"
-        android:text="@string/sent"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="@string/sent"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
