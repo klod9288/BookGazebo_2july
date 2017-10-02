@@ -55,7 +55,7 @@ public class Process2Fragment extends Fragment {
     private String cremationString, intermentString, nameString, pavilionString,
             dateString, timeString, bodyWhereString, timeBodyWhereString,
             timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
-            timeBwchnafiString, timeMonkSongString, monkSongString,
+            timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString, chantPlantString, chutnatfaiString,
             burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
             sabondString, rungString, pintoString;
@@ -111,10 +111,10 @@ public class Process2Fragment extends Fragment {
         bwchnafiCheckBox();
 
         //MonkSong Time
-        monkSongTime();
+        monkSongTime(); // เวลาพระเทศน์
 
         //MoknSong CheckBox
-        moknSongCheckBox();
+        moknSongCheckBox(); //  พระเทศน์
 
         //ChantPlan CheckBox
         chantPlanCheckBox();
@@ -589,8 +589,10 @@ public class Process2Fragment extends Fragment {
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
                     monkSongString = "1";
+                    calcualteMoney();
                 } else {
                     monkSongString = "0";
+                    calcualteMoney();
                 }
             }
         });
@@ -688,6 +690,11 @@ public class Process2Fragment extends Fragment {
             moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
         } else {
             Log.d(tag, "บวชหน้าไฟ false");
+        }
+
+        //พระเทศน์นิมนต์
+        if (monkSongString.equals("1")) {
+            moneyAnInt = moneyAnInt + 600;
         }
 
 
