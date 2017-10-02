@@ -58,7 +58,7 @@ public class Process2Fragment extends Fragment {
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
             burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
-            sabondString, rungString, pintoString, bunsagoonString = "0", amountBunsagonString = "0";
+            sabondString = "0", rungString = "0", pintoString = "0", bunsagoonString = "0", amountBunsagonString = "0";
 
 
 
@@ -226,10 +226,11 @@ public class Process2Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
-                    sabondString = "1";
+                    pintoString = "1";
                 } else {
-                    sabondString = "0";
+                    pintoString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -244,6 +245,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     rungString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -254,10 +256,11 @@ public class Process2Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
-                    pintoString = "1";
+                    sabondString = "1";
                 } else {
-                    pintoString = "0";
+                    sabondString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -815,13 +818,20 @@ public class Process2Fragment extends Fragment {
             moneyAnInt = moneyAnInt + myFindAmount(bowTextView.getText().toString());
 
             //บังสกุลที่เมรุ
+            if (sabondString.equals("1")) {
+                moneyAnInt = moneyAnInt + 150;
+            }
 
 
             //ลุ้งผ้าขาว
-
+            if (rungString.equals("1")) {
+                moneyAnInt = moneyAnInt + 300;
+            }
 
             // ปิ่นโต
-
+            if (pintoString.equals("1")) {
+                moneyAnInt = moneyAnInt + 350;
+            }
 
             //Show Text
             TextView textView = getView().findViewById(R.id.txtShowMoney);
