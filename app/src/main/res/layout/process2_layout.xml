@@ -291,6 +291,7 @@
                     android:textSize="@dimen/h2" />
 
                 <EditText
+                    android:id="@+id/edtBunsagoon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -300,6 +301,7 @@
 
 
                 <CheckBox
+                    android:id="@+id/chbBunSagoon"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"

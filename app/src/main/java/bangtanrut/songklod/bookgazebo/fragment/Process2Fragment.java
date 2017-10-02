@@ -58,7 +58,7 @@ public class Process2Fragment extends Fragment {
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
             burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
-            sabondString, rungString, pintoString;
+            sabondString, rungString, pintoString, bunsagoonString = "0", amountBunsagonString = "0";
 
 
 
@@ -120,6 +120,7 @@ public class Process2Fragment extends Fragment {
         chantPlanCheckBox();    // ฉันเพล
 
         //Bunsagun Checkbox
+        bunsagunCheckbox(); // บังสกุล
 
         //ChutNatFai CheckBox
         chutNatFaiCheckBox();
@@ -200,6 +201,23 @@ public class Process2Fragment extends Fragment {
         sentDataController();
 
 
+    }
+
+    private void bunsagunCheckbox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBunSagoon);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText editText = getView().findViewById(R.id.edtBunsagoon);
+                amountBunsagonString = editText.getText().toString().trim();
+                if (checkBox.isChecked()) {
+                    bunsagoonString = "1";
+                } else {
+                    bunsagoonString = "0";
+                }
+                calcualteMoney();
+            }
+        });
     }
 
     private void pinto() {
@@ -712,7 +730,9 @@ public class Process2Fragment extends Fragment {
 
 
             //ซักผ้าบังสกุล
-
+            if (bunsagoonString.equals("1")) {
+                moneyAnInt = moneyAnInt + (800 * Integer.parseInt(amountBunsagonString));
+            }
 
 
             //ค่าณาปนกิจ
