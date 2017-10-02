@@ -23,11 +23,12 @@
     </LinearLayout>
     <!--Content-->
     <ScrollView
-        android:layout_above="@+id/btnSentData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryLight2"
-        >
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
 
         <LinearLayout
@@ -245,9 +246,10 @@
 
             </LinearLayout>
 
+            <!--สวดมนต์ฉันเพล-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:orientation="horizontal">
 
@@ -263,7 +265,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/ordainedt"></EditText>
+                    android:text="0"/>
 
                 <CheckBox
                     android:id="@+id/chbChantPlant"
@@ -274,9 +276,10 @@
 
             </LinearLayout>
 
+            <!--ซักผ้าบังสกุลทอด-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:orientation="horizontal">
 
@@ -291,14 +294,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/ordainedt"
+                    android:text="0"
                     android:inputType="number" />
 
-                <Spinner
 
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"></Spinner>
 
                 <CheckBox
                     android:layout_width="0dp"
@@ -1103,7 +1102,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="6">
@@ -1111,41 +1111,42 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:text="@string/detai19"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="@dimen/h1"
                         android:textStyle="bold" />
 
-                </RelativeLayout>
-                <!--Total-->
-                <TextView
+                    <!--Total-->
+                    <TextView
+                        android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/txtShowMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/h1"
+                        android:textStyle="bold" />
 
-                    android:id="@+id/txtShowMoney"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="2"
-                    android:textSize="@dimen/h1"
-                    android:textStyle="bold" />
+                </LinearLayout>
+
 
             </LinearLayout>
+
+            <!--Button SendData-->
+            <Button
+                android:id="@+id/btnSentData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimary"
+                android:text="@string/sent"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
 
     </ScrollView>
 
-    <!--Button SendData-->
-    <Button
-        android:id="@+id/btnSentData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:text="@string/sent"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+
 
 </RelativeLayout>

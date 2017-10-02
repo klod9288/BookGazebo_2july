@@ -56,7 +56,7 @@ public class Process2Fragment extends Fragment {
             dateString, timeString, bodyWhereString, timeBodyWhereString,
             timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
-            amountChantPlantString, chantPlantString, chutnatfaiString,
+            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
             burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
             sabondString, rungString, pintoString;
 
@@ -117,7 +117,9 @@ public class Process2Fragment extends Fragment {
         moknSongCheckBox(); //  พระเทศน์
 
         //ChantPlan CheckBox
-        chantPlanCheckBox();
+        chantPlanCheckBox();    // ฉันเพล
+
+        //Bunsagun Checkbox
 
         //ChutNatFai CheckBox
         chutNatFaiCheckBox();
@@ -573,10 +575,13 @@ public class Process2Fragment extends Fragment {
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                amountChantPlantString = amountChantPlant.getText().toString().trim();
                 if (checkBox.isChecked()) {
                     chantPlantString = "1";
+                    calcualteMoney();
                 } else {
                     chantPlantString = "0";
+                    calcualteMoney();
                 }
             }
         });
@@ -678,34 +683,112 @@ public class Process2Fragment extends Fragment {
         int moneyAnInt = 0;     // จำนวนที่ต้องจ่าย
         String tag = "1OctV1";
 
-        //Add สบง-ชุดกาแฟ
-        int[] coffeeGroupInts = new int[]{0, 300};
-        moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
+        try {
 
-        //Add บวชหน้าไฟ
-        Log.d(tag, "บวชหน้าไฟ ==> " + bwchnafiString);
-        if (bwchnafiString.equals("1")) {
-            Log.d(tag, "บวชหน้าไฟ True");
-            Log.d(tag, "จำนวนผู้บวช ==> " + amountBwchanfiString);
-            moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
-        } else {
-            Log.d(tag, "บวชหน้าไฟ false");
+            //Add สบง-ชุดกาแฟ
+            int[] coffeeGroupInts = new int[]{0, 300};
+            moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
+
+            //Add บวชหน้าไฟ
+            Log.d(tag, "บวชหน้าไฟ ==> " + bwchnafiString);
+            if (bwchnafiString.equals("1")) {
+                Log.d(tag, "บวชหน้าไฟ True");
+                Log.d(tag, "จำนวนผู้บวช ==> " + amountBwchanfiString);
+                moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
+            } else {
+                Log.d(tag, "บวชหน้าไฟ false");
+            }
+
+            //พระเทศน์นิมนต์
+            if (monkSongString.equals("1")) {
+                moneyAnInt = moneyAnInt + 600;
+            }
+
+            // สวดฉันเพล
+            if (chantPlantString.equals("1")) {
+                Log.d(tag, "ฉันเพล ==> " + amountChantPlantString);
+                moneyAnInt = moneyAnInt + (300 * Integer.parseInt(amountChantPlantString));
+            }
+
+
+            //ซักผ้าบังสกุล
+
+
+
+            //ค่าณาปนกิจ
+
+
+
+            //ค่าน้ำมันเผา
+
+
+
+            //หยวก
+
+
+            //ศาลาตั่ง
+
+
+            //ค่าจัดสถานที่เผา
+
+
+
+            //รถรับศพ
+
+
+
+            //จัดดอกไม้หน้าศพ
+
+
+
+            //ดอกไม่้จันทร์
+
+
+
+            //ช่อประธาน
+
+
+
+            //เครื่องเสียง
+
+
+            //พินพาทย์
+
+
+
+            //น้ำดื่ม
+
+
+
+            //น้ำแข็ง
+
+
+
+            //อาหารถวายพระ
+
+
+            //อาหารว่าง
+
+
+            //ยืมถ้วย
+
+
+            //บังสกุลที่เมรุ
+
+
+            //ลุ้งผ้าขาว
+
+
+            // ปิ่นโต
+
+
+            //Show Text
+            TextView textView = getView().findViewById(R.id.txtShowMoney);
+            textView.setText(Integer.toString(moneyAnInt));
+
+        } catch (Exception e) {
+            Log.d(tag, "e Calculate ==> " + e.toString());
         }
-
-        //พระเทศน์นิมนต์
-        if (monkSongString.equals("1")) {
-            moneyAnInt = moneyAnInt + 600;
-        }
-
-
-
-
-
-
-
-        //Show Text
-        TextView textView = getView().findViewById(R.id.txtShowMoney);
-        textView.setText(Integer.toString(moneyAnInt));
 
     }
 
@@ -718,7 +801,7 @@ public class Process2Fragment extends Fragment {
                 //Get Value From EditText
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
-                amountChantPlantString = amountChantPlant.getText().toString().trim();
+
 
 
             }
