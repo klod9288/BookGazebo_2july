@@ -54,7 +54,7 @@ public class Process2Fragment extends Fragment {
 
     private String cremationString, intermentString, nameString, pavilionString,
             dateString, timeString, bodyWhereString, timeBodyWhereString,
-            timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
+            timeSongString, coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
             burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
@@ -147,38 +147,38 @@ public class Process2Fragment extends Fragment {
 
 
         //Flowerbody CheckBox
-        flowerbodyCheckBox();
+        flowerbodyCheckBox();   // จัดดอกไม้หน้าศพ
 
 
         //Flower Moon
-        flowerMoon();
+        flowerMoon();   //ดอกไม่้จันทร์
 
 
         //Flower Moon President
-        flowerMoonPresident();
+        flowerMoonPresident();  //ช่อประธาน
 
 
         //PowerSound
-        powerSound();
+        powerSound();   //เครื่องเสียง
 
 
         //Power Band
-        powerBand();
+        powerBand();    // พินพาท
 
         //Water Drink
-        waterDrink();
+        waterDrink();   // น้ำดื่ม
 
         //Ice Controller
-        iceController();
+        iceController();    // น้ำแข็ง
 
         //Food Controller
-        foodController();
+        foodController();   // อาหารถวายพระ
 
         //Candy Controller
-        candyController();
+        candyController();  // อาหารว่าง
 
         //Bow Controller
-        bowController();
+        bowController();    // ยืมถ้วย
 
 
         //BungSagung Spinner
@@ -292,6 +292,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     bowTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -311,7 +312,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     candyTextView.setText("0");
                 }
-
+                calcualteMoney();
             }
         });
     }
@@ -327,10 +328,12 @@ public class Process2Fragment extends Fragment {
                             "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 20 ท่าน",
                             "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 50 ท่าน"};
                     chooseItem(foodTextView, 300, charSequences, false);
-
+                    calcualteMoney();
                 } else {
                     foodTextView.setText("0");
+                    calcualteMoney();
                 }
+
             }
         });
     }
@@ -346,6 +349,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     iceTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -361,6 +365,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     waterDrinkTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -392,7 +397,7 @@ public class Process2Fragment extends Fragment {
                             break;
                     }
                 }
-
+                calcualteMoney();
                 dialogInterface.dismiss();
             }
         });
@@ -412,6 +417,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     powerBandTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -426,6 +432,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     powerSoundTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
 
@@ -441,6 +448,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flower1TextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -455,6 +463,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flower0TextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -473,8 +482,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flowerTextView.setText("0");
                 }
-
-
+                calcualteMoney();
             }
         });
 
@@ -771,40 +779,40 @@ public class Process2Fragment extends Fragment {
 
 
             //จัดดอกไม้หน้าศพ
-
+            moneyAnInt = moneyAnInt + myFindAmount(flowerTextView.getText().toString());
 
 
             //ดอกไม่้จันทร์
-
+            moneyAnInt = moneyAnInt + myFindAmount(flower0TextView.getText().toString());
 
 
             //ช่อประธาน
-
+            moneyAnInt = moneyAnInt + myFindAmount(flower1TextView.getText().toString());
 
 
             //เครื่องเสียง
-
+            moneyAnInt = moneyAnInt + myFindAmount(powerSoundTextView.getText().toString());
 
             //พินพาทย์
-
+            moneyAnInt = moneyAnInt + myFindAmount(powerBandTextView.getText().toString());
 
 
             //น้ำดื่ม
-
+            moneyAnInt = moneyAnInt + myFindAmount(waterDrinkTextView.getText().toString());
 
 
             //น้ำแข็ง
-
+            moneyAnInt = moneyAnInt + myFindAmount(iceTextView.getText().toString());
 
 
             //อาหารถวายพระ
-
+            moneyAnInt = moneyAnInt + myFindAmount(foodTextView.getText().toString());
 
             //อาหารว่าง
-
+            moneyAnInt = moneyAnInt + myFindAmount(candyTextView.getText().toString());
 
             //ยืมถ้วย
-
+            moneyAnInt = moneyAnInt + myFindAmount(bowTextView.getText().toString());
 
             //บังสกุลที่เมรุ
 
