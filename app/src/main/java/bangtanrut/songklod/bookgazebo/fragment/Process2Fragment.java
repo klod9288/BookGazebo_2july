@@ -139,11 +139,11 @@ public class Process2Fragment extends Fragment {
 
 
         //ManageBurnBuild CheckBox
-        manageBurnBuildChekcBox();
+        manageBurnBuildChekcBox();  //ค่าจัดสถานที่เผ่า
 
 
         //CarBody CheckBox
-        carBodyCheckBox();
+        carBodyCheckBox();  // รถรับศพ
 
 
         //Flowerbody CheckBox
@@ -490,6 +490,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     carBodyTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
 
@@ -505,6 +506,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     manageBurnBuildTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -522,6 +524,7 @@ public class Process2Fragment extends Fragment {
                         salaPriceTextView.setText("2200.00");
                         break;
                 }
+                calcualteMoney();
             }
         });
     }
@@ -756,15 +759,15 @@ public class Process2Fragment extends Fragment {
             }
 
             //ศาลาตั่ง
-
+            moneyAnInt = moneyAnInt + myFindAmount(salaPriceTextView.getText().toString());
 
 
             //ค่าจัดสถานที่เผา
-
+            moneyAnInt = moneyAnInt + myFindAmount(manageBurnBuildTextView.getText().toString());
 
 
             //รถรับศพ
-
+            moneyAnInt = moneyAnInt + myFindAmount(carBodyTextView.getText().toString());
 
 
             //จัดดอกไม้หน้าศพ
@@ -818,6 +821,17 @@ public class Process2Fragment extends Fragment {
 
         } catch (Exception e) {
             Log.d(tag, "e Calculate ==> " + e.toString());
+        }
+
+    }
+
+    private int myFindAmount(String strNumber) {
+
+        if (strNumber.equals("0")) {
+            return 0;
+        } else {
+            String[] strings = strNumber.split("\\.");
+            return Integer.parseInt(strings[0]);
         }
 
     }
