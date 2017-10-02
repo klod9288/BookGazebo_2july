@@ -57,7 +57,7 @@ public class Process2Fragment extends Fragment {
             timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
-            burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
+            burnBuildString = "0", burnOldString = "0", burnBananaString, bunSagungTimeString,
             sabondString, rungString, pintoString, bunsagoonString = "0", amountBunsagonString = "0";
 
 
@@ -126,10 +126,10 @@ public class Process2Fragment extends Fragment {
         chutNatFaiCheckBox();
 
         //BurnBuild CheckBox
-        burnBuildCheckBox();
+        burnBuildCheckBox();    //ค่าณาปนกิจ
 
         //BurnOld CheckBox
-        burnOldCheckBox();
+        burnOldCheckBox();  //ค่าน้ำมันเผา
 
         //BurnBanana CheckBox
         burnBananaCheckBox();
@@ -554,6 +554,7 @@ public class Process2Fragment extends Fragment {
                     burnOldString = "0";
                     burnOldTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -570,6 +571,7 @@ public class Process2Fragment extends Fragment {
                     burnBuildString = "0";
                     burnBuildTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -736,11 +738,15 @@ public class Process2Fragment extends Fragment {
 
 
             //ค่าณาปนกิจ
-
+            if (burnBuildString.equals("1")) {
+                moneyAnInt = moneyAnInt + 3300;
+            }
 
 
             //ค่าน้ำมันเผา
-
+            if (burnOldString.equals("1")) {
+                moneyAnInt = moneyAnInt + 3000;
+            }
 
 
             //หยวก
