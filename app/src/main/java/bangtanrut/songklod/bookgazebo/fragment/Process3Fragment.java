@@ -2,6 +2,7 @@ package bangtanrut.songklod.bookgazebo.fragment;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -46,6 +48,30 @@ public class Process3Fragment extends Fragment {
         //SetDate Controller
         setDateController();
 
+        //Tumbun Controller
+        tumbunController();
+
+    }
+
+    private void tumbunController() {
+        tumBunString = "";
+        RadioGroup radioGroup = getView().findViewById(R.id.ragGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                switch (i) {
+                    case R.id.radBuild1:
+                        tumBunString = getResources().getString(R.string.church);
+                        break;
+                    case R.id.radBuild2:
+                        tumBunString = getResources().getString(R.string.Temple);
+                        break;
+                    case R.id.radBuild3:
+                        tumBunString = getResources().getString(R.string.museum);
+                        break;
+                }
+            }
+        });
     }
 
     private void setDateController() {
