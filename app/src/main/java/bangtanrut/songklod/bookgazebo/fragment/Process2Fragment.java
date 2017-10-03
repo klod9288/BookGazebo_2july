@@ -54,11 +54,11 @@ public class Process2Fragment extends Fragment {
 
     private String cremationString, intermentString, nameString, pavilionString,
             dateString, timeString, bodyWhereString, timeBodyWhereString,
-            timeSongString, coffeeGroupString, amountBwchanfiString = "0", bwchnafiString = "0",
-            timeBwchnafiString, timeMonkSongString, monkSongString,
-            amountChantPlantString, chantPlantString, chutnatfaiString,
-            burnBuildString, burnOldString, burnBananaString, bunSagungTimeString,
-            sabondString, rungString, pintoString;
+            timeSongString, coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
+            timeBwchnafiString, timeMonkSongString, monkSongString = "0",
+            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
+            burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
+            sabondString = "0", rungString = "0", pintoString = "0", bunsagoonString = "0", amountBunsagonString = "0";
 
 
 
@@ -111,71 +111,74 @@ public class Process2Fragment extends Fragment {
         bwchnafiCheckBox();
 
         //MonkSong Time
-        monkSongTime();
+        monkSongTime(); // เวลาพระเทศน์
 
         //MoknSong CheckBox
-        moknSongCheckBox();
+        moknSongCheckBox(); //  พระเทศน์
 
         //ChantPlan CheckBox
-        chantPlanCheckBox();
+        chantPlanCheckBox();    // ฉันเพล
+
+        //Bunsagun Checkbox
+        bunsagunCheckbox(); // บังสกุล
 
         //ChutNatFai CheckBox
         chutNatFaiCheckBox();
 
         //BurnBuild CheckBox
-        burnBuildCheckBox();
+        burnBuildCheckBox();    //ค่าณาปนกิจ
 
         //BurnOld CheckBox
-        burnOldCheckBox();
+        burnOldCheckBox();  //ค่าน้ำมันเผา
 
         //BurnBanana CheckBox
-        burnBananaCheckBox();
+        burnBananaCheckBox();   // ค่าหยวก
 
         //SalaPrice Radio
         salaPriceRadio();
 
 
         //ManageBurnBuild CheckBox
-        manageBurnBuildChekcBox();
+        manageBurnBuildChekcBox();  //ค่าจัดสถานที่เผ่า
 
 
         //CarBody CheckBox
-        carBodyCheckBox();
+        carBodyCheckBox();  // รถรับศพ
 
 
         //Flowerbody CheckBox
-        flowerbodyCheckBox();
+        flowerbodyCheckBox();   // จัดดอกไม้หน้าศพ
 
 
         //Flower Moon
-        flowerMoon();
+        flowerMoon();   //ดอกไม่้จันทร์
 
 
         //Flower Moon President
-        flowerMoonPresident();
+        flowerMoonPresident();  //ช่อประธาน
 
 
         //PowerSound
-        powerSound();
+        powerSound();   //เครื่องเสียง
 
 
         //Power Band
-        powerBand();
+        powerBand();    // พินพาท
 
         //Water Drink
-        waterDrink();
+        waterDrink();   // น้ำดื่ม
 
         //Ice Controller
-        iceController();
+        iceController();    // น้ำแข็ง
 
         //Food Controller
-        foodController();
+        foodController();   // อาหารถวายพระ
 
         //Candy Controller
-        candyController();
+        candyController();  // อาหารว่าง
 
         //Bow Controller
-        bowController();
+        bowController();    // ยืมถ้วย
 
 
         //BungSagung Spinner
@@ -200,16 +203,34 @@ public class Process2Fragment extends Fragment {
 
     }
 
+    private void bunsagunCheckbox() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBunSagoon);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText editText = getView().findViewById(R.id.edtBunsagoon);
+                amountBunsagonString = editText.getText().toString().trim();
+                if (checkBox.isChecked()) {
+                    bunsagoonString = "1";
+                } else {
+                    bunsagoonString = "0";
+                }
+                calcualteMoney();
+            }
+        });
+    }
+
     private void pinto() {
         final CheckBox checkBox = getView().findViewById(R.id.chbPinto);
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
-                    sabondString = "1";
+                    pintoString = "1";
                 } else {
-                    sabondString = "0";
+                    pintoString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -224,6 +245,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     rungString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -234,10 +256,11 @@ public class Process2Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
-                    pintoString = "1";
+                    sabondString = "1";
                 } else {
-                    pintoString = "0";
+                    sabondString = "0";
                 }
+                calcualteMoney();
             }
         });
     }
@@ -272,6 +295,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     bowTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -291,7 +315,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     candyTextView.setText("0");
                 }
-
+                calcualteMoney();
             }
         });
     }
@@ -307,10 +331,12 @@ public class Process2Fragment extends Fragment {
                             "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 20 ท่าน",
                             "อาหารถวายพระ 9-10 รูป แขกไม่เกิน 50 ท่าน"};
                     chooseItem(foodTextView, 300, charSequences, false);
-
+                    calcualteMoney();
                 } else {
                     foodTextView.setText("0");
+                    calcualteMoney();
                 }
+
             }
         });
     }
@@ -326,6 +352,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     iceTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -341,6 +368,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     waterDrinkTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -372,7 +400,7 @@ public class Process2Fragment extends Fragment {
                             break;
                     }
                 }
-
+                calcualteMoney();
                 dialogInterface.dismiss();
             }
         });
@@ -392,6 +420,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     powerBandTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -406,6 +435,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     powerSoundTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
 
@@ -421,6 +451,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flower1TextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -435,6 +466,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flower0TextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -453,8 +485,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     flowerTextView.setText("0");
                 }
-
-
+                calcualteMoney();
             }
         });
 
@@ -470,6 +501,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     carBodyTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
 
@@ -485,6 +517,7 @@ public class Process2Fragment extends Fragment {
                 } else {
                     manageBurnBuildTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -502,6 +535,7 @@ public class Process2Fragment extends Fragment {
                         salaPriceTextView.setText("2200.00");
                         break;
                 }
+                calcualteMoney();
             }
         });
     }
@@ -518,6 +552,7 @@ public class Process2Fragment extends Fragment {
                     burnBananaString = "0";
                     burnBananaTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -534,6 +569,7 @@ public class Process2Fragment extends Fragment {
                     burnOldString = "0";
                     burnOldTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -550,6 +586,7 @@ public class Process2Fragment extends Fragment {
                     burnBuildString = "0";
                     burnBuildTextView.setText("0");
                 }
+                calcualteMoney();
             }
         });
     }
@@ -573,10 +610,13 @@ public class Process2Fragment extends Fragment {
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                amountChantPlantString = amountChantPlant.getText().toString().trim();
                 if (checkBox.isChecked()) {
                     chantPlantString = "1";
+                    calcualteMoney();
                 } else {
                     chantPlantString = "0";
+                    calcualteMoney();
                 }
             }
         });
@@ -589,8 +629,10 @@ public class Process2Fragment extends Fragment {
             public void onClick(View view) {
                 if (checkBox.isChecked()) {
                     monkSongString = "1";
+                    calcualteMoney();
                 } else {
                     monkSongString = "0";
+                    calcualteMoney();
                 }
             }
         });
@@ -676,29 +718,139 @@ public class Process2Fragment extends Fragment {
         int moneyAnInt = 0;     // จำนวนที่ต้องจ่าย
         String tag = "1OctV1";
 
-        //Add สบง-ชุดกาแฟ
-        int[] coffeeGroupInts = new int[]{0, 300};
-        moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
+        try {
 
-        //Add บวชหน้าไฟ
-        Log.d(tag, "บวชหน้าไฟ ==> " + bwchnafiString);
-        if (bwchnafiString.equals("1")) {
-            Log.d(tag, "บวชหน้าไฟ True");
-            Log.d(tag, "จำนวนผู้บวช ==> " + amountBwchanfiString);
-            moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
-        } else {
-            Log.d(tag, "บวชหน้าไฟ false");
+            //Add สบง-ชุดกาแฟ
+            int[] coffeeGroupInts = new int[]{0, 300};
+            moneyAnInt = moneyAnInt + coffeeGroupInts[Integer.parseInt(coffeeGroupString)];
+
+            //Add บวชหน้าไฟ
+            Log.d(tag, "บวชหน้าไฟ ==> " + bwchnafiString);
+            if (bwchnafiString.equals("1")) {
+                Log.d(tag, "บวชหน้าไฟ True");
+                Log.d(tag, "จำนวนผู้บวช ==> " + amountBwchanfiString);
+                moneyAnInt = moneyAnInt + (600 * Integer.parseInt(amountBwchanfiString));
+            } else {
+                Log.d(tag, "บวชหน้าไฟ false");
+            }
+
+            //พระเทศน์นิมนต์
+            if (monkSongString.equals("1")) {
+                moneyAnInt = moneyAnInt + 600;
+            }
+
+            // สวดฉันเพล
+            if (chantPlantString.equals("1")) {
+                Log.d(tag, "ฉันเพล ==> " + amountChantPlantString);
+                moneyAnInt = moneyAnInt + (300 * Integer.parseInt(amountChantPlantString));
+            }
+
+
+            //ซักผ้าบังสกุล
+            if (bunsagoonString.equals("1")) {
+                moneyAnInt = moneyAnInt + (800 * Integer.parseInt(amountBunsagonString));
+            }
+
+
+            //ค่าณาปนกิจ
+            if (burnBuildString.equals("1")) {
+                moneyAnInt = moneyAnInt + 3300;
+            }
+
+
+            //ค่าน้ำมันเผา
+            if (burnOldString.equals("1")) {
+                moneyAnInt = moneyAnInt + 3000;
+            }
+
+
+            //หยวก
+            if (burnBananaString.equals("1")) {
+                moneyAnInt = moneyAnInt + 700;
+            }
+
+            //ศาลาตั่ง
+            moneyAnInt = moneyAnInt + myFindAmount(salaPriceTextView.getText().toString());
+
+
+            //ค่าจัดสถานที่เผา
+            moneyAnInt = moneyAnInt + myFindAmount(manageBurnBuildTextView.getText().toString());
+
+
+            //รถรับศพ
+            moneyAnInt = moneyAnInt + myFindAmount(carBodyTextView.getText().toString());
+
+
+            //จัดดอกไม้หน้าศพ
+            moneyAnInt = moneyAnInt + myFindAmount(flowerTextView.getText().toString());
+
+
+            //ดอกไม่้จันทร์
+            moneyAnInt = moneyAnInt + myFindAmount(flower0TextView.getText().toString());
+
+
+            //ช่อประธาน
+            moneyAnInt = moneyAnInt + myFindAmount(flower1TextView.getText().toString());
+
+
+            //เครื่องเสียง
+            moneyAnInt = moneyAnInt + myFindAmount(powerSoundTextView.getText().toString());
+
+            //พินพาทย์
+            moneyAnInt = moneyAnInt + myFindAmount(powerBandTextView.getText().toString());
+
+
+            //น้ำดื่ม
+            moneyAnInt = moneyAnInt + myFindAmount(waterDrinkTextView.getText().toString());
+
+
+            //น้ำแข็ง
+            moneyAnInt = moneyAnInt + myFindAmount(iceTextView.getText().toString());
+
+
+            //อาหารถวายพระ
+            moneyAnInt = moneyAnInt + myFindAmount(foodTextView.getText().toString());
+
+            //อาหารว่าง
+            moneyAnInt = moneyAnInt + myFindAmount(candyTextView.getText().toString());
+
+            //ยืมถ้วย
+            moneyAnInt = moneyAnInt + myFindAmount(bowTextView.getText().toString());
+
+            //บังสกุลที่เมรุ
+            if (sabondString.equals("1")) {
+                moneyAnInt = moneyAnInt + 150;
+            }
+
+
+            //ลุ้งผ้าขาว
+            if (rungString.equals("1")) {
+                moneyAnInt = moneyAnInt + 300;
+            }
+
+            // ปิ่นโต
+            if (pintoString.equals("1")) {
+                moneyAnInt = moneyAnInt + 350;
+            }
+
+            //Show Text
+            TextView textView = getView().findViewById(R.id.txtShowMoney);
+            textView.setText(Integer.toString(moneyAnInt));
+
+        } catch (Exception e) {
+            Log.d(tag, "e Calculate ==> " + e.toString());
         }
 
+    }
 
+    private int myFindAmount(String strNumber) {
 
-
-
-
-
-        //Show Text
-        TextView textView = getView().findViewById(R.id.txtShowMoney);
-        textView.setText(Integer.toString(moneyAnInt));
+        if (strNumber.equals("0")) {
+            return 0;
+        } else {
+            String[] strings = strNumber.split("\\.");
+            return Integer.parseInt(strings[0]);
+        }
 
     }
 
@@ -711,7 +863,7 @@ public class Process2Fragment extends Fragment {
                 //Get Value From EditText
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
-                amountChantPlantString = amountChantPlant.getText().toString().trim();
+
 
 
             }
