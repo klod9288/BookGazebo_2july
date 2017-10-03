@@ -1,11 +1,19 @@
 package bangtanrut.songklod.bookgazebo.fragment;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import bangtanrut.songklod.bookgazebo.R;
 
@@ -23,5 +31,59 @@ public class Process3Fragment extends Fragment{
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.process3_layout, container, false);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        //SetDate Controller
+        setDateController();
+
+    }
+
+    private void setDateController() {
+        final Calendar calendar = Calendar.getInstance();
+        final int intDay = calendar.get(Calendar.DAY_OF_MONTH);
+        final int intMonth = calendar.get(Calendar.MONTH);
+        final int intYear = calendar.get(Calendar.YEAR);
+
+        showDateTime(calendar);
+
+        ImageView imageView = getView().findViewById(R.id.imvSetDateTime);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+
+                        calendar.set(Calendar.DAY_OF_MONTH, day);
+                        calendar.set(Calendar.MONTH, month);
+                        calendar.set(Calendar.YEAR, year);
+
+                        showDateTime(calendar);
+
+
+                    }
+                }, intYear, intMonth, intDay);
+                datePickerDialog.show();
+            }
+        });
+
+
+    }
+
+    private void showDateTime(Calendar calendar) {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat timeFormat = new SimpleDateFormat("HH:mm");
+
+        TextView dateTextView = getView().findViewById(R.id.txtShowDate);
+        dateTextView.setText(dateFormat.format(calendar.getTime()));
+
+        TextView timeTextView = getView().findViewById(R.id.txtShowTime);
+        timeTextView.setText(timeFormat.format(calendar.getTime()));
+
     }
 }//Main Class

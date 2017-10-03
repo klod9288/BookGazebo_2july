@@ -58,7 +58,8 @@ public class Process2Fragment extends Fragment {
             timeBwchnafiString, timeMonkSongString, monkSongString = "0",
             amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
             burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
-            sabondString = "0", rungString = "0", pintoString = "0", bunsagoonString = "0", amountBunsagonString = "0";
+            sabondString = "0", rungString = "0", pintoString = "0",
+            bunsagoonString = "0", amountBunsagonString = "0";
 
 
 
