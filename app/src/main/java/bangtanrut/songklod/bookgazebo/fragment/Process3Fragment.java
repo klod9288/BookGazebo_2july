@@ -8,15 +8,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
+import bangtanrut.songklod.bookgazebo.MyConstant;
 import bangtanrut.songklod.bookgazebo.R;
 
 /**
@@ -26,8 +31,9 @@ import bangtanrut.songklod.bookgazebo.R;
 public class Process3Fragment extends Fragment {
 
     //Explicit
-    private String dateString, tumBunString, salaString, nameBodyString,
-            nameContactString, phoneString, timePhathed, timeSungkatand, amountSungkatand,
+    private String dateString, tumBunString, salaString, nameBodyString = "",
+            nameContactString = "", phoneString = "", timePhathed,
+            timeSungkatand, amountSungkatand,
             timeSundmonn, amoundSundmonn, timePackageBody, amountKondin, amountFlower,
             amoundBucha, amoundThaitan, amoundWaterDrink, amoundFood, amoundBow;
 
@@ -51,11 +57,38 @@ public class Process3Fragment extends Fragment {
         //Tumbun Controller
         tumbunController();
 
+        //Sala Controller
+        salaController();
+
+    }
+
+    private void salaController() {
+        Spinner spinner = getView().findViewById(R.id.spnSala);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getPavilionStrings();
+        salaString = strings[0];
+
+        salaString = strings[0];
+        ArrayAdapter<String> stringArrayList = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayList);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                salaString = strings[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                salaString = strings[0];
+            }
+        });
+
     }
 
     private void tumbunController() {
         tumBunString = "";
-        RadioGroup radioGroup = getView().findViewById(R.id.ragGroup);
+        RadioGroup radioGroup = getView().findViewById(R.id.ragTumBun);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
