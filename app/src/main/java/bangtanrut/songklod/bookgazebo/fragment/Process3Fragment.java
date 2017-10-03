@@ -21,7 +21,13 @@ import bangtanrut.songklod.bookgazebo.R;
  * Created by Administrator on 2/7/2560.
  */
 
-public class Process3Fragment extends Fragment{
+public class Process3Fragment extends Fragment {
+
+    //Explicit
+    private String dateString, tumBunString, salaString, nameBodyString,
+            nameContactString, phoneString, timePhathed, timeSungkatand, amountSungkatand,
+            timeSundmonn, amoundSundmonn, timePackageBody, amountKondin, amountFlower,
+            amoundBucha, amoundThaitan, amoundWaterDrink, amoundFood, amoundBow;
 
 
     @Nullable
@@ -80,7 +86,9 @@ public class Process3Fragment extends Fragment{
         DateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
         TextView dateTextView = getView().findViewById(R.id.txtShowDate);
-        dateTextView.setText(dateFormat.format(calendar.getTime()));
+        dateString = dateFormat.format(calendar.getTime());
+        dateTextView.setText(dateString);
+
 
         TextView timeTextView = getView().findViewById(R.id.txtShowTime);
         timeTextView.setText(timeFormat.format(calendar.getTime()));

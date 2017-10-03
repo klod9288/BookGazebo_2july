@@ -93,25 +93,26 @@
                 android:layout_height="wrap_content">
 
                 <RadioGroup
+                    android:id="@+id/ragTumBun"
                     android:orientation="horizontal"
                     android:padding="@dimen/my_padding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-
+                        android:id="@+id/radBuild1"
                         android:text="@string/church"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <RadioButton
-
+                        android:id="@+id/radBuild2"
                         android:text="@string/Temple"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <RadioButton
-
+                        android:id="@+id/radBuild3"
                         android:text="@string/museum"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
