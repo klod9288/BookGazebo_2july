@@ -52,12 +52,12 @@ public class Process2Fragment extends Fragment {
     private MyConstant myConstant;
     private MyAlert myAlert;
 
-    private String cremationString, intermentString, nameString, pavilionString,
-            dateString, timeString, bodyWhereString, timeBodyWhereString,
-            timeSongString, coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
-            timeBwchnafiString, timeMonkSongString, monkSongString = "0",
-            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
-            burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
+    private String cremationString, intermentString = "0", nameString = "", pavilionString  = "",
+            dateString = "", timeString = "", bodyWhereString = "", timeBodyWhereString = "",
+            timeSongString = "", coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
+            timeBwchnafiString = "", timeMonkSongString = "", monkSongString = "0",
+            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString = "0",
+            burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString = "",
             sabondString = "0", rungString = "0", pintoString = "0",
             bunsagoonString = "0", amountBunsagonString = "0";
 
@@ -866,9 +866,42 @@ public class Process2Fragment extends Fragment {
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
 
 
-
+                uploadToServer();
             }
         });
+    }
+
+    private void uploadToServer() {
+
+        String tag = "5octV1";
+        Log.d(tag, cremationString );
+        Log.d(tag, intermentString );
+        Log.d(tag, nameString );
+        Log.d(tag, pavilionString );
+        Log.d(tag, dateString );
+        Log.d(tag, timeString );
+        Log.d(tag, bodyWhereString );
+        Log.d(tag, timeBodyWhereString );
+        Log.d(tag, timeSongString );
+        Log.d(tag, amountBwchanfiString );
+        Log.d(tag, bwchnafiString );
+        Log.d(tag, timeBwchnafiString );
+        Log.d(tag, timeMonkSongString );
+        Log.d(tag, monkSongString );
+        Log.d(tag, amountChantPlantString );
+        Log.d(tag, chantPlantString );
+        Log.d(tag, chutnatfaiString );
+        Log.d(tag, burnBuildString );
+        Log.d(tag, burnOldString );
+        Log.d(tag, burnBananaString );
+        Log.d(tag, bunSagungTimeString );
+        Log.d(tag, sabondString );
+        Log.d(tag, rungString );
+        Log.d(tag, pintoString );
+        Log.d(tag, bunsagoonString );
+        Log.d(tag, amountBunsagonString );
+
+
     }
 
     private void intermentController() {
@@ -951,7 +984,8 @@ public class Process2Fragment extends Fragment {
                 final int hourAint = calendar.get(Calendar.HOUR_OF_DAY);
                 final int minusAint = calendar.get(Calendar.MINUTE);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                        new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int intYear, int intMonth, int intDay) {
                         dateString = Integer.toString(intDay) + "/" +
