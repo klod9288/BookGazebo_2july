@@ -30,6 +30,7 @@ import java.util.Calendar;
 
 import bangtanrut.songklod.bookgazebo.MyAlert;
 import bangtanrut.songklod.bookgazebo.MyConstant;
+import bangtanrut.songklod.bookgazebo.PostProcess2;
 import bangtanrut.songklod.bookgazebo.R;
 
 /**
@@ -52,17 +53,14 @@ public class Process2Fragment extends Fragment {
     private MyConstant myConstant;
     private MyAlert myAlert;
 
-    private String cremationString, intermentString, nameString, pavilionString,
-            dateString, timeString, bodyWhereString, timeBodyWhereString,
-            timeSongString, coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
-            timeBwchnafiString, timeMonkSongString, monkSongString = "0",
-            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString,
-            burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString,
+    private String cremationString, intermentString = "0", nameString = "", pavilionString = "",
+            dateString = "", timeString = "", bodyWhereString = "", timeBodyWhereString = "",
+            timeSongString = "", coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
+            timeBwchnafiString = "", timeMonkSongString = "", monkSongString = "0",
+            amountChantPlantString = "0", chantPlantString = "0", chutnatfaiString = "0",
+            burnBuildString = "0", burnOldString = "0", burnBananaString = "0", bunSagungTimeString = "",
             sabondString = "0", rungString = "0", pintoString = "0",
             bunsagoonString = "0", amountBunsagonString = "0";
-
-
-
 
 
     @Nullable
@@ -237,7 +235,7 @@ public class Process2Fragment extends Fragment {
     }
 
     private void rung() {
-       final CheckBox checkBox = getView().findViewById(R.id.chbRung);
+        final CheckBox checkBox = getView().findViewById(R.id.chbRung);
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -252,7 +250,7 @@ public class Process2Fragment extends Fragment {
     }
 
     private void sabung() {
-       final CheckBox checkBox = getView().findViewById(R.id.chbSabon);
+        final CheckBox checkBox = getView().findViewById(R.id.chbSabon);
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -406,7 +404,6 @@ public class Process2Fragment extends Fragment {
             }
         });
         builder.show();
-
 
 
     }
@@ -866,9 +863,60 @@ public class Process2Fragment extends Fragment {
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
 
 
-
+                uploadToServer();
             }
         });
+    }
+
+    private void uploadToServer() {
+
+        String tag = "5octV1";
+        Log.d(tag, cremationString);
+        Log.d(tag, intermentString);
+        Log.d(tag, nameString);
+        Log.d(tag, pavilionString);
+        Log.d(tag, dateString);
+        Log.d(tag, timeString);
+        Log.d(tag, bodyWhereString);
+        Log.d(tag, timeBodyWhereString);
+        Log.d(tag, timeSongString);
+        Log.d(tag, amountBwchanfiString);
+        Log.d(tag, bwchnafiString);
+        Log.d(tag, timeBwchnafiString);
+        Log.d(tag, timeMonkSongString);
+        Log.d(tag, monkSongString);
+        Log.d(tag, amountChantPlantString);
+        Log.d(tag, chantPlantString);
+        Log.d(tag, chutnatfaiString);
+        Log.d(tag, burnBuildString);
+        Log.d(tag, burnOldString);
+        Log.d(tag, burnBananaString);
+        Log.d(tag, bunSagungTimeString);
+        Log.d(tag, sabondString);
+        Log.d(tag, rungString);
+        Log.d(tag, pintoString);
+        Log.d(tag, bunsagoonString);
+        Log.d(tag, amountBunsagonString);
+
+        try {
+
+            MyConstant myConstant = new MyConstant();
+            PostProcess2 postProcess2 = new PostProcess2(getActivity());
+            postProcess2.execute(cremationString, intermentString, nameString, pavilionString,
+                    dateString, timeString, "setDatetime", bodyWhereString, timeBodyWhereString,
+                    timeSongString, "coffeeGroup", amountBwchanfiString, timeBwchnafiString,
+                    amountChantPlantString, burnBuildString, burnOldString, burnBananaString,
+                    "salaPrice", "manageBurnBuild", "carBody", "flower", "flower0", "flower1",
+                    "powerSound", "powerBand", "waterDrink", "ice", "food", "candy",
+                    "bow", myConstant.getUrlPostProcess2());
+
+            Log.d(tag, "Result ==> " + postProcess2.get());
+
+        } catch (Exception e) {
+            Log.d(tag, "e ==> " + e.toString());
+        }
+
+
     }
 
     private void intermentController() {
@@ -951,22 +999,23 @@ public class Process2Fragment extends Fragment {
                 final int hourAint = calendar.get(Calendar.HOUR_OF_DAY);
                 final int minusAint = calendar.get(Calendar.MINUTE);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int intYear, int intMonth, int intDay) {
-                        dateString = Integer.toString(intDay) + "/" +
-                                Integer.toString(intMonth + 1) + "/" +
-                                Integer.toString(intYear);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int intYear, int intMonth, int intDay) {
+                                dateString = Integer.toString(intDay) + "/" +
+                                        Integer.toString(intMonth + 1) + "/" +
+                                        Integer.toString(intYear);
 
-                        showdateTextView.setText(dateString);
+                                showdateTextView.setText(dateString);
 
-                        TextView textView = getView().findViewById(R.id.txtDate2);
-                        textView.setText(dateString);
+                                TextView textView = getView().findViewById(R.id.txtDate2);
+                                textView.setText(dateString);
 
-                        setTime(hourAint, minusAint, calendar);
+                                setTime(hourAint, minusAint, calendar);
 
-                    }
-                }, yearAint, monthAint, dayAint);
+                            }
+                        }, yearAint, monthAint, dayAint);
                 datePickerDialog.show();
             }//onClick
         });
