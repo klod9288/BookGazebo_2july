@@ -23,6 +23,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -48,12 +49,13 @@ public class Process2Fragment extends Fragment {
             flowerTextView, flower0TextView, flower1TextView, powerSoundTextView, powerBandTextView,
             waterDrinkTextView, iceTextView, foodTextView, candyTextView, bowTextView;
     private ImageView setDateTimeImageView;
+    private boolean statusABoolean = true;
 
     //Other
     private MyConstant myConstant;
     private MyAlert myAlert;
 
-    private String cremationString, intermentString = "0", nameString = "", pavilionString = "",
+    private String cremationString = "0", intermentString = "0", nameString = "", pavilionString = "",
             dateString = "", timeString = "", bodyWhereString = "", timeBodyWhereString = "",
             timeSongString = "", coffeeGroupString = "0", amountBwchanfiString = "0", bwchnafiString = "0",
             timeBwchnafiString = "", timeMonkSongString = "", monkSongString = "0",
@@ -862,8 +864,12 @@ public class Process2Fragment extends Fragment {
                 nameString = nameEditText.getText().toString().trim();
                 bodyWhereString = bodyWhereEditText.getText().toString().trim();
 
+                if (statusABoolean) {
+                    uploadToServer();
+                } else {
+                    Toast.makeText(getActivity(), "ไม่สามารถอัพซ้ำได้ คะ", Toast.LENGTH_SHORT).show();
+                }
 
-                uploadToServer();
             }
         });
     }
@@ -910,7 +916,12 @@ public class Process2Fragment extends Fragment {
                     "powerSound", "powerBand", "waterDrink", "ice", "food", "candy",
                     "bow", myConstant.getUrlPostProcess2());
 
-            Log.d(tag, "Result ==> " + postProcess2.get());
+            String result = postProcess2.get();
+            Log.d(tag, "Result ==> " + result);
+            if (result.equals("True")) {
+                statusABoolean = false;
+                Log.d(tag, "Status ==> " + statusABoolean);
+            }
 
         } catch (Exception e) {
             Log.d(tag, "e ==> " + e.toString());
