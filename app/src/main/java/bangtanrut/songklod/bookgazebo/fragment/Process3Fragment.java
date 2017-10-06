@@ -7,6 +7,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -27,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import bangtanrut.songklod.bookgazebo.MyConstant;
+import bangtanrut.songklod.bookgazebo.PostProcess3;
 import bangtanrut.songklod.bookgazebo.R;
 
 /**
@@ -44,6 +47,7 @@ public class Process3Fragment extends Fragment {
             amountKondin = "", amountFlower = "",
             amoundBucha = "", amoundThaitan = "",
             amoundWaterDrink = "", amountIce = "", amoundFood = "", amoundBow = "";
+    private boolean aBoolean = true;
 
 
     @Nullable
@@ -410,9 +414,36 @@ public class Process3Fragment extends Fragment {
                 EditText songmonEditText = getView().findViewById(R.id.edtSungmon);
                 amoundSundmonn = songmonEditText.getText().toString().trim();
 
+                if (aBoolean) {
+                    uploadToServer();
+                } else {
+                    Toast.makeText(getActivity(), "อัพโหลดไปแล้ว", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
+    }
+
+    private void uploadToServer() {
+
+        try {
+            String tag = "7octV1";
+            MyConstant myConstant = new MyConstant();
+            PostProcess3 postProcess3 = new PostProcess3(getActivity());
+            postProcess3.execute(dateString, tumBunString, salaString, nameBodyString,
+                    nameContactString, phoneString, timePhathed, timeSungkatand,
+                    amountSungkatand, timeSundmonn, amoundSundmonn, timePackageBody,
+                    amountKondin, amountFlower, amoundBucha, amoundThaitan, amoundWaterDrink,
+                    amountIce, amoundFood, amoundBow, myConstant.getUrlPostProcess3());
+            String result = postProcess3.get();
+            Log.d(tag, "result ==> " + result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void salaController() {
