@@ -148,6 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:id="@+id/edtNameBody"
                     android:hint="@string/name_itblock02"
                     android:inputType="text"
                     android:layout_width="wrap_content"
@@ -168,6 +169,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtNameContact"
                     android:hint="@string/name_itblock02"
                     android:inputType="text"
                     android:layout_width="wrap_content"
@@ -188,6 +190,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtPhone"
                     android:hint="@string/name_itblock02"
                     android:inputType="number"
                     android:layout_width="wrap_content"
@@ -209,7 +212,7 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-                    android:id="@+id/spnWashBody"
+                    android:id="@+id/spnPhathed"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -230,11 +233,12 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-                    android:id="@+id/spnBurnbody"
+                    android:id="@+id/spnSangkathan"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edtSangkathan"
                     android:hint="@string/Sangkatan02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -255,11 +259,12 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-
+                    android:id="@+id/spnSungmon"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edtSungmon"
                     android:hint="@string/Sangkatan02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -280,7 +285,7 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-
+                    android:id="@+id/spnPackbody"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -672,7 +677,7 @@
 
     <!--Button SendData-->
     <Button
-
+        android:id="@+id/btnSetnDataProcess3"
         android:text="@string/sent"
         android:textSize="18dp"
         android:textStyle="bold"

@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -31,11 +33,14 @@ import bangtanrut.songklod.bookgazebo.R;
 public class Process3Fragment extends Fragment {
 
     //Explicit
-    private String dateString, tumBunString, salaString, nameBodyString = "",
-            nameContactString = "", phoneString = "", timePhathed,
-            timeSungkatand, amountSungkatand,
-            timeSundmonn, amoundSundmonn, timePackageBody, amountKondin, amountFlower,
-            amoundBucha, amoundThaitan, amoundWaterDrink, amoundFood, amoundBow;
+    private String dateString = "", tumBunString = "", salaString = "", nameBodyString = "",
+            nameContactString = "", phoneString = "", timePhathed = "",
+            timeSungkatand = "", amountSungkatand = "",
+            timeSundmonn = "", amoundSundmonn = "",
+            timePackageBody= "",
+            amountKondin = "", amountFlower = "",
+            amoundBucha = "", amoundThaitan = "",
+            amoundWaterDrink = "", amoundFood = "", amoundBow = "";
 
 
     @Nullable
@@ -60,6 +65,131 @@ public class Process3Fragment extends Fragment {
         //Sala Controller
         salaController();
 
+        //Phathed Controller
+        phathedController();
+
+        //Sankathan Controller
+        sankathanController();
+
+
+        //Sundmon Controller
+        sundmonController();
+
+
+        //PackBody Controller
+        packBodyController();
+
+
+        // Sent Data
+        sentData();
+
+    }   // onActivityCreate
+
+    private void packBodyController() {
+        Spinner spinner = getView().findViewById(R.id.spnPackbody);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getBwchnafiStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                timePackageBody = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                timePackageBody = strings[0];
+            }
+        });
+    }
+
+    private void sundmonController() {
+        Spinner spinner = getView().findViewById(R.id.spnSungmon);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getBwchnafiStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                timeSundmonn = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                timeSundmonn = strings[0];
+            }
+        });
+    }
+
+    private void sankathanController() {
+        Spinner spinner = getView().findViewById(R.id.spnSangkathan);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getBwchnafiStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                timeSungkatand = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                timeSungkatand = strings[0];
+            }
+        });
+    }
+
+    private void phathedController() {
+        Spinner spinner = getView().findViewById(R.id.spnPhathed);
+        MyConstant myConstant = new MyConstant();
+        final String[] strings = myConstant.getBwchnafiStrings();
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, strings);
+        spinner.setAdapter(stringArrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                timePhathed = strings[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                timePhathed = strings[0];
+            }
+        });
+    }
+
+    private void sentData() {
+        Button button = getView().findViewById(R.id.btnSetnDataProcess3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText nameBodyEditText = getView().findViewById(R.id.edtNameBody);
+                nameBodyString = nameBodyEditText.getText().toString().trim();
+
+                EditText nameContactEditText = getView().findViewById(R.id.edtNameContact);
+                nameContactString = nameContactEditText.getText().toString().trim();
+
+                EditText phoneEditText = getView().findViewById(R.id.edtPhone);
+                phoneString = phoneEditText.getText().toString().trim();
+
+                EditText sangkatanEditText = getView().findViewById(R.id.edtSangkathan);
+                amountSungkatand = sangkatanEditText.getText().toString().trim();
+
+                EditText songmonEditText = getView().findViewById(R.id.edtSungmon);
+                amoundSundmonn = songmonEditText.getText().toString().trim();
+
+
+
+            }
+        });
     }
 
     private void salaController() {
