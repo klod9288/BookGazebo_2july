@@ -148,6 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <EditText
+                    android:id="@+id/edtNameBody"
                     android:hint="@string/name_itblock02"
                     android:inputType="text"
                     android:layout_width="wrap_content"
@@ -168,6 +169,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtNameContact"
                     android:hint="@string/name_itblock02"
                     android:inputType="text"
                     android:layout_width="wrap_content"
@@ -188,6 +190,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/edtPhone"
                     android:hint="@string/name_itblock02"
                     android:inputType="number"
                     android:layout_width="wrap_content"
@@ -209,7 +212,7 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-                    android:id="@+id/spnWashBody"
+                    android:id="@+id/spnPhathed"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -230,11 +233,12 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-                    android:id="@+id/spnBurnbody"
+                    android:id="@+id/spnSangkathan"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edtSangkathan"
                     android:hint="@string/Sangkatan02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -255,11 +259,12 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-
+                    android:id="@+id/spnSungmon"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edtSungmon"
                     android:hint="@string/Sangkatan02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -280,7 +285,7 @@
                     android:layout_height="wrap_content" />
 
                 <Spinner
-
+                    android:id="@+id/spnPackbody"
                     android:layout_weight="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -350,7 +355,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbKondin"
                         android:text="@string/detailp3"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -360,7 +365,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
+                        android:id="@+id/txtKondin"
+                        android:text="0.00"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
@@ -385,7 +391,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbFlowerP3"
                         android:text="@string/detailp31"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -395,7 +401,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
+                        android:id="@+id/txtFlowerP3"
+                        android:text="0.00"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
@@ -420,7 +427,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbBucha"
                         android:text="@string/detailp32"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -430,6 +437,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBucha"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -455,7 +463,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbThaitan"
                         android:text="@string/detailp33"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -465,6 +473,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtThaitan"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -490,7 +499,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbWaterDrinkP3"
                         android:text="@string/detailp34"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -500,6 +509,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtWaterDrinkP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -525,7 +535,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbIceP3"
                         android:text="@string/detailp35"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -535,6 +545,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtIceP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -566,7 +577,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-
+                            android:id="@+id/chbFoodP3"
                             android:text="@string/detailp36"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -578,6 +589,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtFoodP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -609,7 +621,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-
+                            android:id="@+id/chbBow"
                             android:text="@string/detailp37"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -621,6 +633,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBow"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -655,8 +668,9 @@
                 </RelativeLayout>
                 <!--Total-->
                 <TextView
-
-                    android:textSize="@dimen/h2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/txtTotel"
+                    android:textSize="@dimen/h1"
                     android:textStyle="bold"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
@@ -672,7 +686,7 @@
 
     <!--Button SendData-->
     <Button
-
+        android:id="@+id/btnSetnDataProcess3"
         android:text="@string/sent"
         android:textSize="18dp"
         android:textStyle="bold"

@@ -11,6 +11,7 @@ public class MyConstant {
     private String urlGetUser = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/getUser.php";
     private String urlPostProcess1 = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/addProcess1.php";
     private String urlPostProcess2 = "http://swiftcodingthai.com/bow/addProcess2var3.php";
+    private String urlPostProcess3 = "http://swiftcodingthai.com/bow/addProcess3.php";
 
     //For General
     private String[] columnUserStrings = new String[]{
@@ -39,6 +40,10 @@ public class MyConstant {
             "ศาลา 10 (3,000.00 บาท)",
             "ศาลา 11 (2,200.00 บาท)",
             "ศาลา 12 (2,200.00 บาท)",};
+
+    public String getUrlPostProcess3() {
+        return urlPostProcess3;
+    }
 
     public String getUrlPostProcess2() {
         return urlPostProcess2;
