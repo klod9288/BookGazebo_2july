@@ -355,7 +355,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbKondin"
                         android:text="@string/detailp3"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -365,7 +365,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
+                        android:id="@+id/txtKondin"
+                        android:text="0.00"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
@@ -390,7 +391,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbFlowerP3"
                         android:text="@string/detailp31"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -400,7 +401,8 @@
 
                     <!--ราคา-->
                     <TextView
-                        android:text="0"
+                        android:id="@+id/txtFlowerP3"
+                        android:text="0.00"
                         android:layout_weight="2"
                         android:textStyle="bold"
                         android:textSize="@dimen/h2"
@@ -425,7 +427,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbBucha"
                         android:text="@string/detailp32"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -435,6 +437,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBucha"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -460,7 +463,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbThaitan"
                         android:text="@string/detailp33"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -470,6 +473,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtThaitan"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -495,7 +499,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbWaterDrinkP3"
                         android:text="@string/detailp34"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -505,6 +509,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtWaterDrinkP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -530,7 +535,7 @@
 
                     <!--รายการ-->
                     <CheckBox
-
+                        android:id="@+id/chbIceP3"
                         android:text="@string/detailp35"
                         android:layout_weight="5"
                         android:textSize="@dimen/h2"
@@ -540,6 +545,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtIceP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -571,7 +577,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-
+                            android:id="@+id/chbFoodP3"
                             android:text="@string/detailp36"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -583,6 +589,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtFoodP3"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -614,7 +621,7 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-
+                            android:id="@+id/chbBow"
                             android:text="@string/detailp37"
                             android:textSize="@dimen/h2"
                             android:textStyle="bold"
@@ -626,6 +633,7 @@
 
                     <!--ราคา-->
                     <TextView
+                        android:id="@+id/txtBow"
                         android:text="0"
                         android:layout_weight="2"
                         android:textStyle="bold"
@@ -660,8 +668,9 @@
                 </RelativeLayout>
                 <!--Total-->
                 <TextView
-
-                    android:textSize="@dimen/h2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:id="@+id/txtTotel"
+                    android:textSize="@dimen/h1"
                     android:textStyle="bold"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"

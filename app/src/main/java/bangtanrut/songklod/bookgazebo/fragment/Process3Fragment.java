@@ -1,16 +1,19 @@
 package bangtanrut.songklod.bookgazebo.fragment;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,10 +40,10 @@ public class Process3Fragment extends Fragment {
             nameContactString = "", phoneString = "", timePhathed = "",
             timeSungkatand = "", amountSungkatand = "",
             timeSundmonn = "", amoundSundmonn = "",
-            timePackageBody= "",
+            timePackageBody = "",
             amountKondin = "", amountFlower = "",
             amoundBucha = "", amoundThaitan = "",
-            amoundWaterDrink = "", amoundFood = "", amoundBow = "";
+            amoundWaterDrink = "", amountIce = "", amoundFood = "", amoundBow = "";
 
 
     @Nullable
@@ -79,11 +82,232 @@ public class Process3Fragment extends Fragment {
         //PackBody Controller
         packBodyController();
 
+        //Kondin Controller
+        kondinController();
+
+        //Flower Controller
+        flowerController();
+
+        //Bucha Controller
+        buchaController();
+
+        //ThaiTan Controller
+        thaiTanController();
+
+        //WaterDrink Controller
+        waterDrink();
+
+        //Ice Controller
+        iceController();
+
+        //Food Controller
+        foodController();
+
+        //Bow Controller
+        bowController();
+
 
         // Sent Data
         sentData();
 
     }   // onActivityCreate
+
+    private void flowerController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbFlowerP3);
+        final TextView textView = getView().findViewById(R.id.txtFlowerP3);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 10, amountFlower);
+                } else {
+                    textView.setText("0.00");
+                    amountFlower = "0";
+                }
+
+            }
+        });
+    }
+
+    private void easyCheck(final TextView textView, final int intPrice, final String strSave) {
+        CharSequence[] charSequences = new CharSequence[]{"1", "2", "3", "4", "5"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setCancelable(false);
+        builder.setTitle("Choose Amount");
+        builder.setSingleChoiceItems(charSequences, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                int intAnswer = intPrice * (which + 1);
+                textView.setText(Integer.toString(intAnswer) + ".00");
+                assigeString(strSave, Integer.toString(which + 1));
+                calculatePrice();
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    private void calculatePrice() {
+
+        TextView kondinTextView = getView().findViewById(R.id.txtKondin);
+        TextView flowdrTextView = getView().findViewById(R.id.txtFlowerP3);
+        TextView buchaTextView = getView().findViewById(R.id.txtBucha);
+        TextView thaitanTextView = getView().findViewById(R.id.txtThaitan);
+        TextView waterTextView = getView().findViewById(R.id.txtWaterDrinkP3);
+        TextView iceTextView = getView().findViewById(R.id.txtIceP3);
+        TextView foodTextView = getView().findViewById(R.id.txtFoodP3);
+        TextView totalTextView = getView().findViewById(R.id.txtTotel);
+
+        int intTotal = findInt(kondinTextView.getText().toString()) +
+                findInt(flowdrTextView.getText().toString()) +
+                findInt(buchaTextView.getText().toString()) +
+                findInt(thaitanTextView.getText().toString()) +
+                findInt(waterTextView.getText().toString()) +
+                findInt(iceTextView.getText().toString()) +
+                findInt(foodTextView.getText().toString());
+        totalTextView.setText(Integer.toString(intTotal) + ".00");
+
+
+    }
+
+    private int findInt(String strText) {
+
+        String[] strings = strText.split("\\.");
+
+        return Integer.parseInt(strings[0]);
+    }
+
+    private void assigeString(String strSave, String s) {
+        strSave = s;
+    }
+
+    private void bowController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBow);
+        final TextView textView = getView().findViewById(R.id.txtBow);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    textView.setText("300.00");
+                    amoundBow = "1";
+                } else {
+                    textView.setText("0.00");
+                    amoundBow = "0";
+                }
+
+            }
+        });
+    }
+
+    private void foodController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbFoodP3);
+        final TextView textView = getView().findViewById(R.id.txtFoodP3);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 50, amoundFood);
+                } else {
+                    textView.setText("0.00");
+                    amoundFood = "0";
+                }
+
+            }
+        });
+    }
+
+    private void iceController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbIceP3);
+        final TextView textView = getView().findViewById(R.id.txtIceP3);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 70, amountIce);
+                } else {
+                    textView.setText("0.00");
+                    amountIce = "0";
+                }
+
+            }
+        });
+    }
+
+    private void waterDrink() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbWaterDrinkP3);
+        final TextView textView = getView().findViewById(R.id.txtWaterDrinkP3);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 140, amoundWaterDrink);
+                } else {
+                    textView.setText("0.00");
+                    amoundWaterDrink = "0";
+                }
+
+            }
+        });
+    }
+
+    private void thaiTanController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbThaitan);
+        final TextView textView = getView().findViewById(R.id.txtThaitan);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 300, amoundThaitan);
+                } else {
+                    textView.setText("0.00");
+                    amoundThaitan = "0";
+                }
+
+            }
+        });
+    }
+
+    private void buchaController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbBucha);
+        final TextView textView = getView().findViewById(R.id.txtBucha);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 30, amoundBucha);
+                } else {
+                    textView.setText("0.00");
+                    amoundBucha = "0";
+                }
+
+            }
+        });
+    }
+
+    private void kondinController() {
+        final CheckBox checkBox = getView().findViewById(R.id.chbKondin);
+        final TextView textView = getView().findViewById(R.id.txtKondin);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (checkBox.isChecked()) {
+                    easyCheck(textView, 3, amountKondin);
+                } else {
+                    textView.setText("0.00");
+                    amountKondin = "0";
+                }
+
+            }
+        });
+    }
 
     private void packBodyController() {
         Spinner spinner = getView().findViewById(R.id.spnPackbody);
@@ -185,7 +409,6 @@ public class Process3Fragment extends Fragment {
 
                 EditText songmonEditText = getView().findViewById(R.id.edtSungmon);
                 amoundSundmonn = songmonEditText.getText().toString().trim();
-
 
 
             }
