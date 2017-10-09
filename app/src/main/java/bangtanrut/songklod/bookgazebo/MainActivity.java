@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView textView;
     private Button button;
     private String userString, passwordString;
+    private boolean urlAdminABoolean = true; // ปกติ ไม่ได้เช็ค Admin จะใช้ userTABLE แต่ถ้า เช็ค Admin จะใช้ userAdminTABLE
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Controller
         controller();
 
+        //ForAdmin Controller
+        forAdminController();
+
     }   // Main Method
+
+    private void forAdminController() {
+        final CheckBox checkBox = (CheckBox) findViewById(R.id.chbAdmin);
+        checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkBox.isChecked()) {
+
+                } else {
+                }
+            }
+        });
+    }
 
     private void controller() {
         textView.setOnClickListener(MainActivity.this);
