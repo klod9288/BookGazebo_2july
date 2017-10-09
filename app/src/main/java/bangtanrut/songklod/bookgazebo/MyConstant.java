@@ -16,6 +16,21 @@ public class MyConstant {
     private String urlGetProcess2 = "http://swiftcodingthai.com/bow/getAllProcess2.php";
     private String urlGetProcess3 = "http://swiftcodingthai.com/bow/getAllProcess3.php";
 
+    //Column Process2
+    private String[] colunmProcess2Strings = new String[]{"id", "cremation", "interment", "name",
+            "pavilion", "showdate", "showTime", "setDateTime", "bodyWhere", "timeBodyWhere",
+            "timeSong", "coffeeGroup", "amountBwchnafi", "timeBwchanafi", "bwchnafi",
+            "amountChantPlant", "burnBuild", "burnOld", "burnBanana", "salaPrice",
+            "manageBurnBuild", "carBody", "flower", "flower0", "flower1", "powerSound",
+            "powerBand", "waterDrink", "ice", "food", "candy", "bow"};
+
+    //Column Process3
+    private String[] columnProcess3Strings = new String[]{"id", "dateString", "tumBunString",
+            "salaString", "nameBodyString", "nameContactString", "phoneString", "timePhathed",
+            "timeSungkatand", "amountSungkatand", "timeSundmonn", "amoundSundmonn",
+            "timePackageBody", "amountKondin", "amountFlower", "amoundBucha", "amoundThaitan",
+            "amoundWaterDrink", "amountIce", "amoundFood", "amoundBow"};
+
     //For General
     private String[] columnUserStrings = new String[]{
             "id",
@@ -42,6 +57,14 @@ public class MyConstant {
             "ศาลา 10 (3,000.00 บาท)",
             "ศาลา 11 (2,200.00 บาท)",
             "ศาลา 12 (2,200.00 บาท)",};
+
+    public String[] getColunmProcess2Strings() {
+        return colunmProcess2Strings;
+    }
+
+    public String[] getColumnProcess3Strings() {
+        return columnProcess3Strings;
+    }
 
     public String getUrlGetProcess1() {
         return urlGetProcess1;

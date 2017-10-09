@@ -17,10 +17,11 @@
 
     <!--TabHost-->
     <android.support.design.widget.TabLayout
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:id="@+id/tabListProcess"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimaryDark"/>
 
     <!--Pager Layout-->
     <android.support.v4.view.ViewPager
