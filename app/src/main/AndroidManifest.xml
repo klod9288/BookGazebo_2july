@@ -23,7 +23,8 @@
         <activity android:name=".ModeTwo" />
         <activity android:name=".ModeThree" />
         <activity android:name=".WaitUser" />
-        <activity android:name=".WaitAdmin"></activity>
+        <activity android:name=".WaitAdmin" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>
