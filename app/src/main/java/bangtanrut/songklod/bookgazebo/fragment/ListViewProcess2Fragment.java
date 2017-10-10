@@ -55,8 +55,8 @@ public class ListViewProcess2Fragment extends Fragment {
             Log.d(tag, "JSON ==> " + resultJSON);
 
             JSONArray jsonArray = new JSONArray(resultJSON);
-            String[] columnNameStrings = myConstant.getColunmProcess2Strings(); // Column Name
-            String[][] dataValueStrings = new String[columnNameStrings.length][jsonArray.length()];
+            final String[] columnNameStrings = myConstant.getColunmProcess2Strings(); // Column Name
+            final String[][] dataValueStrings = new String[columnNameStrings.length][jsonArray.length()];
 
             for (int i1=0;i1<dataValueStrings.length; i1+=1) {
 
@@ -82,7 +82,14 @@ public class ListViewProcess2Fragment extends Fragment {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String[] dataSentStrings = new String[columnNameStrings.length];
+                    for (int i=0; i<dataSentStrings.length; i+=1) {
+                        dataSentStrings[i] =  columnNameStrings[i] + " = " + dataValueStrings[i][position];
+                        Log.d("11octV2", "dataSent[" + i + "] ==> " + dataSentStrings[i]);
+                    }
+
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
+                    intent.putExtra("DataSent", dataSentStrings);
                     getActivity().startActivity(intent);
                 }
             });
