@@ -12,9 +12,16 @@ public class MyConstant {
     private String urlPostProcess1 = "http://coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/addProcess1.php";
     private String urlPostProcess2 = "http://swiftcodingthai.com/bow/addProcess2var3.php";
     private String urlPostProcess3 = "http://swiftcodingthai.com/bow/addProcess3.php";
-    private String urlGetProcess1 = "http://swiftcodingthai.com/bow/getAllProcess2.php";
+    private String urlGetProcess1 = "http://www.coderobot.webstarterz.com/coderobot.webstarterz.com/bauy/app/getAllProcess1.php";
     private String urlGetProcess2 = "http://swiftcodingthai.com/bow/getAllProcess2.php";
     private String urlGetProcess3 = "http://swiftcodingthai.com/bow/getAllProcess3.php";
+
+    //Column Proeess1
+    private String[] columnProcess1Strings = new String[]{"id","Name","Pavilion","Time",
+            "Timework","Bodywere","Deadcard","Timewashbody","Buenbody","Movebody",
+            "Placrecive","Carrecive","Packagebody","Flower","Cinamal","Thaitum",
+            "Waterdrink","Ice1","Ice2"};
+
 
     //Column Process2
     private String[] colunmProcess2Strings = new String[]{"id", "cremation", "interment", "name",
@@ -57,6 +64,10 @@ public class MyConstant {
             "ศาลา 10 (3,000.00 บาท)",
             "ศาลา 11 (2,200.00 บาท)",
             "ศาลา 12 (2,200.00 บาท)",};
+
+    public String[] getColumnProcess1Strings() {
+        return columnProcess1Strings;
+    }
 
     public String[] getColunmProcess2Strings() {
         return colunmProcess2Strings;
