@@ -47,7 +47,7 @@ public class ListViewProcess2Fragment extends Fragment {
         try {
 
             GetData getData = new GetData(getActivity());
-            getData.execute(myConstant.getUrlGetProcess1());
+            getData.execute(myConstant.getUrlGetProcess2());
             String resultJSON = getData.get();
             Log.d(tag, "JSON ==> " + resultJSON);
 
